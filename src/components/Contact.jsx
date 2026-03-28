@@ -21,9 +21,9 @@ export default function Contact() {
     setMessage("✅ Message sent successfully!");
     setForm({ name: "", email: "", msg: "" });
     // 🔥 AUTO CLEAR AFTER 3 SECONDS
-  setTimeout(() => {
-    setMessage("");
-  }, 3000);
+    setTimeout(() => {
+      setMessage("");
+    }, 3000);
   };
 
   return (
@@ -38,7 +38,7 @@ export default function Contact() {
       </div>
 
       {/* FORM */}
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form className="contact-form" onSubmit={handleSubmit} netlify>
         <input
           placeholder="Name"
           value={form.name}
