@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [active, setActive] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false); // ✅ NEW
 
   useEffect(() => {
     const sections = [
@@ -21,7 +22,7 @@ export default function Navbar() {
         const section = document.getElementById(id);
 
         if (section) {
-          const top = section.offsetTop - 150; // 🔥 better offset
+          const top = section.offsetTop - 150;
           const height = section.offsetHeight;
 
           if (window.scrollY >= top && window.scrollY < top + height) {
@@ -37,23 +38,35 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Smooth scroll function (no jump)
+  // ✅ Smooth scroll + CLOSE MENU
   const handleClick = (e, id) => {
     e.preventDefault();
     const section = document.getElementById(id);
 
     if (section) {
       window.scrollTo({
-      top: section.offsetTop - 80,
-    });
+        top: section.offsetTop - 80,
+        behavior: "smooth"
+      });
     }
+
+    setMenuOpen(false); // ✅ CLOSE MENU AFTER CLICK
   };
 
   return (
     <nav className="navbar">
       <div className="logo">SKARVION</div>
 
-      <div className="nav-links">
+      {/* ✅ HAMBURGER */}
+      <div
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </div>
+
+      {/* ✅ NAV LINKS */}
+      <div className={`nav-links ${menuOpen ? "active" : ""}`}>
         <a
           href="#home"
           onClick={(e) => handleClick(e, "home")}
