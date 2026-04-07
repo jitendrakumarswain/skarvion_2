@@ -8,7 +8,7 @@ export default function Topbar() {
     <>
       <div className="topbar">
         <div>
-         <b> 📞 +91 7064949597 | 📍 Bhubaneswar, Odisha </b> 
+         <b> 📞 +91 7064949597 | 📍 Badagada, Bhubaneswar, 751006, Odisha </b> 
         </div>
 
         <button

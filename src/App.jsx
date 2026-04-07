@@ -10,30 +10,32 @@ import About from "./components/About";
 import Topbar from "./components/Topbar";
 import WhyUs from "./components/WhyUs";
 import ProcessTimeline from "./components/ProcessTimeline";
+import Careers from "./components/Careers";
 import { FaWhatsapp } from "react-icons/fa";
 import './App.css'
 
 function App() {
 
 
-  return (
-    <>
-      <Topbar />
-      <Navbar />
+ return (
+  <>
+   
+    <Navbar />
 
-      <section id="home">
-        <Hero />
-        <WhyUs />
-      </section>
+    <section id="home">
+      <Hero />
+      <WhyUs />
+    </section>
 
-      <section id="about">
-        <About />
-      </section>
+    <section id="about">
+      <About />
+    </section>
 
-      <section id="services">
-        <Services />
-        <ProcessTimeline />
-      </section>
+    <section id="services">
+      <Services />
+      <ProcessTimeline />
+    </section>
+
 
       <section id="pricing">
         <Pricing />
@@ -49,6 +51,8 @@ function App() {
 
       <section id="contact">
         <Contact />
+        <Footer />
+        
       </section>
 
       <a
@@ -60,7 +64,7 @@ function App() {
         <FaWhatsapp />
       </a>
 
-      <Footer />
+      
     </>
   );
 }

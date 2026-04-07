@@ -1,6 +1,14 @@
 /* GLOBAL */
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: 'Segoe UI', sans-serif;
   background: #0b0f1a;
   color: white;
@@ -54,36 +62,113 @@ body {
   transform: translateY(-2px);
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
-  height: 100vh;
+  margin-top: 70px; /* same as navbar height */
+}
+.hero {
+  position: relative;
+
+  /* 🔥 subtract navbar height */
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: 0;
 
   background:
-    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)),
     url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+}
+
+/* ===== 🔥 CONSTRUCTION ANIMATION ===== */
+.construction-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.construction-bg span {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 6px;
+  animation: float 8s linear infinite;
+}
+
+/* Positioning */
+.construction-bg span:nth-child(1) {
+  top: 20%;
+  left: 10%;
+}
+.construction-bg span:nth-child(2) {
+  top: 60%;
+  left: 80%;
+}
+.construction-bg span:nth-child(3) {
+  top: 80%;
+  left: 30%;
+}
+
+/* Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-80px) rotate(180deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: relative;
+  z-index: 10;
+
+  max-width: 750px;
+  width: 100%;
+
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px 40px;
+  border-radius: 16px;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
 .overlay {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 50px;
-  border-radius: 10px;
+  animation: floatBox 4s ease-in-out infinite;
 }
 
+@keyframes floatBox {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===== TEXT ===== */
 .hero h1 {
   font-size: 48px;
   font-weight: 700;
+  color: #fff;
 }
 
 .hero span {
@@ -92,72 +177,83 @@ body {
 
 .hero p {
   color: #ccc;
-  margin-top: 10px;
+  margin-top: 12px;
+  line-height: 1.6;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 button {
+  margin-top: 20px;
   background: linear-gradient(45deg, gold, #ffcc00);
   padding: 12px 25px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: 600;
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
 }
 
-/* SECTION */
+/* ===== SECTION FIX ===== */
 .section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 80px 20px;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 40px 16px;
   text-align: center;
-  animation: fadeIn 0.8s ease;
 }
 
+/* ===== HEADING ===== */
 .section h2 {
   font-size: 32px;
   margin-bottom: 40px;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+.highlight-text {
+  color: #facc15; /* yellow */
 }
 
-/* WHY SECTION */
+/* ===== GRID ===== */
 .why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  margin-top: 40px;
+
+  flex-wrap: wrap;             /* 🔥 makes it responsive */
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 0 16px;
 }
 
-/* WHY CARD */
+/* ===== CARD ===== */
 .why-card {
-  background: linear-gradient(145deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(0, 0, 0, 0.6));
+  width: 280px;                /* keep your design */
+  max-width: 100%;             /* 🔥 prevents overflow */
+  box-sizing: border-box;
+
+  padding: 20px;
+  border-radius: 16px;
+
+  /* keep your existing design styles below 👇 */
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.6));
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  color: white;
 }
 
-/* HOVER */
-.why-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-}
-
-/* TEXT */
+/* ===== TEXT ===== */
 .why-card p {
   margin: 10px 0;
-  color: #ccc;
-  font-size: 15px;
 }
+
+/* ===== GLOBAL FIX ===== */
+body {
+  overflow-x: hidden;          /* 🔥 extra safety */
+}
+
 
 /* IMAGES */
 .card img {
@@ -200,7 +296,7 @@ button:hover {
   justify-content: center;
   align-items: center;
 
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
   opacity: 0;
   transition: 0.3s;
 }
@@ -1033,5 +1129,75 @@ button:hover {
       background: rgba(255, 215, 0, 0.15);
       transform: none;
     }
+
+/* CAREER PAGE */
+.careers {
+  background: #020817;
+  color: white;
+  padding: 80px 20px;
+}
+
+/* HERO */
+.career-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.career-hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.career-hero p {
+  color: #ccc;
+}
+
+/* GRID */
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* JOBS */
+.job-card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* FORM */
+.career-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.career-form input,
+.career-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.career-form button {
+  background: gold;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+}
   }
 }

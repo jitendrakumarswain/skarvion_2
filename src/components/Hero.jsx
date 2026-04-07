@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import ParticlesBg from "./ParticlesBg";
+import structureImg from "../assets/structure.png";
 
 export default function Hero() {
   const [showForm, setShowForm] = useState(false);
@@ -13,7 +15,7 @@ export default function Hero() {
     details: "",
   });
 
-  // ✅ Handle Input Change
+  // ✅ Handle Input
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -27,7 +29,6 @@ export default function Hero() {
 
     const { name, phone, type, details } = formData;
 
-    // 🔍 Validation
     if (name.trim().length < 3) {
       alert("Enter valid name");
       return;
@@ -45,7 +46,6 @@ export default function Hero() {
 
     setLoading(true);
 
-    // ✅ WhatsApp
     const message = `Hello Skarvion,
 Name: ${name}
 Mobile: ${phone}
@@ -58,7 +58,6 @@ Description: ${details}`;
     );
 
     try {
-      // ✅ Backend Save
       await fetch("http://localhost:5000/contact", {
         method: "POST",
         headers: {
@@ -70,7 +69,6 @@ Description: ${details}`;
       setSuccess(true);
       setLoading(false);
 
-      // ✅ Reset Form
       setFormData({
         name: "",
         phone: "",
@@ -78,12 +76,10 @@ Description: ${details}`;
         details: "",
       });
 
-      // ✅ Auto Close
       setTimeout(() => {
         setShowForm(false);
         setSuccess(false);
       }, 2000);
-
     } catch (err) {
       console.log("Backend not running");
       setLoading(false);
@@ -91,18 +87,29 @@ Description: ${details}`;
   };
 
   return (
-    <section className="hero">
-      <div className="overlay">
+    <section className="hero relative overflow-hidden">
+
+      {/* 🔥 Construction Background Animation */}
+      <div className="construction-bg">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* OPTIONAL PARTICLES */}
+      <ParticlesBg />
+
+      {/* CONTENT */}
+      <div className="overlay relative z-10">
         <h1>
-          Smart Planning for <span>Strong Infrastructure</span>
+         <b></b> Smart Planning for <b></b><span><b>Strong Infrastructure</b></span>
         </h1>
 
         <p className="hero-tagline">
-          <span>Planning</span> • <span>Designing</span> •{" "}
-          <span>Estimation</span> • <span>Construction</span>
+          <span><b>Planning</b></span> • <span><b>Designing</b></span> •{" "}
+          <span><b>Estimation</b></span> • <span><b>Construction</b></span>
         </p>
 
-        {/* 🔘 OPEN MODAL */}
         <button
           onClick={() => {
             setShowForm(true);
@@ -113,7 +120,7 @@ Description: ${details}`;
         </button>
       </div>
 
-      {/* 🪟 MODAL */}
+      {/* MODAL */}
       {showForm && (
         <div className="modal">
           <div className="modal-content animate">
@@ -127,7 +134,6 @@ Description: ${details}`;
 
             <h2>Get a Quote</h2>
 
-            {/* ✅ SUCCESS MESSAGE */}
             {success ? (
               <div className="success-box">
                 ✅ Message sent successfully!
