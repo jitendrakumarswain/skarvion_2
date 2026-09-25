@@ -1,0 +1,143 @@
+/* Pricing section */
+
+/* PRICING */
+.pricing-section {
+  padding: 60px 3%;
+  background: #323c55;
+  text-align: center;
+  color: #fff;
+}
+
+.pricing-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.pricing-sub {
+  color: #94a3b8;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.pricing-card {
+  background: linear-gradient(145deg, #1e293b, #020617);
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: cardOrbit 6s ease-in-out infinite;
+}
+
+@keyframes cardOrbit {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(4px, -4px);
+  }
+
+  50% {
+    transform: translate(0, -8px);
+  }
+
+  75% {
+    transform: translate(-4px, -4px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.pricing-card:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.pricing-card:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.pricing-card:nth-child(4) {
+  animation-delay: 4.5s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* POPULAR CARD */
+.pricing-card.popular {
+  border: 2px solid #38bdf8;
+  transform: scale(1.05);
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #38bdf8;
+  color: #000;
+  padding: 5px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+/* TEXT */
+.pricing-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.pricing-card h1 {
+  font-size: 32px;
+  color: #38bdf8;
+  margin: 15px 0;
+}
+
+/* LIST */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.pricing-card li {
+  margin: 8px 0;
+  color: #cbd5f5;
+}
+
+/* BUTTON */
+.pricing-card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pricing-card button:hover {
+  background: #0ea5e9;
+}
+
+.price-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 15px 0;
+}

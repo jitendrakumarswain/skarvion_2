@@ -1,13 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import {
-  FaUsers,
+  FaClipboardList,
   FaDraftingCompass,
-  FaFileContract,
   FaHardHat,
-  FaMapMarkedAlt,
-  FaHome,
+  FaCheckCircle,
+  FaArrowRight,
 } from "react-icons/fa";
 
 export default function ProcessTimeline() {
@@ -15,45 +11,118 @@ export default function ProcessTimeline() {
     {
       number: "01",
       title: "Planning",
-      desc: "Understanding your requirements, budget, and timeline to create a strong foundation."
+      shortTitle: "Discover",
+      desc:
+        "We understand your project requirements, site conditions, budget and timeline before defining the right direction.",
+      icon: <FaClipboardList />,
     },
     {
       number: "02",
       title: "Design",
-      desc: "We create modern architectural and structural designs tailored to your needs."
+      shortTitle: "Design",
+      desc:
+        "Our team develops architectural, structural and elevation concepts tailored to your needs and project goals.",
+      icon: <FaDraftingCompass />,
     },
     {
       number: "03",
       title: "Execution",
-      desc: "Our expert team starts construction with quality materials and proper supervision."
+      shortTitle: "Build",
+      desc:
+        "Construction is carried out with proper coordination, quality materials, supervision and attention to detail.",
+      icon: <FaHardHat />,
     },
     {
       number: "04",
       title: "Delivery",
-      desc: "On-time delivery with complete quality assurance and customer satisfaction."
-    }
+      shortTitle: "Complete",
+      desc:
+        "We complete the project with quality checks, finishing coordination and a focus on timely handover.",
+      icon: <FaCheckCircle />,
+    },
   ];
 
   return (
-    <section className="timeline-section">
-      <h2 className="timeline-title">Our Working Process</h2>
+    <section className="timeline-section" id="process">
 
+      {/* Header */}
+      <div className="timeline-header">
+
+        <span className="timeline-tag">
+          HOW WE WORK
+        </span>
+
+        <h2 className="timeline-title">
+          From Concept to Completion
+        </h2>
+
+        <p className="timeline-subtitle">
+          A structured process designed to turn your vision into a
+          well-planned, professionally executed project.
+        </p>
+
+      </div>
+
+      {/* Timeline */}
       <div className="timeline">
+
+        {/* Progress Line */}
+        <div className="timeline-line">
+          <div className="timeline-line-progress" />
+        </div>
+
         {steps.map((step, index) => (
           <div
-            key={index}
+            key={step.number}
             className={`timeline-item ${
               index % 2 === 0 ? "left" : "right"
             }`}
           >
+
+            {/* Connector */}
+            <div className="timeline-marker">
+              <span>{step.number}</span>
+            </div>
+
+            {/* Content */}
             <div className="timeline-content">
-              <span className="step-number">{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.desc}</p>
+
+              <div className="timeline-card">
+
+                <div className="timeline-card-top">
+
+                  <div className="timeline-icon">
+                    {step.icon}
+                  </div>
+
+                  <div className="timeline-step-text">
+                    <span>
+                      STEP {step.number}
+                    </span>
+
+                    <h3>{step.title}</h3>
+                  </div>
+
+                </div>
+
+                <p>{step.desc}</p>
+
+                <div className="timeline-card-bottom">
+                  <span className="timeline-short-title">
+                    {step.shortTitle}
+                  </span>
+
+                  <FaArrowRight />
+                </div>
+
+              </div>
+
             </div>
           </div>
         ))}
+
       </div>
+
     </section>
   );
 }

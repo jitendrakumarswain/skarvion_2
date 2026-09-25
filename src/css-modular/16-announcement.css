@@ -1,0 +1,202 @@
+/* Announcement bar */
+
+/* =========================================
+   MODERN HIGH-TECH ANNOUNCEMENT BAR
+========================================= */
+
+.announcement-bar {
+  position: relative;
+  width: 100%;
+  height: 52px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  
+  /* Rich Dark Titanium & Amber Ambiance */
+  background: radial-gradient(circle at 50% 50%, #1c1810 0%, #0d0d10 100%);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+
+  /* Smooth edge fade out at the borders */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+/* Animated Neon Accent Line at the Bottom */
+.announcement-glow-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f59e0b, #fbbf24, #f59e0b, transparent);
+  background-size: 200% 100%;
+  animation: borderMove 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes borderMove {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* Ticker Container */
+.announcement-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: ticker 32s linear infinite;
+}
+
+.announcement-bar:hover .announcement-track {
+  animation-play-state: paused;
+}
+
+/* Individual Item Container */
+.announcement-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 35px;
+  white-space: nowrap;
+}
+
+/* Glowing Neon Badge */
+.announcement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+/* Live Pulsing Dot */
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f59e0b;
+  box-shadow: 0 0 8px #fbbf24;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+/* Main Announcement Text */
+.announcement-text {
+  color: #e5e7eb;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.announcement-text strong {
+  color: #fbbf24;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+}
+
+/* Actionable Button Chip */
+.announcement-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 12px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+.announcement-cta:hover {
+  background: #fbbf24;
+  color: #111827;
+  border-color: #fbbf24;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+  transform: translateY(-1px);
+}
+
+.announcement-cta .cta-arrow {
+  transition: transform 0.2s ease;
+}
+
+.announcement-cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+/* Divider Star */
+.announcement-divider {
+  color: rgba(245, 158, 11, 0.4);
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+/* Close Icon */
+.announcement-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.announcement-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Continuous Marquee Animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .announcement-bar {
+    height: 46px;
+  }
+  
+  .announcement-item {
+    padding: 0 20px;
+    gap: 8px;
+  }
+
+  .announcement-text {
+    font-size: 12px;
+  }
+
+  .announcement-badge {
+    font-size: 9.5px;
+    padding: 2px 7px;
+  }
+
+  .announcement-cta {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+}

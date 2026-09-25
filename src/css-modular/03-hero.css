@@ -1,0 +1,848 @@
+/* =========================================================
+   SKARVION — PREMIUM HERO
+   Full-screen image carousel
+========================================================= */
+
+.skv-hero {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: stretch;
+
+  background: #080a11;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   IMAGE SLIDER
+========================================================= */
+
+.skv-slider-container {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  z-index: 0;
+}
+
+.skv-slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 1.2s ease,
+    visibility 1.2s ease;
+}
+
+.skv-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.skv-slide-bg {
+  position: absolute;
+  inset: -2%;
+
+  width: 104%;
+  height: 104%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transform: scale(1.02);
+
+  transition:
+    transform 7s ease,
+    filter 0.8s ease;
+}
+
+.skv-slide.active .skv-slide-bg {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   DARK IMAGE OVERLAY
+========================================================= */
+
+.skv-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 7, 18, 0.86) 0%,
+      rgba(3, 7, 18, 0.64) 28%,
+      rgba(3, 7, 18, 0.30) 58%,
+      rgba(3, 7, 18, 0.20) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 7, 18, 0.72) 0%,
+      rgba(3, 7, 18, 0.05) 48%,
+      rgba(3, 7, 18, 0.30) 100%
+    );
+}
+
+
+/* =========================================================
+   SUBTLE HERO GLOW
+========================================================= */
+
+.skv-hero-glow {
+  position: absolute;
+  inset: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 18% 55%,
+      rgba(56, 189, 248, 0.12),
+      transparent 35%
+    );
+
+  mix-blend-mode: screen;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.skv-hero > #tsparticles,
+.skv-hero #tsparticles {
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 1 !important;
+
+  pointer-events: none !important;
+}
+
+/* =========================================================
+   HERO CONTENT CONTAINER
+========================================================= */
+
+.skv-hero-container {
+  position: relative;
+  z-index: 4;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding:
+    140px
+    clamp(24px, 7vw, 110px)
+    90px;
+
+  gap: 50px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.skv-hero-content {
+  width: min(780px, 100%);
+
+  text-align: left;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.skv-badge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 22px;
+
+  padding: 9px 14px;
+
+  color: #e2e8f0;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.4px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 999px;
+
+  background: rgba(5, 10, 20, 0.32);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.20);
+}
+
+.skv-badge-icon {
+  color: #fbbf24;
+
+  font-size: 15px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MAIN HEADLINE
+========================================================= */
+
+.skv-hero-headline {
+  max-width: 850px;
+
+  margin: 0;
+
+  padding: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 5.2vw, 76px);
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2.2px;
+
+  text-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.38);
+}
+
+
+/* Static heading */
+
+.skv-static-heading {
+  display: block;
+
+  color: #ffffff;
+}
+
+
+/* Typewriter */
+
+.skv-typewriter-text {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #38bdf8;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.skv-hero-desc {
+  max-width: 650px;
+
+  margin: 25px 0 0;
+
+  color: #d1d5db;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+
+  font-weight: 400;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   SERVICE PILLARS
+========================================================= */
+
+.skv-pillars-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 24px;
+}
+
+.skv-pillar-chip {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 11px;
+
+  color: #cbd5e1;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 999px;
+
+  background: rgba(3, 7, 18, 0.35);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.skv-pillar-chip:hover {
+  transform: translateY(-2px);
+
+  color: #ffffff;
+
+  border-color: rgba(56, 189, 248, 0.30);
+
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.skv-chip-bullet {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #fbbf24;
+
+  box-shadow:
+    0 0 9px rgba(251, 191, 36, 0.8);
+}
+
+
+/* =========================================================
+   ACTION AREA
+========================================================= */
+
+.skv-hero-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 32px;
+}
+
+
+/* =========================================================
+   PRIMARY HERO BUTTON
+========================================================= */
+
+.skv-btn-hero-primary {
+  min-height: 52px;
+
+  margin: 0;
+  padding: 0 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  box-shadow:
+    0 12px 35px rgba(6, 182, 212, 0.24);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.skv-btn-hero-primary:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 18px 42px rgba(6, 182, 212, 0.32);
+}
+
+.skv-cta-icon {
+  transition: transform 0.25s ease;
+}
+
+.skv-btn-hero-primary:hover .skv-cta-icon {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   EXPERIENCE PILL
+========================================================= */
+
+.skv-exp-pill {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 6px 14px 6px 7px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 999px;
+
+  background: rgba(5, 10, 20, 0.32);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.skv-exp-badge {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fbbf24;
+
+  border-radius: 50%;
+
+  background: rgba(245, 158, 11, 0.12);
+
+  border: 1px solid rgba(245, 158, 11, 0.20);
+}
+
+.skv-exp-badge svg {
+  font-size: 14px;
+}
+
+.skv-exp-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.skv-exp-text strong {
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.skv-exp-text span {
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CAROUSEL ARROWS
+========================================================= */
+
+.skv-slider-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 6;
+
+  width: 58px;
+  height: 58px;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.30);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.skv-slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.13);
+
+  border-color: rgba(255, 255, 255, 0.65);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.30);
+
+  transform: translateY(-50%) scale(1.06);
+}
+
+.skv-slider-arrow.prev {
+  left: 3%;
+}
+
+.skv-slider-arrow.next {
+  right: 3%;
+}
+
+
+/* =========================================================
+   SLIDER INDICATORS
+========================================================= */
+
+.skv-slider-indicators {
+  position: absolute;
+
+  left: 50%;
+  bottom: 32px;
+
+  z-index: 7;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  transform: translateX(-50%);
+}
+
+.skv-indicator-bar {
+  width: 28px;
+  height: 3px;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.30);
+
+  cursor: pointer;
+
+  transition:
+    width 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.skv-indicator-bar.active {
+  width: 55px;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.65);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .skv-hero {
+    min-height: 650px;
+  }
+
+  .skv-hero-container {
+    padding:
+      120px
+      7vw
+      85px;
+  }
+
+  .skv-hero-headline {
+    font-size: clamp(38px, 7vw, 58px);
+
+    letter-spacing: -1.5px;
+  }
+
+  .skv-hero-desc {
+    font-size: 14px;
+
+    max-width: 560px;
+  }
+
+  .skv-slider-arrow {
+    width: 50px;
+    height: 50px;
+
+    font-size: 15px;
+  }
+
+  .skv-slider-arrow.prev {
+    left: 18px;
+  }
+
+  .skv-slider-arrow.next {
+    right: 18px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .skv-hero {
+    height: 100svh;
+
+    min-height: 650px;
+  }
+
+  .skv-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 7, 18, 0.82),
+        rgba(3, 7, 18, 0.48)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(3, 7, 18, 0.78),
+        transparent 65%
+      );
+  }
+
+  .skv-hero-container {
+    align-items: flex-end;
+
+    padding:
+      100px
+      20px
+      85px;
+  }
+
+  .skv-hero-content {
+    width: 100%;
+  }
+
+  .skv-badge {
+    margin-bottom: 16px;
+
+    padding: 8px 11px;
+
+    font-size: 9px;
+
+    max-width: 100%;
+  }
+
+  .skv-hero-headline {
+    font-size: clamp(34px, 10vw, 48px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.2px;
+  }
+
+  .skv-typewriter-text {
+    margin-top: 4px;
+  }
+
+  .skv-hero-desc {
+    margin-top: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .skv-pillars-grid {
+    margin-top: 17px;
+
+    gap: 6px;
+  }
+
+  .skv-pillar-chip {
+    padding: 6px 9px;
+
+    font-size: 8px;
+  }
+
+  .skv-hero-actions {
+    margin-top: 22px;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+  }
+
+  .skv-btn-hero-primary {
+    min-height: 48px;
+
+    padding: 0 16px;
+
+    font-size: 12px;
+  }
+
+  .skv-exp-pill {
+    padding-right: 10px;
+  }
+
+  .skv-exp-badge {
+    width: 34px;
+    height: 34px;
+  }
+
+  .skv-exp-text strong {
+    font-size: 10px;
+  }
+
+  .skv-exp-text span {
+    font-size: 8px;
+  }
+
+  .skv-slider-arrow {
+    top: 50%;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 13px;
+  }
+
+  .skv-slider-arrow.prev {
+    left: 10px;
+  }
+
+  .skv-slider-arrow.next {
+    right: 10px;
+  }
+
+  .skv-slider-indicators {
+    bottom: 22px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .skv-hero-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .skv-hero-headline {
+    font-size: 31px;
+  }
+
+  .skv-hero-desc {
+    font-size: 12px;
+  }
+
+  .skv-exp-pill {
+    display: none;
+  }
+
+  .skv-slider-arrow {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .skv-slide-bg,
+  .skv-slide,
+  .skv-slider-arrow,
+  .skv-indicator-bar,
+  .skv-btn-hero-primary {
+    transition: none;
+  }
+}

@@ -1,0 +1,18 @@
+/* Modular CSS entry point */
+@import "./00-global.css";
+@import "./01-loader.css";
+@import "./02-navbar.css";
+@import "./03-hero.css";
+@import "./04-services.css";
+@import "./05-why.css";
+@import "./06-pricing.css";
+@import "./07-projects.css";
+@import "./08-contact.css";
+@import "./09-about.css";
+@import "./10-modal.css";
+@import "./11-testimonials.css";
+@import "./12-floating-actions.css";
+@import "./13-timeline.css";
+@import "./14-footer.css";
+@import "./15-expertise.css";
+@import "./16-announcement.css";

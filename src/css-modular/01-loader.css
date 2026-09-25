@@ -1,0 +1,540 @@
+/* =========================================================
+   SKARVION — PREMIUM LOADER
+========================================================= */
+
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(56, 189, 248, 0.07),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(245, 180, 0, 0.045),
+      transparent 28%
+    ),
+    #050b14;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.65s ease,
+    visibility 0.65s ease;
+}
+
+.loader-screen-exit {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* =========================================================
+   ARCHITECTURAL GRID
+========================================================= */
+
+.loader-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    50px 50px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.loader-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+.loader-glow-one {
+  top: 8%;
+  left: 12%;
+
+  background:
+    rgba(56, 189, 248, 0.055);
+
+  animation:
+    loaderFloatOne 7s ease-in-out infinite;
+}
+
+.loader-glow-two {
+  right: 8%;
+  bottom: 4%;
+
+  background:
+    rgba(245, 180, 0, 0.035);
+
+  animation:
+    loaderFloatTwo 8s ease-in-out infinite;
+}
+
+@keyframes loaderFloatOne {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(35px, 25px);
+  }
+}
+
+@keyframes loaderFloatTwo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-30px, -20px);
+  }
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.loader-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(520px, 88vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.loader-logo-wrapper {
+  position: relative;
+
+  width: 110px;
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  animation:
+    loaderLogoFloat 3s ease-in-out infinite;
+}
+
+.loader-logo-ring {
+  position: absolute;
+  inset: -8px;
+
+  border-radius: 34px;
+
+  border:
+    1px solid rgba(56, 189, 248, 0.14);
+
+  box-shadow:
+    0 0 35px rgba(56, 189, 248, 0.06);
+
+  animation:
+    loaderRingPulse 2.5s ease-in-out infinite;
+}
+
+.loader-logo {
+  position: relative;
+  z-index: 2;
+
+  width: 78px;
+  height: 78px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 8px 18px rgba(0, 0, 0, 0.35)
+    );
+}
+
+@keyframes loaderLogoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes loaderRingPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.loader-brand {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  letter-spacing: 4px;
+
+  line-height: 1;
+}
+
+.loader-tagline {
+  margin: 11px 0 0;
+
+  color: #7f8da1;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.loader-tagline span {
+  margin: 0 4px;
+
+  color: #f5b400;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.loader-message {
+  margin-top: 48px;
+
+  color: #9dacbd;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.loader-dots span {
+  opacity: 0.2;
+
+  animation:
+    loaderDots 1.3s infinite;
+}
+
+.loader-dots span:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.loader-dots span:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes loaderDots {
+  0%,
+  60%,
+  100% {
+    opacity: 0.2;
+  }
+
+  30% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.loader-progress-wrapper {
+  width: 100%;
+
+  margin-top: 18px;
+}
+
+.loader-progress-track {
+  position: relative;
+
+  width: 100%;
+  height: 3px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+.loader-progress-fill {
+  position: relative;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #38bdf8,
+      #f5b400
+    );
+
+  box-shadow:
+    0 0 14px rgba(56, 189, 248, 0.35);
+
+  transition: width 0.12s linear;
+}
+
+.loader-progress-fill::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 80px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.65)
+    );
+
+  animation:
+    loaderShine 1.5s linear infinite;
+}
+
+@keyframes loaderShine {
+  from {
+    transform: translateX(-80px);
+  }
+
+  to {
+    transform: translateX(80px);
+  }
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.loader-progress-meta {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 10px;
+}
+
+.loader-progress-meta span {
+  color: #536174;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.loader-progress-meta strong {
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   BOTTOM ACCENT
+========================================================= */
+
+.loader-bottom-line {
+  position: absolute;
+
+  left: 50%;
+  bottom: 30px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.loader-bottom-line span {
+  display: block;
+
+  width: 18px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #26384d;
+}
+
+.loader-bottom-line span:nth-child(2) {
+  width: 34px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #38bdf8,
+      #f5b400
+    );
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .loader-logo-wrapper {
+    width: 92px;
+    height: 92px;
+
+    border-radius: 23px;
+  }
+
+  .loader-logo {
+    width: 66px;
+    height: 66px;
+  }
+
+  .loader-brand {
+    font-size: 26px;
+
+    letter-spacing: 3px;
+  }
+
+  .loader-tagline {
+    font-size: 8px;
+
+    letter-spacing: 2.2px;
+  }
+
+  .loader-message {
+    margin-top: 38px;
+
+    font-size: 10px;
+  }
+
+  .loader-progress-wrapper {
+    width: 88%;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .loader-logo-wrapper,
+  .loader-logo-ring,
+  .loader-glow,
+  .loader-dots span,
+  .loader-progress-fill::after {
+    animation: none;
+  }
+
+  .loader-screen {
+    transition: none;
+  }
+}

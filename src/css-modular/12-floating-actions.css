@@ -1,0 +1,85 @@
+/* Floating call / WhatsApp actions */
+
+/* 📞 CALL BUTTON */
+.call-btn {
+  position: fixed;
+
+  bottom: 100px; /* 🔥 ABOVE WhatsApp */
+  right: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  background: #34a853;
+  color: rgb(116, 11, 11);
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  z-index: 9999;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* ICON SIZE */
+.call-btn svg {
+  font-size: 26px;
+}
+
+/* HOVER */
+.call-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.call-btn:hover {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  background: #25D366;
+  color: white;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+
+  z-index: 9999;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+
+  /* 🔥 animation */
+  animation: whatsappPulse 1.8s infinite;
+}
+
+/* ICON SIZE */
+.whatsapp-btn svg {
+  font-size: 30px;
+}
+
+/* HOVER EFFECT */
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Related to message done smoothly*/
+.form-message {
+  transition: opacity 0.3s ease;
+}

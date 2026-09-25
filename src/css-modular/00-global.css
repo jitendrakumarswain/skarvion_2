@@ -1,0 +1,483 @@
+/* =========================================================
+   SKARVION — GLOBAL STYLES & SHARED PRIMITIVES
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-width: 320px;
+
+  overflow-x: hidden;
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
+  background: #080a11;
+  color: #f3f4f6;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+}
+
+body > div {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progress-container {
+  width: 320px;
+  height: 8px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.progress-fill {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f59e0b,
+      #fbbf24,
+      #fde68a
+    );
+
+  box-shadow:
+    0 0 14px rgba(251, 191, 36, 0.8);
+
+  border-radius: 999px;
+
+  transition: width 0.25s ease;
+}
+
+
+/* =========================================================
+   FLOAT ANIMATION
+========================================================= */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 40px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 35px;
+
+  color: #d4af37;
+
+  animation: bounceDown 1.5s infinite;
+
+  z-index: 20;
+}
+
+@keyframes bounceDown {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(12px);
+  }
+}
+
+
+/* =========================================================
+   GENERIC BUTTON RESET
+   Component-specific buttons should be styled
+   inside their own CSS files.
+========================================================= */
+
+button {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   GENERIC SECTION
+========================================================= */
+
+.section {
+  width: 100%;
+
+  overflow-x: hidden;
+
+  padding: 80px 16px 40px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section h2 {
+  font-size: 32px;
+
+  margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   WHATSAPP PULSE
+========================================================= */
+
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+
+  70% {
+    transform: scale(1.05);
+
+    box-shadow:
+      0 0 0 12px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+
+/* =========================================================
+   COMPANY / ADDRESS
+========================================================= */
+
+.company-title {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  margin: 0 0 10px;
+}
+
+.address-text {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  margin: 0 0 16px;
+}
+
+.pin-icon {
+  color: #f59e0b;
+
+  margin-top: 4px;
+
+  flex-shrink: 0;
+
+  font-size: 14px;
+}
+
+.nav-arrow {
+  color: rgba(245, 158, 11, 0.6);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   CONNECT / SOCIAL
+========================================================= */
+
+.connect-tagline {
+  color: #94a3b8;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  margin: 0 0 16px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.social-link {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #cbd5e1;
+
+  font-size: 15px;
+
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 8px;
+
+  transition: all 0.25s ease;
+}
+
+.social-link:hover {
+  color: #ffffff;
+
+  transform: translateY(-3px);
+}
+
+.social-link.fb:hover {
+  background: #1877f2;
+
+  border-color: #1877f2;
+
+  box-shadow:
+    0 4px 12px rgba(24, 119, 242, 0.4);
+}
+
+.social-link.insta:hover {
+  background:
+    linear-gradient(
+      45deg,
+      #f58529,
+      #dd2a7b,
+      #8134af,
+      #515bd4
+    );
+
+  border-color: #dd2a7b;
+
+  box-shadow:
+    0 4px 12px rgba(221, 42, 123, 0.4);
+}
+
+.social-link.in:hover {
+  background: #0a66c2;
+
+  border-color: #0a66c2;
+
+  box-shadow:
+    0 4px 12px rgba(10, 102, 194, 0.4);
+}
+
+.social-link.yt:hover {
+  background: #ff0000;
+
+  border-color: #ff0000;
+
+  box-shadow:
+    0 4px 12px rgba(255, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   CONTACT ITEM
+========================================================= */
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.contact-icon {
+  color: #f59e0b;
+
+  font-size: 13px;
+
+  flex-shrink: 0;
+}
+
+.contact-item:hover {
+  color: #f59e0b;
+}
+
+
+/* =========================================================
+   LEARN BUTTON
+========================================================= */
+
+.learn-btn {
+  margin-top: 20px;
+
+  padding: 12px 22px;
+
+  background: #f5b400;
+
+  border: none;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PULSE
+========================================================= */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.4;
+  }
+}
+
+/* ================================
+   MODERN SKARVION CURSOR
+================================ */
+
+body {
+  cursor: none;
+}
+
+.skv-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #f5a400;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    background 0.2s ease;
+}
+
+.skv-cursor-ring {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(245, 164, 0, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    border-color 0.25s ease;
+}

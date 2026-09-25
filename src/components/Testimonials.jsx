@@ -1,90 +1,128 @@
 import React from "react";
+import "../css-modular/11-testimonials.css";
 
 const testimonials = [
   {
     name: "Rahul Sharma",
-    text: "Great planning and design service! Everything was handled professionally.",
-    rating: 4.5
+    role: "Residential Client",
+    text:
+      "The planning process was clear, professional and well organized. The team understood our requirements and guided us through every stage.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=85",
   },
   {
     name: "Priya Das",
-    text: "Modern design and smooth execution. Loved the final outcome.",
-    rating: 4
+    role: "Homeowner",
+    text:
+      "We really appreciated the attention to detail and the modern design approach. Communication was smooth throughout the project.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=85",
   },
   {
     name: "Sanjay Patel",
-    text: "High quality work and timely delivery. Highly recommended.",
-    rating: 5
+    role: "Business Client",
+    text:
+      "The team provided practical solutions and maintained a strong focus on quality. The overall experience was very professional.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=85",
   },
   {
     name: "Neha Verma",
-    text: "Very supportive team. Guided us throughout the project.",
-    rating: 4.5
-  }
+    role: "Residential Client",
+    text:
+      "The team was supportive and responsive from planning through execution. They made the entire process easier to understand.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=85",
+  },
 ];
 
 function Rating({ value }) {
   return (
-    <div style={{ color: "gold" }}>
-      {[1,2,3,4,5].map((i) =>
-        value >= i ? "★" : value >= i - 0.5 ? "☆" : "✩"
-      )}
+    <div className="testimonial-stars" aria-label={`${value} out of 5 stars`}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <span
+          key={star}
+          className={star <= value ? "testimonial-star active" : "testimonial-star"}
+        >
+          ★
+        </span>
+      ))}
     </div>
   );
 }
 
 export default function Testimonials() {
   return (
-    <section style={{ background: "#020817", padding: "60px 20px" }}>
-      
-      <h2 style={{
-        textAlign: "center",
-        color: "white",
-        marginBottom: "40px"
-      }}>
-        Client Testimonials
-      </h2>
+    <section className="testimonials-section" id="testimonials">
 
-      {/* GRID FIX */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-        gap: "20px",
-        maxWidth: "1200px",
-        margin: "auto"
-      }}>
+      <div className="testimonials-header">
+        <span className="testimonials-tag">
+          CLIENT FEEDBACK
+        </span>
 
-        {testimonials.map((t, i) => (
-          <div key={i} style={{
-            border: "1px solid rgba(255,215,0,0.4)",
-            borderRadius: "15px",
-            padding: "20px",
-            background: "#020817",
-            textAlign: "center",
-            color: "white"
-          }}>
+        <h2>
+          What Our Clients Say
+        </h2>
 
-            <Rating value={t.rating} />
+        <p>
+          Real experiences, thoughtful planning and professional execution
+          are at the heart of every Skarvion project.
+        </p>
+      </div>
 
-            <p style={{ margin: "15px 0", color: "#ccc" }}>
-              "{t.text}"
+      <div className="testimonials-grid">
+
+        {testimonials.map((testimonial) => (
+          <article
+            className="testimonial-card"
+            key={testimonial.name}
+          >
+
+            <div className="testimonial-top">
+              <div className="testimonial-profile">
+
+                <div className="testimonial-avatar">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="testimonial-person">
+                  <h3>{testimonial.name}</h3>
+                  <span>{testimonial.role}</span>
+                </div>
+
+              </div>
+
+              <div className="testimonial-quote-mark">
+                “
+              </div>
+            </div>
+
+            <Rating value={testimonial.rating} />
+
+            <p className="testimonial-text">
+              “{testimonial.text}”
             </p>
 
-            <hr style={{
-              width: "40px",
-              border: "1px solid gold",
-              margin: "10px auto"
-            }}/>
+            <div className="testimonial-bottom">
+              <span className="testimonial-line" />
+              <span className="testimonial-label">
+                Client Feedback
+              </span>
+            </div>
 
-            <h4>{t.name}</h4>
-            <p style={{ fontSize: "12px", color: "#aaa" }}>
-              Verified Client
-            </p>
-
-          </div>
+          </article>
         ))}
 
       </div>
+
     </section>
   );
 }

@@ -11,10 +11,8 @@ export default function ParticlesBg() {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fullScreen: { enable: true, zIndex: -1 },
-        background: {
-          color: "#0f172a", // dark blue
-        },
+        fullScreen: { enable: false, zIndex: -1 },
+
         particles: {
           number: { value: 60 },
           color: { value: "#38bdf8" },

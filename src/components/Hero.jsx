@@ -1,196 +1,253 @@
 "use client";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+import structureImage from "../assets/structure.png";
 import ParticlesBg from "./ParticlesBg";
-import structureImg from "../assets/structure.png";
+import QuoteModal from "./QuoteModal";
+import { Typewriter } from "react-simple-typewriter";
+
+import {
+  FaArrowRight,
+  FaAward,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
+
+import { HiOutlineSparkles } from "react-icons/hi2";
+
+
+const SLIDES = [
+
+ 
+  {
+    image:
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80",
+    tag: "Modern Duplex Architecture",
+    location: "Jayadev Vihar, Bhubaneswar",
+  },
+
+  {
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80",
+    tag: "Contemporary Interior & Planning",
+    location: "Khandagiri, Bhubaneswar",
+  },
+
+  {
+    image:
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80",
+    tag: "Premium Residential Elevation",
+    location: "Cuttack-Bhubaneswar Road",
+  },
+];
+
+
+const PILLARS = [
+  "Architectural Planning",
+  "3D Elevation Designing",
+  "BOQ Estimation",
+  "Turnkey Construction",
+];
+
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Quote Modal control
   const [showForm, setShowForm] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    type: "",
-    details: "",
-  });
 
-  // ✅ Handle Input
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  // Auto-slide effect every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
   };
 
-  // ✅ Submit
-  const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    const { name, phone, type, details } = formData;
-
-    if (name.trim().length < 3) {
-      alert("Enter valid name");
-      return;
-    }
-
-    if (!/^[0-9]{10}$/.test(phone)) {
-      alert("Enter valid 10 digit mobile number");
-      return;
-    }
-
-    if (!type) {
-      alert("Select building type");
-      return;
-    }
-
-    setLoading(true);
-
-    const message = `Hello Skarvion,
-Name: ${name}
-Mobile: ${phone}
-Building Type: ${type}
-Description: ${details}`;
-
-    window.open(
-      `https://wa.me/917064949597?text=${encodeURIComponent(message)}`,
-      "_blank"
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + SLIDES.length) % SLIDES.length
     );
-
-    try {
-      await fetch("http://localhost:5000/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      setSuccess(true);
-      setLoading(false);
-
-      setFormData({
-        name: "",
-        phone: "",
-        type: "",
-        details: "",
-      });
-
-      setTimeout(() => {
-        setShowForm(false);
-        setSuccess(false);
-      }, 2000);
-    } catch (err) {
-      console.log("Backend not running");
-      setLoading(false);
-    }
   };
+
 
   return (
-    <section className="hero relative overflow-hidden">
+    <section className="skv-hero">
 
-      {/* 🔥 Construction Background Animation */}
-      <div className="construction-bg">
-        <span></span>
-        <span></span>
-        <span></span>
+      {/* Dynamic Background Image Slider */}
+      <div className="skv-slider-container">
+        {SLIDES.map((slide, index) => (
+          <div
+            key={index}
+            className={`skv-slide ${
+              index === currentSlide ? "active" : ""
+            }`}
+          >
+            <div
+              className="skv-slide-bg"
+              style={{
+                backgroundImage: `url(${slide.image})`,
+              }}
+            />
+          </div>
+        ))}
       </div>
 
-      {/* OPTIONAL PARTICLES */}
+
+      {/* Modern Gradient Overlays */}
+      <div className="skv-hero-overlay" />
+      <div className="skv-hero-glow" />
+
+
+      {/* Particle Effects */}
       <ParticlesBg />
 
-      {/* CONTENT */}
-      <div className="overlay relative z-10">
-        <h1>
-         <b></b> Smart Planning for <b></b><span><b>Strong Infrastructure</b></span>
-        </h1>
 
-        <p className="hero-tagline">
-          <span><b>Planning</b></span> • <span><b>Designing</b></span> •{" "}
-          <span><b>Estimation</b></span> • <span><b>Construction</b></span>
-        </p>
+      {/* Hero Content */}
+      <div className="skv-hero-container">
+        <div className="skv-hero-content">
 
-        <button
-          onClick={() => {
-            setShowForm(true);
-            setSuccess(false);
-          }}
-        >
-          Get Quote
-        </button>
-      </div>
+          {/* Active Design Tag Pill */}
+          <div className="skv-badge">
+            <HiOutlineSparkles className="skv-badge-icon" />
 
-      {/* MODAL */}
-      {showForm && (
-        <div className="modal">
-          <div className="modal-content animate">
+            <span>
+              {SLIDES[currentSlide].tag} •{" "}
+              {SLIDES[currentSlide].location}
+            </span>
+          </div>
+
+
+          {/* Typewriter Dynamic Headline */}
+          <h1 className="skv-hero-headline">
+
+            <span className="skv-static-heading">
+              Architectural Elegance:
+            </span>
+
+            <span className="skv-typewriter-text">
+              <Typewriter
+                words={[
+                  "Smart Planning for Dream Homes",
+                  "Modern Luxury Villas & Duplexes",
+                  "Innovative Structural Engineering",
+                  "Turnkey Construction Precision",
+                ]}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={60}
+                deleteSpeed={35}
+                delaySpeed={2200}
+              />
+            </span>
+
+          </h1>
+
+
+          <p className="skv-hero-desc">
+            Bespoke residential blueprints, custom elevation styles, and
+            expert civil execution built to stand for generations across
+            Odisha.
+          </p>
+
+
+          {/* Pillars */}
+          <div className="skv-pillars-grid">
+            {PILLARS.map((item) => (
+              <span key={item} className="skv-pillar-chip">
+                <span className="skv-chip-bullet" />
+                {item}
+              </span>
+            ))}
+          </div>
+
+
+          {/* CTA & Trust Stats */}
+          <div className="skv-hero-actions">
 
             <button
-              className="close-btn"
-              onClick={() => setShowForm(false)}
+              className="skv-btn-hero-primary"
+              onClick={() => {
+                setShowForm(true);
+              }}
             >
-              ×
+              <span>Get Free Estimation</span>
+              <FaArrowRight className="skv-cta-icon" />
             </button>
 
-            <h2>Get a Quote</h2>
 
-            {success ? (
-              <div className="success-box">
-                ✅ Message sent successfully!
+            <div className="skv-exp-pill">
+
+              <div className="skv-exp-badge">
+                <FaAward />
               </div>
-            ) : (
-              <form className="quote-form" onSubmit={handleSubmit}>
 
-                <input
-                  name="name"
-                  placeholder="Full Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
+              <div className="skv-exp-text">
+                <strong>10+ Years</strong>
+                <span>Civil Architecture</span>
+              </div>
 
-                <input
-                  name="phone"
-                  placeholder="Mobile Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
+            </div>
 
-                <select
-                  name="type"
-                  value={formData.type}
-                  onChange={handleChange}
-                >
-                  <option value="">Select Building Type</option>
-                  <option value="Residential">Residential</option>
-                  <option value="Commercial">Commercial</option>
-                </select>
-
-                <textarea
-                  name="details"
-                  placeholder="Building Description"
-                  value={formData.details}
-                  onChange={handleChange}
-                />
-
-                <div className="modal-buttons">
-                  <button type="submit" className="submit-btn">
-                    {loading ? "Sending..." : "Submit"}
-                  </button>
-
-                  <button
-                    type="button"
-                    className="close-btn"
-                    onClick={() => setShowForm(false)}
-                  >
-                    Close
-                  </button>
-                </div>
-
-              </form>
-            )}
           </div>
+
         </div>
+      </div>
+
+
+      {/* Carousel Navigation Arrows */}
+
+      <button
+        className="skv-slider-arrow prev"
+        onClick={prevSlide}
+        aria-label="Previous home design"
+      >
+        <FaChevronLeft />
+      </button>
+
+
+      <button
+        className="skv-slider-arrow next"
+        onClick={nextSlide}
+        aria-label="Next home design"
+      >
+        <FaChevronRight />
+      </button>
+
+
+      {/* Slide Pagination Indicator Bars */}
+      <div className="skv-slider-indicators">
+
+        {SLIDES.map((_, idx) => (
+          <button
+            key={idx}
+            className={`skv-indicator-bar ${
+              idx === currentSlide ? "active" : ""
+            }`}
+            onClick={() => setCurrentSlide(idx)}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+
+      </div>
+
+
+      {/* Separate Quote Modal */}
+      {showForm && (
+        <QuoteModal
+          onClose={() => setShowForm(false)}
+        />
       )}
+
     </section>
   );
 }

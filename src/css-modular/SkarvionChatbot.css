@@ -1,0 +1,750 @@
+/* =========================================================
+   SKARVION AI CHATBOT
+========================================================= */
+
+.skv-ai-launcher {
+  position: fixed;
+
+  left: 24px;
+  right: auto;
+  bottom: 102px;
+
+  z-index: 99997;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(188, 21, 77, 0.28);
+  border-radius: 20px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #104616,
+      #300a30
+    );
+
+  box-shadow:
+    0 14px 35px rgba(15, 236, 122, 0.3),
+    0 0 28px rgba(5, 236, 51, 0.08);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.skv-ai-launcher:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: rgba(108, 189, 255, 0.5);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.38),
+    0 0 32px rgba(56, 189, 248, 0.12);
+}
+
+.skv-ai-launcher > svg {
+  position: relative;
+  z-index: 2;
+  font-size: 23px;
+}
+
+.skv-ai-launcher-glow {
+  position: absolute;
+  inset: -5px;
+  border-radius: 25px;
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  animation: skvAiPulse 2.6s ease-in-out infinite;
+}
+
+.skv-ai-online-dot {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid #0b1728;
+
+  z-index: 3;
+}
+
+@keyframes skvAiPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.skv-ai-panel {
+  position: fixed;
+
+  left: 24px;
+  right: auto;
+  bottom: 178px;
+
+  z-index: 99998;
+
+  width: min(390px, calc(100vw - 30px));
+  height: min(660px, calc(100vh - 210px));
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(14px) scale(0.98);
+  transform-origin: bottom right;
+
+  background: linear-gradient(145deg, #0b1728, #07111f);
+  border: 1px solid rgba(108, 189, 255, 0.18);
+  border-radius: 24px;
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.48),
+    0 0 45px rgba(56, 189, 248, 0.06);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+.skv-ai-panel.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.skv-ai-header {
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.skv-ai-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.skv-ai-avatar {
+  position: relative;
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.18);
+}
+
+.skv-ai-avatar > span {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  right: 3px;
+  bottom: 3px;
+
+  border-radius: 50%;
+  background: #22c55e;
+
+  border: 2px solid #0d2035;
+}
+
+.skv-ai-brand strong {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.skv-ai-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-top: 4px;
+
+  color: #7f9ab5;
+  font-size: 10px;
+}
+
+.skv-ai-status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.skv-ai-sound {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+
+  color: #a9c5dc;
+  background: rgba(255, 255, 255, 0.035);
+
+  cursor: pointer;
+}
+
+.skv-ai-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+}
+
+.skv-ai-message-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 13px;
+}
+
+.skv-ai-message-row.user {
+  justify-content: flex-end;
+}
+
+.skv-ai-mini-avatar {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+  border-radius: 9px;
+
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+
+  font-size: 11px;
+}
+
+.skv-ai-message {
+  max-width: 80%;
+  padding: 11px 13px;
+  border-radius: 15px;
+}
+
+.skv-ai-message.bot {
+  border-top-left-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skv-ai-message.user {
+  border-top-right-radius: 5px;
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #075985, #0e7490);
+}
+
+.skv-ai-message p {
+  margin: 0;
+  color: inherit;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.skv-ai-message small {
+  display: block;
+  margin-top: 5px;
+
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 8px;
+}
+
+.skv-ai-quick-area {
+  margin-top: 8px;
+}
+
+.skv-ai-quick-label {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #6f879e;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.skv-ai-quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.skv-ai-quick-btn {
+  min-height: 53px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 10px;
+
+  color: #bcd6e9;
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(108, 189, 255, 0.10);
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: left;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.skv-ai-quick-btn span {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #6cbdff;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.skv-ai-quick-btn:hover {
+  background: rgba(56, 189, 248, 0.07);
+  border-color: rgba(108, 189, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.skv-ai-composer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(6, 16, 29, 0.78);
+}
+
+.skv-ai-composer input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.skv-ai-composer input::placeholder {
+  color: #60768c;
+}
+
+.skv-ai-composer input:focus {
+  border-color: rgba(108, 189, 255, 0.30);
+}
+
+.skv-ai-composer button {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.skv-ai-composer button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.skv-ai-footer {
+  padding: 0 14px 10px;
+
+  text-align: center;
+
+  color: #4d6379;
+  font-size: 8px;
+}
+
+@media (max-width: 600px) {
+  .skv-ai-launcher {
+   left: 16px;
+    right: auto;
+    bottom: 88px;
+    width: 54px;
+    height: 54px;
+    border-radius: 17px;
+  }
+
+  .skv-ai-panel {
+     left: 10px;
+  right: 10px;
+    bottom: 152px;
+
+    width: auto;
+    height: min(620px, calc(100vh - 180px));
+
+    border-radius: 21px;
+  }
+
+  .skv-ai-quick-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skv-ai-launcher-glow {
+    animation: none;
+  }
+}
+
+/* =========================================
+   ONLINE CHAT INVITATION
+========================================= */
+
+.skv-ai-online-prompt {
+  position: fixed;
+  left: 24px;
+  bottom: 176px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  max-width: 290px;
+  padding: 12px 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.97),
+      rgba(8, 20, 38, 0.96)
+    );
+
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-radius: 15px;
+
+  color: #eaf7ff;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(56, 189, 248, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  z-index: 9998;
+
+  animation:
+    skvOnlinePromptIn 0.55s
+      cubic-bezier(.22, 1, .36, 1)
+    forwards;
+}
+
+.skv-ai-online-prompt::after {
+  content: "";
+  position: absolute;
+
+  left: 28px;
+  bottom: -7px;
+
+  width: 13px;
+  height: 13px;
+
+  background: #0b1728;
+
+  border-right: 1px solid rgba(56, 189, 248, 0.28);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.28);
+
+  transform: rotate(45deg);
+}
+
+.skv-ai-online-prompt-dot {
+  width: 9px;
+  height: 9px;
+
+  flex: 0 0 9px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.10),
+    0 0 14px rgba(34, 197, 94, 0.45);
+
+  animation: skvOnlineDot 1.7s ease-in-out infinite;
+}
+
+.skv-ai-online-prompt button {
+  margin-left: auto;
+
+  width: 22px;
+  height: 22px;
+
+  flex: 0 0 22px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: rgba(255, 255, 255, 0.55);
+
+  cursor: pointer;
+
+  font-size: 16px;
+  line-height: 1;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.skv-ai-online-prompt button:hover {
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+}
+
+/* Attention pulse on AI launcher */
+
+.skv-ai-launcher.attention {
+  animation:
+    skvAiAttention 1.2s ease-in-out 3;
+}
+
+@keyframes skvOnlinePromptIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes skvOnlineDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 0.75;
+  }
+}
+
+@keyframes skvAiAttention {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.08);
+  }
+
+  50% {
+    transform: scale(0.98);
+  }
+
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 600px) {
+  .skv-ai-online-prompt {
+    left: 16px;
+    bottom: 160px;
+    max-width: calc(100vw - 92px);
+    font-size: 12px;
+  }
+
+  .skv-ai-online-prompt::after {
+    left: 22px;
+  }
+}
+
+/* =========================================
+   CHATBOT MOUSE / HOVER FIX
+========================================= */
+
+.skv-ai-panel {
+  pointer-events: auto !important;
+  z-index: 100000 !important;
+}
+
+.skv-ai-panel * {
+  pointer-events: auto !important;
+}
+
+/* Interactive elements */
+
+.skv-ai-panel button,
+.skv-ai-panel input {
+  position: relative;
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+.skv-ai-panel input {
+  cursor: text;
+}
+
+/* Quick option hover */
+
+.skv-ai-quick-btn {
+  cursor: pointer !important;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+.skv-ai-quick-btn:hover {
+  transform: translateY(-3px) !important;
+
+  background: rgba(248, 113, 113, 0.14) !important;
+
+  border-color: rgba(248, 113, 113, 0.40) !important;
+
+  box-shadow:
+    0 8px 24px rgba(239, 68, 68, 0.15) !important;
+}
+
+/* Sound button */
+
+.skv-ai-sound {
+  cursor: pointer !important;
+}
+
+.skv-ai-sound:hover {
+  color: #ffffff !important;
+
+  background: rgba(248, 113, 113, 0.10) !important;
+}
+
+/* Send button */
+
+.skv-ai-composer button {
+  cursor: pointer !important;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+.skv-ai-composer button:hover {
+  transform: translateY(-2px) !important;
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 8px 22px rgba(239, 68, 68, 0.28) !important;
+}
+
+.skv-ai-composer button:active {
+  transform: translateY(0) !important;
+}
+
+/* Close button in online message */
+
+.skv-ai-online-prompt button {
+  cursor: pointer !important;
+}
+
+/* Chatbot launcher */
+
+.skv-ai-launcher {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 100001 !important;
+}
+
+

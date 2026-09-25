@@ -1,0 +1,151 @@
+.apply-page{
+    min-height:100vh;
+    background:#07111F;
+    color:white;
+}
+
+.apply-hero{
+    padding:120px 8% 70px;
+    background:
+        linear-gradient(rgba(4,10,20,.82),rgba(4,10,20,.90)),
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-tag{
+    color:#21CF69;
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+.apply-hero h1{
+    font-size:56px;
+    margin:20px 0;
+}
+
+.hero-description{
+    color:#cfd8e3;
+    max-width:650px;
+    line-height:1.8;
+}
+
+.job-info{
+    display:flex;
+    gap:25px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.job-info span{
+    background:#132338;
+    padding:10px 18px;
+    border-radius:30px;
+}
+
+.application-container{
+    padding:70px 8%;
+}
+
+.application-card{
+    background:#101c2c;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:45px;
+}
+
+.apply-form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    margin-top:30px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.form-group label{
+    color:#d7dce2;
+    font-size:14px;
+    font-weight:600;
+}
+
+.apply-form input,
+.apply-form select,
+.apply-form textarea{
+    width:100%;
+    padding:14px 16px;
+    background:#101c2c;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+}
+
+.apply-form input:focus,
+.apply-form select:focus,
+.apply-form textarea:focus{
+    border-color:#21CF69;
+}
+
+textarea{
+    resize:none;
+}
+
+.checkbox{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:16px;
+    color:#fff;
+}
+
+.checkbox input{
+    width:18px;
+    height:18px;
+    flex-shrink:0;
+    accent-color:#21CF69;
+    cursor:pointer;
+}
+
+.checkbox label{
+    cursor:pointer;
+}
+
+.submit-btn{
+    width:220px;
+    margin:auto;
+    padding:15px;
+    background:#21CF69;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#19b85b;
+}
+
+@media (max-width:768px){
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}

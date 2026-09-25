@@ -1,0 +1,376 @@
+/* =========================================================
+   SKARVION COOKIE CONSENT
+========================================================= */
+
+.skv-cookie-wrapper {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 999999;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 18px;
+  pointer-events: none;
+}
+
+.skv-cookie-banner {
+  width: min(1100px, 100%);
+
+  padding: 22px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 20, 38, 0.97),
+      rgba(7, 14, 27, 0.98)
+    );
+
+  border: 1px solid rgba(108, 189, 255, 0.18);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(56, 189, 248, 0.05);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  pointer-events: auto;
+
+  animation: skvCookieIn 0.4s ease;
+}
+
+@keyframes skvCookieIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Content */
+
+.skv-cookie-content {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  flex: 1;
+}
+
+.skv-cookie-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: rgba(245, 158, 11, 0.10);
+
+  border: 1px solid rgba(245, 158, 11, 0.18);
+
+  font-size: 23px;
+}
+
+.skv-cookie-text h3 {
+  margin: 0 0 6px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.skv-cookie-text p {
+  margin: 0;
+
+  max-width: 680px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.skv-cookie-policy {
+  display: inline-block;
+
+  margin-top: 7px;
+
+  color: #38bdf8;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.skv-cookie-policy:hover {
+  color: #7dd3fc;
+}
+
+
+/* Buttons */
+
+.skv-cookie-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  flex-shrink: 0;
+}
+
+.skv-cookie-btn {
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.skv-cookie-btn:hover {
+  transform: translateY(-1px);
+}
+
+.skv-cookie-secondary {
+  color: #cbd5e1;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skv-cookie-outline {
+  color: #cfe9ff;
+
+  background: transparent;
+
+  border: 1px solid rgba(108, 189, 255, 0.25);
+}
+
+.skv-cookie-primary {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  border: 1px solid transparent;
+
+  box-shadow:
+    0 7px 20px rgba(6, 182, 212, 0.18);
+}
+
+
+/* Settings */
+
+.skv-cookie-settings {
+  width: min(560px, 100%);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.skv-cookie-setting {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 13px 15px;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skv-cookie-setting strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+.skv-cookie-setting span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* Switch */
+
+.skv-cookie-switch {
+  position: relative;
+
+  width: 42px;
+  height: 23px;
+
+  flex-shrink: 0;
+}
+
+.skv-cookie-switch input {
+  display: none;
+}
+
+.skv-cookie-switch > span {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 999px;
+
+  background: #334155;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.skv-cookie-switch > span::before {
+  content: "";
+
+  position: absolute;
+
+  width: 17px;
+  height: 17px;
+
+  left: 3px;
+  top: 3px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  transition: 0.25s ease;
+}
+
+.skv-cookie-switch input:checked + span {
+  background: #0ea5e9;
+}
+
+.skv-cookie-switch input:checked + span::before {
+  transform: translateX(19px);
+}
+
+
+/* Settings buttons */
+
+.skv-cookie-settings-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 9px;
+
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .skv-cookie-wrapper {
+    padding: 10px;
+  }
+
+  .skv-cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 18px;
+
+    gap: 18px;
+
+    border-radius: 16px;
+  }
+
+  .skv-cookie-content {
+    gap: 12px;
+  }
+
+  .skv-cookie-icon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 19px;
+  }
+
+  .skv-cookie-text h3 {
+    font-size: 15px;
+  }
+
+  .skv-cookie-text p {
+    font-size: 12px;
+  }
+
+  .skv-cookie-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+  }
+
+  .skv-cookie-primary {
+    grid-column: 1 / -1;
+  }
+
+  .skv-cookie-btn {
+    width: 100%;
+  }
+
+  .skv-cookie-settings {
+    width: 100%;
+  }
+}

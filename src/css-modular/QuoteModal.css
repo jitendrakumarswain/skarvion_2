@@ -1,0 +1,612 @@
+/* =========================================================
+   SKARVION QUOTE MODAL
+   ========================================================= */
+
+.quote-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100vw !important;
+  height: 100dvh !important;
+
+  z-index: 999999 !important;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 30px 20px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: rgba(2, 6, 13, 0.82);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.quote-modal {
+  position: relative !important;
+
+  z-index: 1000000 !important;
+
+  width: 100%;
+  max-width: 780px;
+
+  margin: 20px auto 40px;
+
+  padding: 46px 42px 38px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(108, 189, 255, 0.10),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #10202d,
+      #0a1622
+    );
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 35px 120px rgba(0,0,0,0.65),
+    0 0 50px rgba(108,189,255,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   GOLD SIDE ACCENT
+   ========================================================= */
+
+.quote-modal::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    #f4b000,
+    #d89a00
+  );
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.skv-modal-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255,255,255,0.09);
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.04);
+
+  color: #aebaca;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.skv-modal-close:hover {
+  background: rgba(255,255,255,0.08);
+
+  color: #ffffff;
+
+  border-color: rgba(255,255,255,0.16);
+
+  transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.skv-modal-header {
+  max-width: 650px;
+
+  margin-bottom: 30px;
+
+  padding-right: 40px;
+}
+
+.skv-modal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 11px;
+
+  border: 1px solid rgba(244,176,0,0.24);
+
+  border-radius: 999px;
+
+  background: rgba(244,176,0,0.07);
+
+  color: #ffd45c;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.skv-modal-tag::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #f4b000;
+
+  box-shadow:
+    0 0 10px rgba(244,176,0,0.75);
+}
+
+.skv-modal-header h2 {
+  margin: 18px 0 12px;
+
+  color: #f8fafc;
+
+  font-size: clamp(32px, 4vw, 46px);
+
+  font-weight: 800;
+
+  line-height: 1.03;
+
+  letter-spacing: -1.5px;
+}
+
+.skv-modal-header p {
+  margin: 0;
+
+  max-width: 650px;
+
+  color: #8593a5;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.skv-quote-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+   ========================================================= */
+
+.skv-input-group {
+  position: relative;
+
+  width: 100%;
+}
+
+.skv-field-icon {
+  position: absolute;
+
+  left: 19px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+  color: #f4b000;
+
+  font-size: 16px;
+
+  pointer-events: none;
+}
+
+
+.skv-input-group input,
+.skv-input-group select,
+.skv-input-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255,255,255,0.11);
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.075),
+      rgba(255,255,255,0.035)
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.skv-input-group input,
+.skv-input-group select {
+  min-height: 62px;
+
+  padding: 0 18px 0 58px;
+}
+
+.skv-input-group textarea {
+  min-height: 145px;
+
+  padding: 17px 18px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.skv-input-group input::placeholder,
+.skv-input-group textarea::placeholder {
+  color: #7c8999;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.skv-input-group input:focus,
+.skv-input-group select:focus,
+.skv-input-group textarea:focus {
+  border-color: rgba(108,189,255,0.5);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(108,189,255,0.07),
+      rgba(255,255,255,0.035)
+    );
+
+  box-shadow:
+    0 0 0 3px rgba(108,189,255,0.07),
+    0 12px 30px rgba(0,0,0,0.12);
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.skv-input-group select {
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  cursor: pointer;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #9da9b9 50%
+    ),
+    linear-gradient(
+      135deg,
+      #9da9b9 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 20px) 50%,
+    calc(100% - 15px) 50%;
+
+  background-size: 5px 5px;
+
+  background-repeat: no-repeat;
+}
+
+.skv-input-group select option {
+  background: #101b28;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.skv-modal-footer {
+  margin-top: 6px;
+}
+
+.skv-submit-btn {
+  width: 100%;
+
+  min-height: 56px;
+
+  border: 1px solid rgba(244,176,0,0.42);
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4b000,
+      #d99a00
+    );
+
+  color: #101010;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 35px rgba(244,176,0,0.16);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.skv-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  filter: brightness(1.04);
+
+  box-shadow:
+    0 17px 42px rgba(244,176,0,0.24);
+}
+
+.skv-submit-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   SUCCESS
+   ========================================================= */
+
+.skv-success-state {
+  min-height: 360px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+.skv-success-icon {
+  margin-bottom: 20px;
+
+  color: #4ade80;
+
+  font-size: 56px;
+}
+
+.skv-success-state h3 {
+  margin: 0 0 12px;
+
+  color: #f8fafc;
+
+  font-size: 28px;
+}
+
+.skv-success-state p {
+  margin: 0;
+
+  max-width: 420px;
+
+  color: #8390a3;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .quote-modal-overlay {
+    align-items: flex-start;
+
+    padding: 18px 12px;
+  }
+
+  .quote-modal {
+    max-width: 100%;
+
+    margin: 8px auto 25px;
+
+    padding: 34px 20px 24px;
+
+    border-radius: 18px;
+  }
+
+  .skv-modal-header {
+    padding-right: 35px;
+
+    margin-bottom: 22px;
+  }
+
+  .skv-modal-header h2 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+  }
+
+  .skv-modal-header p {
+    font-size: 14px;
+  }
+
+  .skv-input-group input,
+  .skv-input-group select {
+    min-height: 58px;
+  }
+
+  .skv-input-group textarea {
+    min-height: 135px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .quote-modal-overlay {
+    padding: 10px;
+  }
+
+  .quote-modal {
+    margin: 0 auto 18px;
+
+    padding: 30px 16px 18px;
+
+    border-radius: 16px;
+  }
+
+  .skv-modal-close {
+    top: 12px;
+
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+  .skv-modal-header {
+    padding-right: 32px;
+
+    margin-bottom: 20px;
+  }
+
+  .skv-modal-header h2 {
+    font-size: 28px;
+
+    line-height: 1.05;
+  }
+
+  .skv-modal-header p {
+    font-size: 13px;
+  }
+
+  .skv-input-group input,
+  .skv-input-group select {
+    min-height: 55px;
+
+    padding-left: 52px;
+
+    font-size: 15px;
+  }
+
+  .skv-field-icon {
+    left: 16px;
+  }
+
+  .skv-input-group textarea {
+    min-height: 125px;
+
+    font-size: 15px;
+  }
+
+  .skv-submit-btn {
+    min-height: 52px;
+  }
+}

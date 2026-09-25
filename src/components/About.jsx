@@ -1,37 +1,60 @@
+import React from "react";
+import { FaBullseye, FaEye, FaAward } from "react-icons/fa";
+
 export default function About() {
   return (
-    <section className="section about">
-      <h2>Who We Are</h2>
-
-      <p className="about-text">
-        Skarvion Infrastructure and Designing is a professional construction
-        and design company focused on delivering high-quality architectural
-        planning, structural design, and modern infrastructure solutions.
-      </p>
-
-      <div className="about-grid">
-        <div className="about-card">
-          <h3>Our Mission</h3>
-          <p>
-            To provide innovative, reliable, and cost-effective construction
-            solutions that meet client expectations.
+    <section className="about-section" id="about">
+      <div className="about-container">
+        {/* Section Header */}
+        <div className="about-header">
+          <span className="about-badge">WHO WE ARE</span>
+          <h2 className="about-title">
+            Building Dreams with <span>Precision & Trust</span>
+          </h2>
+          <p className="about-subtitle">
+            Skarvion Infra is a trusted construction company in Bhubaneswar, Odisha,
+            specializing in residential construction, commercial buildings,
+            architectural planning, interior design, renovation, and turnkey projects.
           </p>
         </div>
 
-        <div className="about-card">
-          <h3>Our Vision</h3>
-          <p>
-            To become a leading infrastructure and designing company known
-            for quality, trust, and excellence.
-          </p>
-        </div>
+        {/* 3 Value Cards */}
+        <div className="about-grid">
+          {/* Mission */}
+          <div className="about-card">
+            <div className="icon-box">
+              <FaBullseye />
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To provide innovative, reliable, and cost-effective construction
+              solutions that consistently exceed client expectations.
+            </p>
+          </div>
 
-        <div className="about-card">
-          <h3>Why Choose Us</h3>
-          <p>
-            Experienced team, modern designs, affordable pricing, and
-            commitment to timely delivery.
-          </p>
+          {/* Vision */}
+          <div className="about-card">
+            <div className="icon-box">
+              <FaEye />
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To become a leading infrastructure and design firm celebrated for
+              architectural quality, trust, and structural excellence.
+            </p>
+          </div>
+
+          {/* Why Choose Us */}
+          <div className="about-card">
+            <div className="icon-box">
+              <FaAward />
+            </div>
+            <h3>Why Choose Us</h3>
+            <p>
+              Experienced engineering team, contemporary designs, transparent
+              pricing, and an unwavering commitment to on-time project delivery.
+            </p>
+          </div>
         </div>
       </div>
     </section>

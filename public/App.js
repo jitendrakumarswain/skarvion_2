@@ -7,18 +7,16 @@ import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import Testimonials from "./components/Testimonials";
 import About from "./components/About";
-import Topbar from "./components/Topbar";
 import WhyUs from "./components/WhyUs";
 import ProcessTimeline from "./components/ProcessTimeline";
+import ExpertiseSection from "./components/ExpertiseSection";
+
 import { FaWhatsapp } from "react-icons/fa";
-
-
-import "./App.css";
 
 function App() {
   return (
     <>
-    <Topbar />
+      
       <Navbar />
 
       <section id="home">
@@ -30,8 +28,15 @@ function App() {
         <About />
       </section>
 
+      <section id="expertise">
+        <ExpertiseSection />
+      </section>
+
       <section id="services">
         <Services />
+      </section>
+
+      <section id="process">
         <ProcessTimeline />
       </section>
 
@@ -51,14 +56,14 @@ function App() {
         <Contact />
       </section>
 
-<a
-  href="https://wa.me/917064949597?text=Hello%20Skarvion,%20I%20am%20looking%20for%20construction%20services.%20Could%20you%20please%20share%20more%20details?%20Thank%20you!"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="whatsapp-btn"
->
-  <FaWhatsapp />
-</a>
+      <a
+        href="https://wa.me/917064949597?text=Hello%20Skarvion,%20I%20am%20looking%20for%20construction%20services.%20Could%20you%20please%20share%20more%20details?%20Thank%20you!"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-btn"
+      >
+        <FaWhatsapp />
+      </a>
 
       <Footer />
     </>
