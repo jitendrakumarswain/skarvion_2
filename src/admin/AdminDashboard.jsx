@@ -69,12 +69,13 @@ function AdminDashboard() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/chat-leads`, 
-        {
-          method: "DELETE",
-          headers: authHeaders,
-        }
-      );
+      const response = await fetch(
+  `${import.meta.env.VITE_API_BASE_URL}/api/contacts/${id}`,
+  {
+    method: "DELETE",
+    headers: authHeaders,
+  }
+);
 
       if (!response.ok) {
         if (response.status === 401 || response.status === 403) {

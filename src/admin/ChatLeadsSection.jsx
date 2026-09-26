@@ -13,7 +13,7 @@ export default function ChatLeadsSection() {
       setLoading(true);
       setError("");
 
-      const response = awaitfetch(
+      const response = await fetch(
   `${import.meta.env.VITE_API_BASE_URL}/api/chat-leads`,
   {
           method: "GET",
