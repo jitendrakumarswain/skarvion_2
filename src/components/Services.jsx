@@ -1,32 +1,40 @@
+import { Link } from "react-router-dom";
 const services = [
+
+    {
+    name: "House Construction",
+    description:
+    "Residential house construction planning and project coordination for homeowners in Bhubaneswar and surrounding areas, with a focus on practical design, structural requirements and clear project estimation.",
+    img:
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=85",
+    link: "/house-construction",
+  },
   {
     name: "Architectural Planning",
     description:
-      "Smart planning and design solutions focused on functionality, aesthetics and efficient use of space.",
+  "Architectural planning and house design solutions in Bhubaneswar focused on functional layouts, efficient use of space, practical planning and modern residential design.",
     img:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
+    link: "/house-plans",
   },
   {
     name: "Structural Design",
-    description:
-      "Safe and durable structural solutions designed around stability, performance and construction requirements.",
+   description:
+  "Structural design and engineering solutions in Bhubaneswar focused on safe, durable and practical building structures, aligned with project requirements and construction needs.",
     img:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=85",
-  },
-  {
-    name: "3D Elevation",
-    description:
-      "Detailed visual concepts that help you experience the exterior look and character before construction begins.",
-    img:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85",
-  },
-  {
-    name: "Estimation",
-    description:
-      "Clear project estimation to help with budgeting, planning and better construction decisions.",
-    img:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
-  },
+    link: "/structural-design",
+    },
+ 
+{
+  name: "Estimation",
+  description:
+  "Construction cost estimation and project budgeting support in Bhubaneswar to help homeowners understand project scope, plan expenses and make informed construction decisions.",
+  img:
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
+  link: "/construction-cost",
+},
+
 ];
 
 const fallbackImage =
@@ -38,7 +46,7 @@ export default function Services() {
       <div className="services-header">
         <span className="services-tag">OUR SERVICES</span>
 
-        <h2>What We Do</h2>
+        <h2>Construction & Design Services in Bhubaneswar</h2>
 
         <p>
           We deliver modern, reliable and high-quality construction,
@@ -56,7 +64,7 @@ export default function Services() {
             <div className="service-image-wrapper">
               <img
                 src={service.img}
-                alt={service.name}
+                alt={`${service.name} services by Skarvion Infrastructure in Bhubaneswar`}
                 loading="lazy"
                 onError={(e) => {
                   e.currentTarget.src = fallbackImage;
@@ -75,13 +83,23 @@ export default function Services() {
 
               <p>{service.description}</p>
 
-              <button
-                type="button"
-                className="service-btn"
-              >
-                Explore
-                <span>→</span>
-              </button>
+              {service.link ? (
+  <Link
+    to={service.link}
+    className="service-btn"
+  >
+    Explore
+    <span>→</span>
+  </Link>
+) : (
+  <button
+    type="button"
+    className="service-btn"
+  >
+    Explore
+    <span>→</span>
+  </button>
+)}
             </div>
           </article>
         ))}

@@ -1,0 +1,390 @@
+/* =========================================================
+   STRUCTURAL DESIGN SEO PAGE
+   Skarvion Infrastructure
+========================================================= */
+
+.structural-design-page {
+  min-height: 100vh;
+  background: #05070b;
+  color: #f5f5f5;
+  overflow: hidden;
+}
+
+.sd-container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.sd-hero {
+  position: relative;
+  padding: 150px 0 110px;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(212, 175, 55, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #05070b 0%, #0b1018 55%, #05070b 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.sd-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.015),
+      transparent
+    );
+}
+
+.sd-eyebrow,
+.sd-section-tag {
+  display: inline-block;
+  color: #d4af37;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.sd-hero h1 {
+  max-width: 850px;
+  margin: 18px 0 22px;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.sd-hero-description {
+  max-width: 780px;
+  margin: 0;
+  color: #b9c0ca;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.sd-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.sd-primary-btn,
+.sd-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.sd-primary-btn {
+  background: #d4af37;
+  color: #080a0e;
+  border: 1px solid #d4af37;
+}
+
+.sd-secondary-btn {
+  background: transparent;
+  color: #f4f4f4;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.sd-primary-btn:hover,
+.sd-secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.sd-section {
+  padding: 100px 0;
+  background: #070a0f;
+}
+
+.sd-section-dark {
+  background:
+    linear-gradient(
+      135deg,
+      #090d14 0%,
+      #05070b 100%
+    );
+}
+
+.sd-intro {
+  max-width: 920px;
+}
+
+.sd-section-heading {
+  max-width: 850px;
+  margin-bottom: 46px;
+}
+
+.sd-section h2 {
+  margin: 12px 0 18px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.sd-section p {
+  color: #aeb6c2;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.sd-intro p {
+  margin: 0 0 18px;
+}
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
+
+.sd-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.sd-service-card {
+  padding: 30px;
+  min-height: 210px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.sd-service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.035);
+}
+
+.sd-service-card h3,
+.sd-project-card h3,
+.sd-benefit-card h3,
+.sd-process-card h3,
+.sd-faq-item h3 {
+  margin: 0 0 12px;
+  color: #f4f4f4;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.sd-service-card p,
+.sd-project-card p,
+.sd-benefit-card p,
+.sd-process-card p,
+.sd-faq-item p {
+  margin: 0;
+}
+
+/* =========================================================
+   PROJECT TYPES
+========================================================= */
+
+.sd-project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sd-project-card {
+  padding: 28px;
+  border-radius: 14px;
+  background: #0b1017;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.sd-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sd-process-card {
+  position: relative;
+  padding: 30px 24px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.sd-process-number {
+  display: inline-flex;
+  margin-bottom: 24px;
+  color: #d4af37;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.sd-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.sd-benefit-card {
+  padding: 30px;
+  border-radius: 14px;
+  background: #0b1017;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.sd-faq-list {
+  max-width: 900px;
+  display: grid;
+  gap: 16px;
+}
+
+.sd-faq-item {
+  padding: 25px 28px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.sd-cta {
+  padding: 100px 0;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(212, 175, 55, 0.12),
+      transparent 55%
+    ),
+    #05070b;
+}
+
+.sd-cta h2 {
+  max-width: 760px;
+  margin: 14px auto 18px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.12;
+}
+
+.sd-cta p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #aeb6c2;
+  line-height: 1.8;
+}
+
+.sd-cta .sd-actions {
+  justify-content: center;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .sd-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sd-project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sd-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sd-benefit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .sd-hero {
+    padding: 120px 0 80px;
+  }
+
+  .sd-section {
+    padding: 75px 0;
+  }
+
+  .sd-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .sd-hero-description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .sd-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sd-primary-btn,
+  .sd-secondary-btn {
+    width: 100%;
+  }
+
+  .sd-service-grid,
+  .sd-project-grid,
+  .sd-process-grid,
+  .sd-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-section h2 {
+    font-size: 2rem;
+  }
+
+  .sd-service-card,
+  .sd-project-card,
+  .sd-process-card,
+  .sd-benefit-card {
+    padding: 24px;
+  }
+}

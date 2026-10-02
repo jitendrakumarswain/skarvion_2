@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const expertise = [
   {
-    title: "Residential Buildings",
+    title: "Residential House Construction",
     images: [
       
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85",
@@ -74,12 +74,12 @@ export default function ExpertiseSection() {
               educational, institutional and business buildings.
             </p>
 
-            <ul className="showcase-list">
-              <li>✔ Architectural Planning</li>
-              <li>✔ Structural Design</li>
-              <li>✔ 3D Elevation</li>
-              <li>✔ Construction Management</li>
-            </ul>
+           <ul className="showcase-list">
+            <li>✔ Architectural Planning & House Plans</li>
+            <li>✔ Structural Design & Engineering</li>
+            <li>✔ 3D House Elevation Design</li>
+            <li>✔ Construction Management & Estimation</li>
+          </ul>
 
           </div>
 
@@ -100,7 +100,7 @@ export default function ExpertiseSection() {
         </span>
 
         <h2>
-          From Vision to Reality
+          Residential & Infrastructure Construction in Bhubaneswar
         </h2>
 
         <p>
@@ -129,7 +129,7 @@ export default function ExpertiseSection() {
         <div className="expertise-image">
           <img
             src={item.images[imageIndex]}
-            alt={item.title}
+            alt={`${item.title} project by Skarvion Infrastructure in Bhubaneswar`}
           />
 
           <div className="image-overlay" />

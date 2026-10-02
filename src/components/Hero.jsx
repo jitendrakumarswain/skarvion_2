@@ -20,25 +20,28 @@ const SLIDES = [
 
  
   {
-    image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80",
-    tag: "Modern Duplex Architecture",
-    location: "Jayadev Vihar, Bhubaneswar",
-  },
+  image:
+    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80",
+  tag: "Modern Duplex Architecture",
+  location: "Jayadev Vihar, Bhubaneswar",
+  alt: "Modern duplex house architecture in Bhubaneswar",
+},
 
-  {
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80",
-    tag: "Contemporary Interior & Planning",
-    location: "Khandagiri, Bhubaneswar",
-  },
+ {
+  image:
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80",
+  tag: "Contemporary Interior & Planning",
+  location: "Khandagiri, Bhubaneswar",
+  alt: "Contemporary residential interior planning in Bhubaneswar",
+},
 
-  {
-    image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80",
-    tag: "Premium Residential Elevation",
-    location: "Cuttack-Bhubaneswar Road",
-  },
+{
+  image:
+    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80",
+  tag: "Premium Residential Elevation",
+  location: "Cuttack-Bhubaneswar Road",
+  alt: "Premium residential house elevation near Bhubaneswar",
+},
 ];
 
 
@@ -85,19 +88,20 @@ export default function Hero() {
       {/* Dynamic Background Image Slider */}
       <div className="skv-slider-container">
         {SLIDES.map((slide, index) => (
-          <div
-            key={index}
-            className={`skv-slide ${
-              index === currentSlide ? "active" : ""
-            }`}
-          >
-            <div
-              className="skv-slide-bg"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-            />
-          </div>
+         <div
+  className={`skv-slide ${
+    index === currentSlide ? "active" : ""
+  }`}
+>
+  <div
+    className="skv-slide-bg"
+    role="img"
+    aria-label={slide.alt}
+    style={{
+      backgroundImage: `url(${slide.image})`,
+    }}
+  />
+</div>
         ))}
       </div>
 
@@ -126,38 +130,39 @@ export default function Hero() {
           </div>
 
 
-          {/* Typewriter Dynamic Headline */}
-          <h1 className="skv-hero-headline">
+  {/* SEO-Optimized Main Heading */}
+<h1 className="skv-hero-headline">
 
-            <span className="skv-static-heading">
-              Architectural Elegance:
-            </span>
+  <span className="skv-static-heading">
+    House Construction Company in Bhubaneswar
+  </span>
 
-            <span className="skv-typewriter-text">
-              <Typewriter
-                words={[
-                  "Smart Planning for Dream Homes",
-                  "Modern Luxury Villas & Duplexes",
-                  "Innovative Structural Engineering",
-                  "Turnkey Construction Precision",
-                ]}
-                loop={0}
-                cursor
-                cursorStyle="|"
-                typeSpeed={60}
-                deleteSpeed={35}
-                delaySpeed={2200}
-              />
-            </span>
+  <span className="skv-typewriter-text">
+    <Typewriter
+      words={[
+        "Smart Planning for Dream Homes",
+        "Modern Luxury Villas & Duplexes",
+        "Innovative Structural Engineering",
+        "Turnkey Construction Precision",
+      ]}
+      loop={0}
+      cursor
+      cursorStyle="|"
+      typeSpeed={60}
+      deleteSpeed={35}
+      delaySpeed={2200}
+    />
+  </span>
 
-          </h1>
+</h1>
 
 
-          <p className="skv-hero-desc">
-            Bespoke residential blueprints, custom elevation styles, and
-            expert civil execution built to stand for generations across
-            Odisha.
-          </p>
+        <p className="skv-hero-desc">
+  Skarvion Infrastructure provides house construction, architectural
+  planning, structural design, 3D elevation and construction estimation
+  services in Bhubaneswar and across Odisha, helping homeowners plan and
+  build durable, functional and thoughtfully designed spaces.
+</p>
 
 
           {/* Pillars */}
@@ -174,12 +179,14 @@ export default function Hero() {
           {/* CTA & Trust Stats */}
           <div className="skv-hero-actions">
 
-            <button
-              className="skv-btn-hero-primary"
-              onClick={() => {
-                setShowForm(true);
-              }}
-            >
+          <button
+            className="skv-btn-hero-primary"
+            type="button"
+            aria-label="Get a free house construction estimate from Skarvion Infrastructure"
+            onClick={() => {
+              setShowForm(true);
+            }}
+          >
               <span>Get Free Estimation</span>
               <FaArrowRight className="skv-cta-icon" />
             </button>

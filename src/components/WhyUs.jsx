@@ -6,7 +6,7 @@ export default function WhyUs() {
   return (
     <section className="section" data-aos="fade-up">
       <h2>
-        Why <span className="highlight-text">Skarvion</span> is Best for Construction?
+        Why Choose <span className="highlight-text">Skarvion Infrastructure</span> for Construction?
       </h2>
 
       <div className="why-grid">
@@ -25,25 +25,25 @@ export default function WhyUs() {
 
         {/* CARD 2 */}
         <div
-  className="why-card"
-  data-aos="fade-up"
-  data-aos-delay="200"
->
-          <p>✔ Timely Delivery</p>
-          <p>✔ Construction Guarantee</p>
-          <p>✔ No Hidden Charges</p>
-          <p>✔ No Subcontracting</p>
+          className="why-card"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <p>✔ Timely Project Coordination</p>
+          <p>✔ Clear Construction Scope</p>
+          <p>✔ Transparent Estimation</p>
+          <p>✔ Direct Project Management</p>
         </div>
 
         {/* CARD 3 */}
         <div
-  className="why-card"
-  data-aos="fade-up"
-  data-aos-delay="300"
->
-          <p>🏡 Eco-friendly Designs</p>
+          className="why-card"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <p>🏡 Practical Residential Planning</p>
           <p>🏗️ Modern Construction Solutions</p>
-          <p>❄ Natural Cooling Homes</p>
+          <p>📐 Architectural & Structural Design</p>
         </div>
 
       </div>

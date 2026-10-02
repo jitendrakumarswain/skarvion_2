@@ -13,7 +13,7 @@ export default function ProcessTimeline() {
       title: "Planning",
       shortTitle: "Discover",
       desc:
-        "We understand your project requirements, site conditions, budget and timeline before defining the right direction.",
+     "We understand your house construction requirements, plot conditions, budget and timeline before defining a practical project plan.",
       icon: <FaClipboardList />,
     },
     {
@@ -29,7 +29,7 @@ export default function ProcessTimeline() {
       title: "Execution",
       shortTitle: "Build",
       desc:
-        "Construction is carried out with proper coordination, quality materials, supervision and attention to detail.",
+      "Construction is carried out with proper project coordination, site supervision, quality materials and attention to detail throughout execution.",
       icon: <FaHardHat />,
     },
     {
@@ -37,7 +37,7 @@ export default function ProcessTimeline() {
       title: "Delivery",
       shortTitle: "Complete",
       desc:
-        "We complete the project with quality checks, finishing coordination and a focus on timely handover.",
+      "We complete the project with quality checks, finishing coordination and a structured handover process focused on project completion.",
       icon: <FaCheckCircle />,
     },
   ];
@@ -53,7 +53,7 @@ export default function ProcessTimeline() {
         </span>
 
         <h2 className="timeline-title">
-          From Concept to Completion
+          Our House Construction Process in Bhubaneswar
         </h2>
 
         <p className="timeline-subtitle">

@@ -1,0 +1,377 @@
+/* =========================================================
+   SKARVION HOUSE CONSTRUCTION SEO PAGE
+   ========================================================= */
+
+.house-construction-page {
+  min-height: 100vh;
+  background: #05070a;
+  color: #f5f5f5;
+  overflow: hidden;
+}
+
+.seo-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.seo-hero {
+  padding: 150px 0 100px;
+  background:
+    radial-gradient(circle at 75% 25%, rgba(212, 175, 55, 0.12), transparent 32%),
+    linear-gradient(135deg, #05070a 0%, #0b1018 55%, #05070a 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.seo-eyebrow {
+  margin: 0 0 18px;
+  color: #d4af37;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.seo-hero h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.seo-hero-text {
+  max-width: 780px;
+  margin: 28px 0 0;
+  color: #b9c0ca;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.seo-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.seo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.seo-btn-primary {
+  background: #d4af37;
+  color: #080a0d;
+}
+
+.seo-btn-primary:hover {
+  background: #e4c45a;
+  transform: translateY(-2px);
+}
+
+.seo-btn-secondary {
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  color: #f5f5f5;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.seo-btn-secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.seo-section {
+  padding: 100px 0;
+  background: #07090d;
+}
+
+.seo-section-dark {
+  background: #0b1017;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.seo-content {
+  max-width: 900px;
+}
+
+.seo-content h2,
+.seo-heading h2 {
+  margin: 0 0 24px;
+  color: #f5f5f5;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.seo-content p,
+.seo-heading > p:last-child {
+  color: #aeb6c1;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.seo-content p + p {
+  margin-top: 18px;
+}
+
+.seo-heading {
+  max-width: 820px;
+  margin-bottom: 48px;
+}
+
+.seo-heading .seo-eyebrow {
+  margin-bottom: 14px;
+}
+
+/* =========================
+   SERVICE CARDS
+   ========================= */
+
+.seo-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.seo-service-card {
+  min-height: 210px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.seo-service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.5);
+  background: rgba(212, 175, 55, 0.045);
+}
+
+.seo-service-card h3,
+.seo-project-card h3 {
+  margin: 0 0 14px;
+  color: #f3d36a;
+  font-size: 20px;
+}
+
+.seo-service-card p,
+.seo-project-card p {
+  margin: 0;
+  color: #aeb6c1;
+  line-height: 1.75;
+}
+
+/* =========================
+   PROJECT TYPES
+   ========================= */
+
+.seo-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.seo-project-card {
+  padding: 32px;
+  border-left: 2px solid #d4af37;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* =========================
+   PROCESS
+   ========================= */
+
+.seo-process {
+  display: grid;
+  gap: 0;
+}
+
+.seo-process-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 25px;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.seo-process-step:last-child {
+  border-bottom: 0;
+}
+
+.seo-process-step > span {
+  color: #d4af37;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.seo-process-step h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+}
+
+.seo-process-step p {
+  margin: 0;
+  color: #aeb6c1;
+  line-height: 1.7;
+}
+
+/* =========================
+   FAQ
+   ========================= */
+
+.seo-faq {
+  max-width: 900px;
+}
+
+.seo-faq details {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.seo-faq summary {
+  padding: 24px 0;
+  cursor: pointer;
+  color: #f5f5f5;
+  font-size: 17px;
+  font-weight: 600;
+  list-style: none;
+}
+
+.seo-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.seo-faq summary::after {
+  content: "+";
+  float: right;
+  color: #d4af37;
+  font-size: 22px;
+}
+
+.seo-faq details[open] summary::after {
+  content: "−";
+}
+
+.seo-faq details p {
+  max-width: 850px;
+  padding: 0 0 24px;
+  margin: 0;
+  color: #aeb6c1;
+  line-height: 1.8;
+}
+
+/* =========================
+   CTA
+   ========================= */
+
+.seo-cta {
+  padding: 100px 0;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(212, 175, 55, 0.12), transparent 40%),
+    #05070a;
+}
+
+.seo-cta h2 {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.15;
+}
+
+.seo-cta p:not(.seo-eyebrow) {
+  max-width: 650px;
+  margin: 22px auto 0;
+  color: #aeb6c1;
+  line-height: 1.8;
+}
+
+.seo-cta .seo-hero-actions {
+  justify-content: center;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 900px) {
+  .seo-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seo-hero {
+    padding: 120px 0 80px;
+  }
+
+  .seo-section,
+  .seo-cta {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .seo-container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .seo-hero {
+    padding: 100px 0 65px;
+  }
+
+  .seo-hero h1 {
+    font-size: 42px;
+    letter-spacing: -1px;
+  }
+
+  .seo-hero-text {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .seo-hero-actions {
+    flex-direction: column;
+  }
+
+  .seo-btn {
+    width: 100%;
+  }
+
+  .seo-section,
+  .seo-cta {
+    padding: 65px 0;
+  }
+
+  .seo-service-grid,
+  .seo-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-service-card,
+  .seo-project-card {
+    padding: 25px;
+  }
+
+  .seo-process-step {
+    grid-template-columns: 55px 1fr;
+    gap: 15px;
+  }
+}

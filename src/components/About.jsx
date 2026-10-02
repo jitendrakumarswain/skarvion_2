@@ -9,13 +9,14 @@ export default function About() {
         <div className="about-header">
           <span className="about-badge">WHO WE ARE</span>
           <h2 className="about-title">
-            Building Dreams with <span>Precision & Trust</span>
+           Skarvion Infrastructure — <span>Construction & Design in Bhubaneswar</span>
           </h2>
-          <p className="about-subtitle">
-            Skarvion Infra is a trusted construction company in Bhubaneswar, Odisha,
-            specializing in residential construction, commercial buildings,
-            architectural planning, interior design, renovation, and turnkey projects.
-          </p>
+         <p className="about-subtitle">
+          Skarvion Infrastructure provides residential and commercial construction
+          services in Bhubaneswar, Odisha, along with architectural planning,
+          structural design, interior design, renovation, construction estimation,
+          and turnkey project solutions.
+        </p>
         </div>
 
         {/* 3 Value Cards */}

@@ -1,0 +1,295 @@
+/* =========================================================
+   SKARVION INFRASTRUCTURE — PRIVACY POLICY
+   Premium Corporate Design
+   ========================================================= */
+
+.privacy-policy-page {
+  min-height: 100vh;
+  padding: 150px 24px 90px;
+  background:
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(212, 175, 55, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 25%,
+      rgba(55, 125, 190, 0.06),
+      transparent 28%
+    ),
+    #070b12;
+  color: #d9dee7;
+}
+
+/* Main wrapper */
+
+.privacy-policy-container {
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.privacy-policy-header {
+  position: relative;
+  padding: 0 0 42px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.privacy-policy-header::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  background: #d4af37;
+}
+
+.privacy-policy-label {
+  margin: 0 0 14px;
+  color: #d4af37 !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.privacy-policy-header h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  line-height: 1.08;
+}
+
+.privacy-policy-updated {
+  margin: 18px 0 0 !important;
+  color: #7f8a9a !important;
+  font-size: 13px !important;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.privacy-policy-content {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.privacy-policy-content p {
+  margin: 0 0 24px;
+  color: #aeb7c5;
+  font-weight: 400;
+}
+
+.privacy-policy-content h2 {
+  position: relative;
+  margin: 52px 0 18px;
+  padding-left: 17px;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 1.4;
+}
+
+.privacy-policy-content h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 3px;
+  height: calc(100% - 8px);
+  border-radius: 10px;
+  background: #d4af37;
+}
+
+.privacy-policy-content ul {
+  margin: 0 0 26px;
+  padding-left: 22px;
+  color: #aeb7c5;
+}
+
+.privacy-policy-content li {
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.privacy-policy-content li::marker {
+  color: #d4af37;
+}
+
+.privacy-policy-content strong {
+  color: #eef1f5;
+  font-weight: 600;
+}
+
+/* =========================================================
+   CONTACT CARD
+   ========================================================= */
+
+.privacy-contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 11px;
+
+  margin-top: 28px;
+  padding: 28px 30px;
+
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(14px);
+}
+
+.privacy-contact strong {
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.privacy-contact a {
+  width: fit-content;
+  color: #b9c2cf;
+  font-size: 15px;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.privacy-contact a:hover {
+  color: #d4af37;
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   BRAND FOOTER
+   ========================================================= */
+
+.privacy-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  margin-top: 70px;
+  padding-top: 30px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.privacy-footer strong {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.privacy-footer span {
+  color: #737e8e;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .privacy-policy-page {
+    padding: 125px 20px 65px;
+  }
+
+  .privacy-policy-header {
+    padding-bottom: 32px;
+    margin-bottom: 38px;
+  }
+
+  .privacy-policy-header h1 {
+    font-size: clamp(38px, 11vw, 52px);
+    letter-spacing: -1px;
+  }
+
+  .privacy-policy-content {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .privacy-policy-content h2 {
+    margin-top: 40px;
+    font-size: 20px;
+  }
+
+  .privacy-contact {
+    padding: 23px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .privacy-policy-page {
+    padding: 105px 16px 50px;
+  }
+
+  .privacy-policy-header {
+    margin-bottom: 32px;
+  }
+
+  .privacy-policy-label {
+    font-size: 10px !important;
+    letter-spacing: 2px;
+  }
+
+  .privacy-policy-header h1 {
+    font-size: 37px;
+  }
+
+  .privacy-policy-content {
+    font-size: 14.5px;
+    line-height: 1.78;
+  }
+
+  .privacy-policy-content h2 {
+    margin-top: 34px;
+    padding-left: 14px;
+    font-size: 19px;
+  }
+
+  .privacy-policy-content ul {
+    padding-left: 20px;
+  }
+
+  .privacy-contact {
+    padding: 20px;
+    border-radius: 13px;
+  }
+
+  .privacy-contact a {
+    font-size: 14px;
+  }
+
+  .privacy-footer {
+    margin-top: 50px;
+  }
+}

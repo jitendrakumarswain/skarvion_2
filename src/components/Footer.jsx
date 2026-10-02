@@ -156,7 +156,7 @@ export default function Footer() {
 
     <div className="footer-bottom-links">
       <Link to="/policies" className="footer-bottom-link">
-        Privacy & Policies
+        Privacy Policy
       </Link>
 
       <button

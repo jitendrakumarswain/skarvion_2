@@ -1,0 +1,555 @@
+/* =========================================================
+   SKARVION INFRASTRUCTURE
+   HOUSE PLANS SEO PAGE
+========================================================= */
+
+.skv-service-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #050a14;
+  color: #f8fafc;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.skv-service-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.skv-service-hero {
+  position: relative;
+  padding: 150px 0 100px;
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(56, 189, 248, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(251, 191, 36, 0.07),
+      transparent 30%
+    ),
+    #050a14;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skv-service-hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(900px, 80%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(251, 191, 36, 0.55),
+    transparent
+  );
+}
+
+.skv-service-eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #fbbf24;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.skv-service-hero h1 {
+  max-width: 900px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+}
+
+.skv-service-lead {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.skv-service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.skv-service-primary-btn,
+.skv-service-secondary-btn {
+  min-height: 50px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.skv-service-primary-btn {
+  color: #06111d;
+  background: linear-gradient(
+    135deg,
+    #fbbf24,
+    #f59e0b
+  );
+  box-shadow:
+    0 10px 30px rgba(251, 191, 36, 0.18);
+}
+
+.skv-service-secondary-btn {
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.skv-service-primary-btn:hover,
+.skv-service-secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.skv-service-primary-btn:hover {
+  box-shadow:
+    0 14px 38px rgba(251, 191, 36, 0.25);
+}
+
+.skv-service-secondary-btn:hover {
+  border-color: rgba(251, 191, 36, 0.45);
+  background: rgba(251, 191, 36, 0.06);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.skv-service-section {
+  position: relative;
+  padding: 90px 0;
+  background: #050a14;
+}
+
+.skv-service-section-alt {
+  background:
+    linear-gradient(
+      180deg,
+      #08111f 0%,
+      #07101c 100%
+    );
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skv-service-heading {
+  max-width: 780px;
+  margin-bottom: 42px;
+}
+
+.skv-service-heading > span {
+  display: block;
+  margin-bottom: 12px;
+  color: #fbbf24;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.skv-service-heading h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.skv-service-section > .skv-service-container > p {
+  max-width: 900px;
+  margin: 0 0 22px;
+  color: #b8c3d1;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.skv-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.skv-service-card {
+  position: relative;
+  min-height: 210px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 27, 45, 0.96),
+      rgba(7, 16, 29, 0.96)
+    );
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skv-service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 45px;
+  height: 2px;
+  background: #fbbf24;
+  box-shadow:
+    0 0 14px rgba(251, 191, 36, 0.45);
+}
+
+.skv-service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(251, 191, 36, 0.25);
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.24);
+}
+
+.skv-service-card h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.skv-service-card p {
+  margin: 0;
+  color: #aebccc;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.skv-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.skv-process-step {
+  position: relative;
+  padding: 30px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.skv-process-step > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 50%;
+  color: #fbbf24;
+  font-size: 12px;
+  font-weight: 800;
+  background: rgba(251, 191, 36, 0.06);
+}
+
+.skv-process-step h3 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.skv-process-step p {
+  margin: 0;
+  color: #aebccc;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.skv-faq-list {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skv-faq-item {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.025);
+  overflow: hidden;
+}
+
+.skv-faq-item summary {
+  position: relative;
+  padding: 20px 52px 20px 22px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+  cursor: pointer;
+  list-style: none;
+}
+
+.skv-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.skv-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  transform: translateY(-50%);
+  color: #fbbf24;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.skv-faq-item[open] summary::after {
+  content: "−";
+}
+
+.skv-faq-item p {
+  margin: 0;
+  padding: 0 22px 22px;
+  color: #aebccc;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.skv-service-cta {
+  position: relative;
+  padding: 100px 0;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(251, 191, 36, 0.08),
+      transparent 48%
+    ),
+    #050a14;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skv-service-cta > .skv-service-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skv-service-cta > .skv-service-container > span {
+  margin-bottom: 14px;
+  color: #fbbf24;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.skv-service-cta h2 {
+  max-width: 800px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+.skv-service-cta p {
+  max-width: 700px;
+  margin: 20px 0 0;
+  color: #aebccc;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+  .skv-service-hero {
+    padding: 130px 0 80px;
+  }
+
+  .skv-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skv-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .skv-service-container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .skv-service-hero {
+    padding: 110px 0 70px;
+  }
+
+  .skv-service-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .skv-service-hero h1 {
+    font-size: clamp(36px, 11vw, 52px);
+    letter-spacing: -1.5px;
+  }
+
+  .skv-service-lead {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .skv-service-actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .skv-service-primary-btn,
+  .skv-service-secondary-btn {
+    width: 100%;
+  }
+
+  .skv-service-section {
+    padding: 70px 0;
+  }
+
+  .skv-service-heading {
+    margin-bottom: 30px;
+  }
+
+  .skv-service-heading h2 {
+    font-size: 30px;
+    letter-spacing: -0.8px;
+  }
+
+  .skv-service-section > .skv-service-container > p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .skv-service-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .skv-service-card {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .skv-service-card h3 {
+    font-size: 18px;
+  }
+
+  .skv-process-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .skv-process-step {
+    padding: 24px;
+  }
+
+  .skv-faq-item summary {
+    padding: 18px 48px 18px 18px;
+    font-size: 14px;
+  }
+
+  .skv-faq-item summary::after {
+    right: 18px;
+  }
+
+  .skv-faq-item p {
+    padding: 0 18px 18px;
+    font-size: 13px;
+  }
+
+  .skv-service-cta {
+    padding: 75px 0;
+  }
+
+  .skv-service-cta h2 {
+    font-size: 32px;
+  }
+
+  .skv-service-cta p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .skv-service-container {
+    width: calc(100% - 24px);
+  }
+
+  .skv-service-hero h1 {
+    font-size: 34px;
+  }
+
+  .skv-service-heading h2 {
+    font-size: 27px;
+  }
+}

@@ -23,9 +23,12 @@ import "./css-modular/14-footer.css";
 import "./css-modular/15-expertise.css";
 import "./css-modular/16-announcement.css";
 import "./css-modular/ApplyJob.css";
+import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <HelmetProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </HelmetProvider>
 );
