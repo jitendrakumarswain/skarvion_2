@@ -493,9 +493,10 @@ useEffect(() => {
                 value="skarvion.infra@gmail.com"
               />
               <ContactInfo
-                icon={<PinIcon />}
-                label="Location"
-                value="Chintamaniswar, Bhubaneswar, Odisha, India"
+              icon={<PinIcon />}
+              label="Location"
+              value="Chintamaniswar, Bhubaneswar, Odisha, India"
+
               />
             </div>
           </div>

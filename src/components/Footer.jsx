@@ -1,5 +1,7 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
+
 import {
   FaFacebookF,
   FaInstagram,
@@ -7,7 +9,6 @@ import {
   FaYoutube,
   FaPhoneAlt,
   FaEnvelope,
-  FaMapMarkerAlt,
 } from "react-icons/fa";
 import "../css-modular/14-footer.css";
 
@@ -31,29 +32,25 @@ export default function Footer() {
       </div>
 
       <div className="footer-grid">
-        {/* Column 1: Visit Us */}
-        <div className="footer-column">
-          <h3 className="footer-title">VISIT US</h3>
+       {/* Column 1: Service Area */}
+<div className="footer-column">
+  <h3 className="footer-title">SERVICE AREA</h3>
 
-          <p className="company-title">Skarvion Infrastructure</p>
+  <p className="company-title">Skarvion Infrastructure</p>
 
-          <p className="address-text">
-            <FaMapMarkerAlt className="pin-icon" />
-            <span>
-              Lane - 09, Chintamaniswar,
-              <br />
-              Bhubaneswar, Odisha – 751006
-            </span>
-          </p>
+  <p className="connect-tagline">
+    Professional planning, design, and construction solutions
+    tailored to your project requirements.
+  </p>
 
-          <div className="footer-map">
-            <iframe
-              src="https://www.google.com/maps?q=Skarvion+Planning+%26+Infrastructure,Chintamaniswar,Bhubaneswar&output=embed"
-              title="Skarvion Location"
-              loading="lazy"
-            />
-          </div>
-        </div>
+  <p className="address-text">
+    <span>
+      <strong>Serving Clients Across Odisha</strong>
+      <br />
+      Consultations and site visits available by appointment.
+    </span>
+  </p>
+</div>
 
         {/* Column 2: Services */}
         <div className="footer-column">
