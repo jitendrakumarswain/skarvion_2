@@ -495,7 +495,7 @@ useEffect(() => {
               <ContactInfo
               icon={<PinIcon />}
               label="Location"
-              value="Chintamaniswar, Bhubaneswar, Odisha, India"
+              value="Serving Clients Across Odisha (By Appointment)"
 
               />
             </div>
