@@ -26,6 +26,7 @@ import ProtectedAdmin from "./admin/ProtectedAdmin";
 import Courses from "./pages/Courses";
 import AutoCADCourse from "./pages/AutoCADCourse";
 import RevitTraining from "./pages/RevitTraining";
+import ETABSStaadCourse from "./pages/ETABSStaadCourse";
 
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
   location.pathname === "/admin" ||
   location.pathname === "/courses" ||
   location.pathname === "/courses/autocad-civil-3d"||
-  location.pathname === "/courses/revit-training";
+  location.pathname === "/courses/revit-training" ||
+  location.pathname === "/courses/etabs-staad-pro";
 
 
 
@@ -218,6 +220,14 @@ function App() {
           <Route
             path="/courses/revit-training"
             element={<RevitTraining />}
+          />
+
+          {/* ============================
+              SKARVION ACADEMY — ETABS & STAAD.PRO TRAINING
+          ============================ */}
+          <Route
+            path="/courses/etabs-staad-pro"
+            element={<ETABSStaadCourse />}
           />
 
 
