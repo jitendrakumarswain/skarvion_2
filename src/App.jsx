@@ -25,6 +25,7 @@ import AdminLogin from "./admin/AdminLogin";
 import ProtectedAdmin from "./admin/ProtectedAdmin";
 import Courses from "./pages/Courses";
 import AutoCADCourse from "./pages/AutoCADCourse";
+import RevitTraining from "./pages/RevitTraining";
 
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
   location.pathname === "/admin-login" ||
   location.pathname === "/admin" ||
   location.pathname === "/courses" ||
-  location.pathname === "/courses/autocad-civil-3d";
+  location.pathname === "/courses/autocad-civil-3d"||
+  location.pathname === "/courses/revit-training";
 
 
 
@@ -209,6 +211,14 @@ function App() {
           path="/courses/autocad-civil-3d"
           element={<AutoCADCourse />}
         />
+
+          {/* ============================
+              SKARVION ACADEMY — REVIT & BIM TRAINING
+          ============================ */}
+          <Route
+            path="/courses/revit-training"
+            element={<RevitTraining />}
+          />
 
 
         </Routes>
