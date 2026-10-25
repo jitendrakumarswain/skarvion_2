@@ -40,4 +40,9 @@
     <loc>https://skarvioninfra.com/courses</loc>
   </url>
 
+  <url>
+  <loc>https://skarvioninfra.com/courses/autocad-civil-3d</loc>
+  <priority>0.8</priority>
+</url>
+
 </urlset>

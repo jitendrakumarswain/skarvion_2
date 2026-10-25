@@ -24,6 +24,7 @@ import AdminDashboard from "./admin/AdminDashboard";
 import AdminLogin from "./admin/AdminLogin";
 import ProtectedAdmin from "./admin/ProtectedAdmin";
 import Courses from "./pages/Courses";
+import AutoCADCourse from "./pages/AutoCADCourse";
 
 
 function App() {
@@ -198,7 +199,16 @@ function App() {
             element={<Courses />}
           />
 
+          {/* ============================
+              SKARVION ACADEMY — AUTOCAD & CIVIL 3D COURSE
+          ============================ */}
+
         </Routes>
+
+        <Route
+        path="/courses/autocad-civil-3d"
+        element={<AutoCADCourse />}
+        />
 
       </div>
 
