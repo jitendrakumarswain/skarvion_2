@@ -13,6 +13,7 @@ import {
   FaVideo,
   FaUserFriends,
   FaFileAlt,
+  FaGraduationCap,
 } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
@@ -83,6 +84,12 @@ const MORE_LINKS = [
     href: "/policies",
     label: "Policies",
     icon: FaFileAlt,
+  },
+
+  {
+    href: "/courses",
+    label: "Courses",
+    icon: FaGraduationCap,
   },
 ];
 

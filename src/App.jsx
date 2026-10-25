@@ -23,14 +23,17 @@ import ConstructionCost from "./pages/ConstructionCost";
 import AdminDashboard from "./admin/AdminDashboard";
 import AdminLogin from "./admin/AdminLogin";
 import ProtectedAdmin from "./admin/ProtectedAdmin";
+import Courses from "./pages/Courses";
 
 
 function App() {
   const location = useLocation();
 
   const hideChatbot =
-    location.pathname === "/admin-login" ||
-    location.pathname === "/admin";
+  
+  location.pathname === "/admin-login" ||
+  location.pathname === "/admin" ||
+  location.pathname === "/courses";
 
   const [loading, setLoading] = useState(true);
 
@@ -167,23 +170,38 @@ function App() {
           element={<PrivacyPolicy />}
           />
 
-        {/* ============================
-            HOUSE PLANS
-            ============================ */}
+     
+          {/* ============================
+              HOUSE PLANS
+          ============================ */}
 
           <Route
-           path="/house-plans"
-           element={<HousePlans />}
+            path="/house-plans"
+            element={<HousePlans />}
           />
 
+          {/* ============================
+              STRUCTURAL DESIGN
+          ============================ */}
+
           <Route
-  path="/structural-design"
-  element={<StructuralDesign />}
-/>
+            path="/structural-design"
+            element={<StructuralDesign />}
+          />
+
+          {/* ============================
+              SKARVION ACADEMY — COURSES
+          ============================ */}
+
+          <Route
+            path="/courses"
+            element={<Courses />}
+          />
 
         </Routes>
 
       </div>
+
 
 
       {/* =========================
