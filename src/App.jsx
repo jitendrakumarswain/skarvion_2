@@ -34,7 +34,10 @@ function App() {
   
   location.pathname === "/admin-login" ||
   location.pathname === "/admin" ||
-  location.pathname === "/courses";
+  location.pathname === "/courses" ||
+  location.pathname === "/courses/autocad-civil-3d";
+
+
 
   const [loading, setLoading] = useState(true);
 
