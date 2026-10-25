@@ -202,14 +202,13 @@ function App() {
           {/* ============================
               SKARVION ACADEMY — AUTOCAD & CIVIL 3D COURSE
           ============================ */}
-
-        </Routes>
-
-        <Route
-        path="/courses/autocad-civil-3d"
-        element={<AutoCADCourse />}
+           <Route
+          path="/courses/autocad-civil-3d"
+          element={<AutoCADCourse />}
         />
 
+
+        </Routes>
       </div>
 
 
