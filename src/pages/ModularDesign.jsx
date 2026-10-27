@@ -16,7 +16,7 @@ import {
 } from "react-icons/fa6";
 import "../css-modular/ModularDesign.css";
 
-const WHATSAPP_NUMBER = "917604949597";
+const WHATSAPP_NUMBER = "917064949597";
 
 const modularDesigns = [
   {

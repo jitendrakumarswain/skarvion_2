@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { FaWhatsapp, FaRulerCombined } from "react-icons/fa";
 import "../css-modular/SpacePlanning.css";
 
-const WHATSAPP_NUMBER = "917604949597";
+const WHATSAPP_NUMBER = "917064949597";
 
 export default function SpacePlanning() {
   const handleEnquiry = () => {

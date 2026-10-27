@@ -68,7 +68,7 @@ const categories = [
   "Specialized Plans",
 ];
 
-const WHATSAPP_NUMBER = "917604949597";
+const WHATSAPP_NUMBER = "917064949597";
 
 export default function FloorPlanDesigns() {
   const [activeCategory, setActiveCategory] = useState("All Plans");

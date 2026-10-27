@@ -72,7 +72,7 @@ export default function ArchitecturalPlanning() {
   const [plotSize, setPlotSize] = useState("");
   const [requirements, setRequirements] = useState("");
 
-  const whatsappNumber = "917604949597";
+  const whatsappNumber = "917064949597";
 
   const visibleServices = planningServices.filter(
     (service) =>
