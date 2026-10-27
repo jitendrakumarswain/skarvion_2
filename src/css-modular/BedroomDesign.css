@@ -1,0 +1,929 @@
+
+.bedroom-page {
+  --bd-bg: #080d17;
+  --bd-panel: #111b2a;
+  --bd-gold: #d6ad62;
+  --bd-gold-light: #f0d59b;
+  --bd-text: #f4f2ed;
+  --bd-muted: #aab4c4;
+  background: var(--bd-bg);
+  color: var(--bd-text);
+  overflow: hidden;
+}
+
+.bedroom-page * {
+  box-sizing: border-box;
+}
+
+.bedroom-container {
+  width: min(1200px, 88%);
+  margin: 0 auto;
+}
+
+.bedroom-page button,
+.bedroom-page input,
+.bedroom-page textarea {
+  font: inherit;
+}
+
+.bedroom-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--bd-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.bedroom-hero {
+  padding: 90px 0;
+  background:
+    radial-gradient(ellipse at 78% 45%, rgba(214, 173, 98, 0.13), transparent 38%),
+    linear-gradient(135deg, #080d17, #111b2a);
+}
+
+.bedroom-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.bedroom-hero h1 {
+  margin: 23px 0;
+  font-size: clamp(2.7rem, 5vw, 4.4rem);
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+}
+
+.bedroom-hero h1 span {
+  display: block;
+  color: var(--bd-gold);
+}
+
+.bedroom-hero-copy > p,
+.bedroom-section-heading > p,
+.bedroom-enquiry-copy > p {
+  color: var(--bd-muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.bedroom-hero-copy > p {
+  max-width: 560px;
+}
+
+.bedroom-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.bedroom-primary-btn,
+.bedroom-secondary-btn {
+  min-height: 49px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 19px;
+  border-radius: 7px;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bedroom-primary-btn {
+  border: 1px solid var(--bd-gold);
+  background: var(--bd-gold);
+  color: #101521;
+}
+
+.bedroom-primary-btn:hover {
+  background: var(--bd-gold-light);
+  transform: translateY(-2px);
+}
+
+.bedroom-secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--bd-text);
+}
+
+.bedroom-secondary-btn:hover {
+  border-color: var(--bd-gold);
+  transform: translateY(-2px);
+}
+
+.bedroom-trust-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 19px;
+  margin-top: 28px;
+  color: #c5ceda;
+  font-size: 0.82rem;
+}
+
+.bedroom-trust-points span,
+.bedroom-enquiry-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bedroom-trust-points svg,
+.bedroom-enquiry-points svg {
+  flex-shrink: 0;
+  color: var(--bd-gold);
+}
+
+.bedroom-visual {
+  padding: 15px;
+  border: 1px solid rgba(214, 173, 98, 0.22);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
+.bedroom-visual-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 7px 15px;
+}
+
+.bedroom-visual-top span {
+  color: var(--bd-gold);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.bedroom-visual-top strong {
+  font-size: 0.83rem;
+}
+
+.bedroom-art {
+  position: relative;
+  min-height: 345px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(140deg, #e8dcc7, #c7b399 70%, #aa9478);
+}
+
+.bedroom-art-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 4px;
+  width: 30%;
+  height: 48%;
+  padding: 10px;
+  background: #e6e1d3;
+}
+
+.bedroom-art-window span {
+  flex: 1;
+  border: 3px solid #938777;
+  background: linear-gradient(180deg, #bbd4d1, #eaf0e2);
+}
+
+.bedroom-art-picture {
+  position: absolute;
+  top: 12%;
+  right: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  width: 32%;
+  height: 25%;
+  padding: 12px;
+  border: 6px solid #8f7658;
+  background: #e8d9bd;
+}
+
+.bedroom-art-picture i {
+  width: 28%;
+  height: 60%;
+  border-radius: 50% 50% 3px 3px;
+  background: #85977b;
+}
+
+.bedroom-art-picture i:nth-child(2) {
+  height: 83%;
+  background: #cba66c;
+}
+
+.bedroom-art-floor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 23%;
+  background: repeating-linear-gradient(
+    0deg,
+    #a48b6c 0,
+    #a48b6c 2px,
+    #b99e7b 2px,
+    #b99e7b 30px
+  );
+}
+
+.bedroom-art-rug {
+  position: absolute;
+  bottom: 3%;
+  left: 10%;
+  width: 80%;
+  height: 22%;
+  border-radius: 50%;
+  background: rgba(236, 223, 201, 0.86);
+  border: 2px solid rgba(113, 87, 60, 0.15);
+}
+
+.bedroom-art-bed {
+  position: absolute;
+  z-index: 2;
+  bottom: 15%;
+  left: 19%;
+  width: 63%;
+  height: 39%;
+}
+
+.bedroom-headboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 47%;
+  border-radius: 9px 9px 0 0;
+  background: linear-gradient(100deg, #6d5142, #92745b);
+}
+
+.bedroom-mattress {
+  position: absolute;
+  top: 30%;
+  left: 3%;
+  width: 94%;
+  height: 48%;
+  border-radius: 8px;
+  background: #eee7d8;
+}
+
+.bedroom-duvet {
+  position: absolute;
+  z-index: 2;
+  right: 4%;
+  bottom: 15%;
+  width: 66%;
+  height: 39%;
+  border-radius: 5px;
+  background: linear-gradient(110deg, #b9b9a2, #ded8c5);
+}
+
+.bedroom-pillow {
+  position: absolute;
+  z-index: 3;
+  top: 33%;
+  width: 27%;
+  height: 23%;
+  border-radius: 6px;
+  background: #e9dfcb;
+  box-shadow: 0 3px 4px rgba(48, 39, 29, 0.1);
+}
+
+.bedroom-pillow.one {
+  left: 12%;
+}
+
+.bedroom-pillow.two {
+  left: 42%;
+  background: #d3c3a8;
+}
+
+.bedroom-bed-base {
+  position: absolute;
+  bottom: 0;
+  left: 3%;
+  width: 94%;
+  height: 22%;
+  border-radius: 2px 2px 5px 5px;
+  background: #71523d;
+}
+
+.bedroom-art-side-table {
+  position: absolute;
+  z-index: 3;
+  bottom: 19%;
+  left: 7%;
+  width: 12%;
+  height: 15%;
+  border-radius: 3px;
+  background: #8b6b4d;
+  border-bottom: 7px solid #705239;
+}
+
+.bedroom-art-side-table span {
+  position: absolute;
+  top: -12%;
+  left: 15%;
+  width: 70%;
+  height: 5px;
+  background: #c5a77e;
+}
+
+.bedroom-art-lamp {
+  position: absolute;
+  z-index: 4;
+  bottom: 34%;
+  left: 9%;
+  width: 8%;
+  height: 17%;
+}
+
+.bedroom-art-lamp span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 38%;
+  background: #f2dfb5;
+  clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%);
+}
+
+.bedroom-art-lamp i {
+  position: absolute;
+  top: 34%;
+  left: 46%;
+  width: 8%;
+  height: 60%;
+  background: #735c43;
+}
+
+.bedroom-art-plant {
+  position: absolute;
+  z-index: 3;
+  right: 6%;
+  bottom: 19%;
+  width: 12%;
+  height: 27%;
+}
+
+.bedroom-art-plant span {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 33%;
+  border-radius: 2px 2px 8px 8px;
+  background: #b08052;
+}
+
+.bedroom-art-plant i {
+  position: absolute;
+  bottom: 23%;
+  left: 42%;
+  width: 25%;
+  height: 66%;
+  border-radius: 100% 0 100% 0;
+  background: #4f6d4c;
+  transform: rotate(-30deg);
+}
+
+.bedroom-art-plant i:nth-child(2) {
+  left: 5%;
+  height: 52%;
+  transform: rotate(-65deg);
+}
+
+.bedroom-art-plant i:nth-child(3) {
+  left: 58%;
+  height: 58%;
+  transform: rotate(22deg);
+}
+
+.bedroom-visual-caption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 5px 4px;
+}
+
+.bedroom-visual-caption > svg {
+  color: var(--bd-gold);
+  font-size: 1.4rem;
+}
+
+.bedroom-visual-caption strong,
+.bedroom-visual-caption span {
+  display: block;
+}
+
+.bedroom-visual-caption strong {
+  font-size: 0.87rem;
+}
+
+.bedroom-visual-caption span {
+  margin-top: 4px;
+  color: var(--bd-muted);
+  font-size: 0.77rem;
+}
+
+.bedroom-benefits-section,
+.bedroom-options-section,
+.bedroom-enquiry-section {
+  padding: 82px 0;
+}
+
+.bedroom-benefits-section {
+  background: #0b111d;
+}
+
+.bedroom-section-heading {
+  max-width: 720px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.bedroom-section-heading h2,
+.bedroom-enquiry-copy h2,
+.bedroom-final-cta h2 {
+  margin: 14px 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+
+.bedroom-section-heading > p {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.bedroom-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.bedroom-benefits article {
+  padding: 24px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #111b2a, #0d1521);
+}
+
+.bedroom-benefits article > span {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(214, 173, 98, 0.12);
+  color: var(--bd-gold);
+  font-size: 1.15rem;
+}
+
+.bedroom-benefits h3 {
+  margin: 18px 0 9px;
+  font-size: 1rem;
+}
+
+.bedroom-benefits p {
+  margin: 0;
+  color: var(--bd-muted);
+  font-size: 0.87rem;
+  line-height: 1.75;
+}
+
+.bedroom-options-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(214, 173, 98, 0.05), transparent 40%),
+    var(--bd-bg);
+}
+
+.bedroom-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.bedroom-filters button {
+  padding: 10px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  background: transparent;
+  color: #d5dbe4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bedroom-filters button:hover,
+.bedroom-filters button.active {
+  border-color: var(--bd-gold);
+  background: var(--bd-gold);
+  color: #101521;
+}
+
+.bedroom-design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.bedroom-design-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 13px;
+  background: var(--bd-panel);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.bedroom-design-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(214, 173, 98, 0.45);
+}
+
+.bedroom-card-art {
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8dcc7, #b9a286);
+}
+
+.bedroom-art-1 {
+  background: linear-gradient(135deg, #c9b9a2, #847566);
+}
+
+.bedroom-art-2 {
+  background: linear-gradient(135deg, #d9d4c5, #a4b1a4);
+}
+
+.bedroom-card-number {
+  position: absolute;
+  z-index: 4;
+  top: 12px;
+  left: 14px;
+  color: rgba(20, 27, 34, 0.55);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.bedroom-card-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 48%;
+  border-right: 5px solid #998773;
+  background: linear-gradient(135deg, #c6dcda, #f0efdf);
+}
+
+.bedroom-card-picture {
+  position: absolute;
+  top: 15%;
+  right: 13%;
+  width: 30%;
+  height: 28%;
+  border: 5px solid #957b5b;
+  background: linear-gradient(130deg, #d6bd8c, #899b7b);
+}
+
+.bedroom-card-bed {
+  position: absolute;
+  z-index: 2;
+  left: 17%;
+  bottom: 15%;
+  width: 66%;
+  height: 39%;
+  border-radius: 7px 7px 2px 2px;
+  background: linear-gradient(180deg, #e7dfd0, #c7b8a1);
+  box-shadow: 0 10px 15px rgba(30, 30, 24, 0.15);
+}
+
+.bedroom-card-bed span {
+  position: absolute;
+  top: -28%;
+  left: 0;
+  width: 100%;
+  height: 44%;
+  border-radius: 5px 5px 0 0;
+  background: #80634c;
+}
+
+.bedroom-card-bed i {
+  position: absolute;
+  top: 5%;
+  left: 12%;
+  width: 25%;
+  height: 27%;
+  border-radius: 4px;
+  background: #f2ead9;
+}
+
+.bedroom-card-bed i:last-child {
+  left: 42%;
+  background: #d4c4a7;
+}
+
+.bedroom-art-1 .bedroom-card-bed {
+  background: linear-gradient(180deg, #d4c9b9, #9e8975);
+}
+
+.bedroom-art-2 .bedroom-card-bed {
+  background: linear-gradient(180deg, #e2e1d2, #b5c0ae);
+}
+
+.bedroom-card-table {
+  position: absolute;
+  right: 7%;
+  bottom: 14%;
+  width: 12%;
+  height: 18%;
+  border-radius: 3px;
+  background: #8e704e;
+}
+
+.bedroom-card-category {
+  position: absolute;
+  z-index: 4;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 30px;
+  background: rgba(8, 13, 23, 0.84);
+  color: var(--bd-gold-light);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.bedroom-card-content {
+  padding: 22px;
+}
+
+.bedroom-card-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.bedroom-card-content > p {
+  min-height: 78px;
+  margin: 0;
+  color: var(--bd-muted);
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.bedroom-card-content ul {
+  display: grid;
+  gap: 9px;
+  margin: 19px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bedroom-card-content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #d7dce4;
+  font-size: 0.82rem;
+}
+
+.bedroom-card-content li svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+  color: var(--bd-gold);
+}
+
+.bedroom-card-enquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--bd-gold);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.bedroom-card-enquire:hover {
+  color: var(--bd-gold-light);
+}
+
+.bedroom-enquiry-section {
+  background: #0d1522;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bedroom-enquiry-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  align-items: start;
+  gap: 65px;
+}
+
+.bedroom-enquiry-copy h2 {
+  margin-top: 18px;
+}
+
+.bedroom-enquiry-points {
+  display: grid;
+  gap: 15px;
+  margin-top: 25px;
+  color: #d5dce5;
+  font-size: 0.9rem;
+}
+
+.bedroom-form {
+  display: grid;
+  gap: 10px;
+  padding: 29px;
+  border: 1px solid rgba(214, 173, 98, 0.2);
+  border-radius: 14px;
+  background: #111c2c;
+}
+
+.bedroom-form label {
+  margin-top: 7px;
+  color: #e5e8ed;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.bedroom-form input,
+.bedroom-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 7px;
+  outline: none;
+  background: #0b1320;
+  color: var(--bd-text);
+  resize: vertical;
+}
+
+.bedroom-form input::placeholder,
+.bedroom-form textarea::placeholder {
+  color: #778397;
+}
+
+.bedroom-form input:focus,
+.bedroom-form textarea:focus {
+  border-color: var(--bd-gold);
+  box-shadow: 0 0 0 3px rgba(214, 173, 98, 0.1);
+}
+
+.bedroom-form .bedroom-primary-btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.bedroom-form small {
+  margin-top: 5px;
+  color: #929eaf;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.bedroom-final-cta {
+  padding: 45px 0;
+  background:
+    radial-gradient(ellipse at 90% 50%, rgba(214, 173, 98, 0.1), transparent 45%),
+    #080d17;
+}
+
+.bedroom-final-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.bedroom-final-cta h2 {
+  margin-bottom: 8px;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.bedroom-final-cta p {
+  margin: 0;
+  color: var(--bd-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+  .bedroom-hero-layout {
+    gap: 35px;
+  }
+
+  .bedroom-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bedroom-design-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bedroom-enquiry-layout {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 720px) {
+  .bedroom-container {
+    width: min(100% - 34px, 560px);
+  }
+
+  .bedroom-hero {
+    padding: 62px 0;
+  }
+
+  .bedroom-hero-layout,
+  .bedroom-enquiry-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .bedroom-hero h1 {
+    font-size: clamp(2.4rem, 10vw, 3.4rem);
+    letter-spacing: -1.2px;
+  }
+
+  .bedroom-trust-points {
+    display: grid;
+    gap: 11px;
+  }
+
+  .bedroom-art {
+    min-height: 290px;
+  }
+
+  .bedroom-benefits-section,
+  .bedroom-options-section,
+  .bedroom-enquiry-section {
+    padding: 62px 0;
+  }
+
+  .bedroom-section-heading {
+    margin-bottom: 28px;
+  }
+
+  .bedroom-design-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bedroom-card-content > p {
+    min-height: 0;
+  }
+
+  .bedroom-form {
+    padding: 22px;
+  }
+
+  .bedroom-final-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .bedroom-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .bedroom-actions {
+    flex-direction: column;
+  }
+
+  .bedroom-actions > * {
+    width: 100%;
+  }
+
+  .bedroom-visual-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .bedroom-art {
+    min-height: 255px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bedroom-page *,
+  .bedroom-page *::before,
+  .bedroom-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,163 @@
+
+.space-planning-page {
+  min-height: 100vh;
+  background: #080d18;
+  color: #f5f5f5;
+}
+
+.space-planning-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  align-items: center;
+  gap: 48px;
+  padding: 100px 8%;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(212, 175, 55, 0.12), transparent 48%),
+    #080d18;
+}
+
+.space-planning-content {
+  max-width: 720px;
+}
+
+.space-planning-label {
+  color: #d4af37;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.space-planning-content h1 {
+  margin: 20px 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.space-planning-content h1 span {
+  display: block;
+  color: #d4af37;
+}
+
+.space-planning-content > p,
+.space-planning-feature p,
+.space-planning-card p,
+.space-planning-bottom p {
+  color: #bdc4d1;
+  line-height: 1.8;
+}
+
+.space-planning-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 14px 24px;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  background: #d4af37;
+  color: #080d18;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.space-planning-cta:hover {
+  transform: translateY(-2px);
+  background: #e5c65b;
+}
+
+.space-planning-cta:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.space-planning-feature {
+  padding: 38px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.space-planning-feature > svg {
+  color: #d4af37;
+  font-size: 2.5rem;
+}
+
+.space-planning-feature h2 {
+  margin: 22px 0 10px;
+}
+
+.space-planning-services {
+  padding: 70px 8%;
+  text-align: center;
+}
+
+.space-planning-services > h2,
+.space-planning-bottom h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+.space-planning-intro {
+  margin-bottom: 36px;
+  color: #bdc4d1;
+}
+
+.space-planning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  text-align: left;
+}
+
+.space-planning-card {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: #101827;
+}
+
+.space-planning-card h3 {
+  color: #d4af37;
+}
+
+.space-planning-bottom {
+  padding: 65px 8%;
+  background: #101827;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .space-planning-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 65px 6%;
+  }
+
+  .space-planning-services {
+    padding: 55px 6%;
+  }
+
+  .space-planning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .space-planning-feature {
+    padding: 28px;
+  }
+
+  .space-planning-bottom {
+    padding: 50px 6%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .space-planning-cta {
+    transition: none;
+  }
+
+  .space-planning-cta:hover {
+    transform: none;
+  }
+}

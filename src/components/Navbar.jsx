@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import {
   FaPhoneAlt,
@@ -68,6 +69,31 @@ const DESIGN_COLUMNS = [
     ],
   },
 ];
+
+// Dedicated routes for every Design Ideas dropdown item.
+// Space Planning still needs its page component and App.jsx route.
+const DESIGN_ROUTES = {
+  "Architectural Planning": "/architectural-planning",
+  "Floor Plan Designs": "/floor-plan-designs",
+  "House Planning": "/house-planning",
+  "Space Planning": "/space-planning",
+  "Site Planning": "/site-planning",
+  "3D Elevation Designs": "/3d-elevation",
+  "Front Elevation": "/front-elevation",
+  "Modern Elevation": "/modern-elevation",
+  "Exterior Design": "/exterior-design",
+  "Landscape Design": "/landscape-design",
+  "Living Room Designs": "/living-room-design",
+  "Bedroom Designs": "/bedroom-design",
+  "Kitchen Designs": "/kitchen-design",
+  "Bathroom Designs": "/bathroom-design",
+  "Office Interiors": "/office-design",
+  "Staircase Designs": "/staircase-design",
+  "False Ceiling Designs": "/false-ceiling-design",
+  "Wall Decor": "/wall-decor-design",
+  "Lighting Designs": "/lighting-design",
+  "Modular Designs": "/modular-design",
+};
 
 const MORE_LINKS = [
   {
@@ -293,13 +319,13 @@ export default function Navbar() {
                       <h4>{column.title}</h4>
 
                       {column.items.map((item) => (
-                        <a
-                          href="#services"
+                        <Link
+                          to={DESIGN_ROUTES[item] || "/"}
                           key={item}
                           onClick={handleDesignLink}
                         >
                           {item}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   ))}
@@ -490,17 +516,15 @@ export default function Navbar() {
                   mobileDesignOpen ? "open" : ""
                 }`}
               >
-                {DESIGN_COLUMNS.flatMap((column) => column.items).map(
-                  (item) => (
-                    <a
-                      href="#services"
-                      key={item}
-                      onClick={handleDesignLink}
-                    >
-                      {item}
-                    </a>
-                  )
-                )}
+{DESIGN_COLUMNS.flatMap((column) => column.items).map((item) => (
+                  <Link
+                    to={DESIGN_ROUTES[item] || "/"}
+                    key={item}
+                    onClick={handleDesignLink}
+                  >
+                    {item}
+                  </Link>
+                ))}
               </div>
             </li>
 

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import {
   Routes,
@@ -27,13 +28,36 @@ import Courses from "./pages/Courses";
 import AutoCADCourse from "./pages/AutoCADCourse";
 import RevitTraining from "./pages/RevitTraining";
 import ETABSStaadCourse from "./pages/ETABSStaadCourse";
+import ModernElevation from "./pages/ModernElevation";
+import ArchitecturalPlanning from "./pages/ArchitecturalPlanning";
+import FloorPlanDesigns from "./pages/FloorPlanDesigns";
+import HousePlanning from "./pages/HousePlanning";
+import SitePlanning from "./pages/SitePlanning";
+import ThreeDElevation from "./pages/ThreeDElevation";
+import FrontElevation from "./pages/FrontElevation";
+import ExteriorDesign from "./pages/ExteriorDesign";
+import LandscapeDesign from "./pages/LandscapeDesign";
+import LivingRoomDesign from "./pages/LivingRoomDesign";
+import BedroomDesign from "./pages/BedroomDesign";
+import KitchenDesign from "./pages/KitchenDesign";
+import BathroomDesign from "./pages/BathroomDesign";
+import OfficeDesign from "./pages/OfficeDesign";
+import StaircaseDesign from "./pages/StaircaseDesign";
+import FalseCeilingDesign from "./pages/FalseCeilingDesign";
+import WallDecorDesign from "./pages/WallDecorDesign";
+import LightingDesign from "./pages/LightingDesign";
+import ModularDesign from "./pages/ModularDesign";
+import BalconyDesign from "./pages/BalconyDesign";
+import GardenDesign from "./pages/GardenDesign";
+import SwimmingPoolDesign from "./pages/SwimmingPoolDesign";
+import SpacePlanning from "./pages/SpacePlanning";
 
 
 function App() {
   const location = useLocation();
 
   const hideChatbot =
-  
+
   location.pathname === "/admin-login" ||
   location.pathname === "/admin" ||
   location.pathname === "/courses" ||
@@ -178,7 +202,7 @@ function App() {
           element={<PrivacyPolicy />}
           />
 
-     
+
           {/* ============================
               HOUSE PLANS
           ============================ */}
@@ -230,7 +254,188 @@ function App() {
             element={<ETABSStaadCourse />}
           />
 
+          {/* ============================
+              SKARVION ACADEMY — MODERN ELEVATION
+          ============================ */}
+          <Route
+  path="/modern-elevation"
+  element={<ModernElevation />}
+/>
 
+          {/* ============================
+              SKARVION ACADEMY — ARCHITECTURAL PLANNING
+          ============================ */}
+          <Route
+  path="/architectural-planning"
+  element={<ArchitecturalPlanning />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — FLOOR PLAN DESIGNS
+          ============================ */}
+          <Route
+  path="/floor-plan-designs"
+  element={<FloorPlanDesigns />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — HOUSE PLANNING
+          ============================ */}
+          <Route
+  path="/house-planning"
+  element={<HousePlanning />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — SITE PLANNING
+          ============================ */}
+          <Route
+  path="/site-planning"
+  element={<SitePlanning />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — 3D ELEVATION
+          ============================ */}
+          <Route
+  path="/3d-elevation"
+  element={<ThreeDElevation />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — FRONT ELEVATION
+          ============================ */}
+          <Route
+  path="/front-elevation"
+  element={<FrontElevation />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — EXTERIOR DESIGN
+          ============================ */}
+          <Route
+  path="/exterior-design"
+  element={<ExteriorDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — LANDSCAPE DESIGN
+          ============================ */}
+          <Route
+  path="/landscape-design"
+  element={<LandscapeDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — LIVING ROOM DESIGN
+          ============================ */}
+          <Route
+  path="/living-room-design"
+  element={<LivingRoomDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — BEDROOM DESIGN
+          ============================ */}
+          <Route
+  path="/bedroom-design"
+  element={<BedroomDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — KITCHEN DESIGN
+          ============================ */}
+          <Route
+  path="/kitchen-design"
+  element={<KitchenDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — BATHROOM DESIGN
+          ============================ */}
+          <Route
+  path="/bathroom-design"
+  element={<BathroomDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — OFFICE DESIGN
+          ============================ */}
+          <Route
+  path="/office-design"
+  element={<OfficeDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — STAIRCASE DESIGN
+          ============================ */}
+          <Route
+  path="/staircase-design"
+  element={<StaircaseDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — FALSE CEILING DESIGN
+          ============================ */}
+          <Route
+  path="/false-ceiling-design"
+  element={<FalseCeilingDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — WALL DECOR DESIGN
+          ============================ */}
+          <Route
+  path="/wall-decor-design"
+  element={<WallDecorDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — LIGHTING DESIGN
+          ============================ */}
+          <Route
+  path="/lighting-design"
+  element={<LightingDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — MODULAR DESIGN
+          ============================ */}
+          <Route
+  path="/modular-design"
+  element={<ModularDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — BALCONY DESIGN
+          ============================ */}
+          <Route
+  path="/balcony-design"
+  element={<BalconyDesign />}
+/>
+          {/* ============================
+              SKARVION ACADEMY — GARDEN DESIGN
+          ============================ */}
+          <Route
+  path="/garden-design"
+  element={<GardenDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — SWIMMING POOL DESIGN
+          ============================ */}
+          <Route
+  path="/swimming-pool-design"
+  element={<SwimmingPoolDesign />}
+/>
+
+          {/* ============================
+              SKARVION ACADEMY — SPACE PLANNING
+          ============================ */}
+          <Route
+  path="/space-planning"
+  element={<SpacePlanning />}
+/>
         </Routes>
       </div>
 

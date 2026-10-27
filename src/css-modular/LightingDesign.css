@@ -1,0 +1,1440 @@
+
+/* =========================================
+   SKARVION INFRASTRUCTURE
+   LIGHTING DESIGN PAGE
+========================================= */
+
+.lighting-design-page {
+  --ld-bg: #090d14;
+  --ld-panel: #111925;
+  --ld-panel-light: #172231;
+  --ld-gold: #d7b46a;
+  --ld-gold-light: #f0d69b;
+  --ld-text: #f5f3ed;
+  --ld-muted: #a9b1bd;
+  --ld-border: rgba(215, 180, 106, 0.22);
+  background: var(--ld-bg);
+  color: var(--ld-text);
+  overflow: hidden;
+}
+
+.lighting-design-page *,
+.lighting-design-page *::before,
+.lighting-design-page *::after {
+  box-sizing: border-box;
+}
+
+.lighting-design-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lighting-design-container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.lighting-design-section {
+  padding: 100px 0;
+}
+
+.lighting-design-page h1,
+.lighting-design-page h2,
+.lighting-design-page h3,
+.lighting-design-page p {
+  margin-top: 0;
+}
+
+.lighting-design-page h1,
+.lighting-design-page h2 {
+  letter-spacing: -1.2px;
+}
+
+.lighting-design-page h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.lighting-design-page h2 span,
+.lighting-design-hero h1 span {
+  display: block;
+  color: var(--ld-gold);
+}
+
+.lighting-design-page p {
+  color: var(--ld-muted);
+  line-height: 1.85;
+}
+
+.lighting-design-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ld-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.7;
+}
+
+.lighting-design-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 14px 22px;
+  border: 1px solid var(--ld-gold);
+  border-radius: 5px;
+  background: var(--ld-gold);
+  color: #15171b !important;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.lighting-design-btn:hover {
+  transform: translateY(-2px);
+  background: var(--ld-gold-light);
+  box-shadow: 0 10px 28px rgba(215, 180, 106, 0.15);
+}
+
+.lighting-design-btn-outline {
+  background: transparent;
+  color: var(--ld-text) !important;
+}
+
+.lighting-design-btn-outline:hover {
+  background: rgba(215, 180, 106, 0.1);
+  color: var(--ld-gold-light) !important;
+}
+
+/* Hero */
+
+.lighting-design-hero {
+  position: relative;
+  isolation: isolate;
+  padding: 85px 0 95px;
+  background:
+    radial-gradient(ellipse at 75% 35%, rgba(224, 174, 80, 0.1), transparent 42%),
+    linear-gradient(120deg, #090d14, #111a26 62%, #0b1018);
+}
+
+.lighting-design-grid-pattern {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(215, 180, 106, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(215, 180, 106, 0.18) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to right, transparent, black);
+}
+
+.lighting-design-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.lighting-design-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.lighting-design-hero h1 {
+  margin: 23px 0;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  line-height: 1.04;
+  font-weight: 800;
+}
+
+.lighting-design-hero-copy > p {
+  max-width: 570px;
+  margin-bottom: 29px;
+  font-size: 1.03rem;
+}
+
+.lighting-design-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lighting-design-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  margin-top: 28px;
+}
+
+.lighting-design-hero-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #d4d9df;
+  font-size: 0.8rem;
+}
+
+.lighting-design-hero-points svg {
+  color: var(--ld-gold);
+}
+
+/* CSS illustration */
+
+.lighting-design-hero-visual {
+  position: relative;
+  padding: 12px 0 28px 12px;
+}
+
+.lighting-design-room {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid rgba(215, 180, 106, 0.32);
+  border-radius: 8px;
+  background: #b8a38a;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.3);
+}
+
+.lighting-design-ceiling {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 43px;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 25px;
+  background: linear-gradient(#eee2cf, #c6b69d);
+}
+
+.lighting-design-ceiling span {
+  width: 12px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff0c7;
+  box-shadow: 0 0 15px 7px rgba(255, 225, 153, 0.7);
+}
+
+.lighting-design-room-wall {
+  position: absolute;
+  inset: 43px 0 65px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(70, 54, 37, 0.12) 1px, transparent 1px),
+    linear-gradient(115deg, #c9b59b, #a88f72);
+  background-size: 85px 100%;
+}
+
+.lighting-design-cove-glow {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 16px;
+  background: #ffe9b3;
+  box-shadow: 0 7px 25px 12px rgba(255, 222, 142, 0.58);
+}
+
+.lighting-design-art {
+  position: absolute;
+  top: 55px;
+  left: 18%;
+  width: 44%;
+  height: 145px;
+  padding: 8px;
+  border: 5px solid #60482f;
+  background: #e3d3b7;
+  box-shadow: 0 0 32px 6px rgba(255, 216, 137, 0.12);
+}
+
+.lighting-design-art span:first-child {
+  display: block;
+  height: 100%;
+  background:
+    radial-gradient(circle at 65% 25%, #e6c67b 0 12%, transparent 13%),
+    linear-gradient(145deg, transparent 40%, #7b8b70 41% 53%, transparent 54%),
+    linear-gradient(35deg, #a9b29a 0 28%, #e2d1b4 29% 60%, #9b7657 61%);
+}
+
+.lighting-design-art span:last-child {
+  position: absolute;
+  right: 12%;
+  bottom: 8px;
+  width: 25%;
+  height: 45%;
+  background: #9a8a6b;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.lighting-design-pendant {
+  position: absolute;
+  top: 0;
+  right: 15%;
+  width: 54px;
+  height: 130px;
+}
+
+.lighting-design-pendant span:first-child {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 2px;
+  height: 85px;
+  background: #4d3b28;
+}
+
+.lighting-design-pendant span:last-child {
+  position: absolute;
+  top: 74px;
+  left: 2px;
+  width: 48px;
+  height: 28px;
+  border-radius: 50% 50% 5px 5px;
+  background: linear-gradient(#f5d78e, #a98245);
+  box-shadow: 0 0 35px 13px rgba(255, 220, 135, 0.32);
+}
+
+.lighting-design-sofa {
+  position: absolute;
+  bottom: 0;
+  left: 9%;
+  width: 65%;
+  height: 90px;
+  display: flex;
+  gap: 5px;
+  padding: 12px;
+  border-radius: 9px 9px 0 0;
+  background: linear-gradient(#d8c6ab, #9e886d);
+  box-shadow: 0 8px 20px rgba(44, 32, 19, 0.2);
+}
+
+.lighting-design-sofa span {
+  flex: 1;
+  border-radius: 5px;
+  background: linear-gradient(130deg, #e3d2b8, #b5a083);
+}
+
+.lighting-design-side-table {
+  position: absolute;
+  right: 7%;
+  bottom: 0;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(90deg, #624a33, #9a7650);
+}
+
+.lighting-design-side-table span {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 58px;
+  height: 7px;
+  background: #d4b47d;
+}
+
+.lighting-design-floor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 65px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 80px, rgba(59, 42, 27, 0.14) 81px 83px),
+    linear-gradient(#c5af8f, #8f7659);
+}
+
+.lighting-design-lamp {
+  position: absolute;
+  bottom: 42px;
+  right: 7%;
+  width: 35px;
+  height: 100px;
+}
+
+.lighting-design-lamp span:first-child {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  width: 4px;
+  height: 70px;
+  background: #4e3b28;
+}
+
+.lighting-design-lamp span:last-child {
+  position: absolute;
+  top: 0;
+  width: 35px;
+  height: 28px;
+  border-radius: 50% 50% 4px 4px;
+  background: #ead6a8;
+  box-shadow: 0 0 30px 12px rgba(255, 220, 139, 0.3);
+}
+
+.lighting-design-visual-label {
+  position: absolute;
+  right: -12px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 22px;
+  border: 1px solid var(--ld-border);
+  border-radius: 6px;
+  background: #151e29;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.lighting-design-visual-label > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 4px;
+  background: rgba(215, 180, 106, 0.12);
+  color: var(--ld-gold);
+  font-size: 1.2rem;
+}
+
+.lighting-design-visual-label strong,
+.lighting-design-visual-label small {
+  display: block;
+}
+
+.lighting-design-visual-label strong {
+  font-size: 0.92rem;
+}
+
+.lighting-design-visual-label small {
+  margin-top: 5px;
+  color: var(--ld-muted);
+}
+
+/* Intro */
+
+.lighting-design-intro {
+  background: #0d131d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lighting-design-intro-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.lighting-design-intro-grid h2 {
+  margin-top: 17px;
+  margin-bottom: 0;
+}
+
+.lighting-design-intro-grid > p {
+  margin-bottom: 0;
+}
+
+/* Gallery */
+
+.lighting-design-gallery {
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(215, 180, 106, 0.05), transparent 48%),
+    var(--ld-bg);
+}
+
+.lighting-design-section-heading {
+  max-width: 720px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.lighting-design-section-heading h2 {
+  margin-top: 14px;
+}
+
+.lighting-design-section-heading p {
+  margin-bottom: 0;
+}
+
+.lighting-design-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 35px;
+}
+
+.lighting-design-filter {
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background: #111823;
+  color: #c5cbd3;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lighting-design-filter:hover,
+.lighting-design-filter.active {
+  border-color: var(--ld-gold);
+  background: rgba(215, 180, 106, 0.12);
+  color: var(--ld-gold-light);
+}
+
+.lighting-design-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.lighting-design-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: var(--ld-panel);
+  animation: lighting-design-card-in 0.35s ease both;
+  animation-delay: calc(var(--lighting-card-index, 0) * 35ms);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.lighting-design-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(215, 180, 106, 0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+@keyframes lighting-design-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Decorative lighting artwork */
+
+.lighting-design-art {
+  position: relative;
+  height: 225px;
+  overflow: hidden;
+  background: #b4a088;
+  background-image:
+    linear-gradient(90deg, rgba(50, 40, 28, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(50, 40, 28, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.lighting-design-art-tag {
+  position: absolute;
+  z-index: 2;
+  top: 13px;
+  left: 13px;
+  padding: 7px 10px;
+  border: 1px solid rgba(215, 180, 106, 0.35);
+  border-radius: 3px;
+  background: rgba(10, 14, 20, 0.86);
+  color: var(--ld-gold-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.lighting-design-art-light {
+  position: absolute;
+  inset: 0;
+}
+
+.lighting-design-art-light span {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff0bf;
+  box-shadow: 0 0 18px 8px rgba(255, 221, 138, 0.55);
+}
+
+.lighting-design-art-light span:nth-child(1) {
+  left: 25%;
+}
+
+.lighting-design-art-light span:nth-child(2) {
+  left: 50%;
+}
+
+.lighting-design-art-light span:nth-child(3) {
+  left: 75%;
+}
+
+.lighting-design-art-furniture {
+  position: absolute;
+  right: 8%;
+  bottom: 18px;
+  left: 8%;
+  height: 52px;
+  display: flex;
+  gap: 7px;
+}
+
+.lighting-design-art-furniture span:first-child {
+  flex: 2;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(#d7c4a7, #8e775d);
+  box-shadow: 0 0 22px rgba(255, 219, 135, 0.15);
+}
+
+.lighting-design-art-furniture span:last-child {
+  flex: 0.8;
+  background: linear-gradient(#b99a6d, #6d5237);
+}
+
+.light-living {
+  background:
+    radial-gradient(ellipse at 50% 32%, rgba(255, 220, 143, 0.28), transparent 38%),
+    linear-gradient(120deg, #a9967e, #cabb9f);
+}
+
+.light-living .lighting-design-art-light span {
+  top: 25px;
+  width: 10px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.light-ceiling {
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(255, 224, 148, 0.8), transparent 42%),
+    repeating-linear-gradient(90deg, #6f665a 0 45px, #948675 46px 48px, #b7a88f 49px 90px);
+}
+
+.light-ceiling .lighting-design-art-light span {
+  top: 20px;
+  width: 42px;
+  height: 3px;
+  border-radius: 0;
+}
+
+.light-pendant {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(255, 214, 123, 0.25), transparent 38%),
+    linear-gradient(130deg, #d2c3a9, #a7957c);
+}
+
+.light-pendant .lighting-design-art-light span {
+  top: 0;
+  left: 49%;
+  width: 2px;
+  height: 105px;
+  border-radius: 0;
+  background: #55452f;
+  box-shadow: none;
+}
+
+.light-pendant .lighting-design-art-light span:nth-child(2) {
+  left: 31%;
+  height: 75px;
+}
+
+.light-pendant .lighting-design-art-light span:nth-child(3) {
+  left: 67%;
+  height: 85px;
+}
+
+.light-pendant .lighting-design-art-furniture span:first-child {
+  position: relative;
+  flex: 1;
+  border-radius: 50%;
+  background: #f0d08b;
+  box-shadow: 0 0 32px 10px rgba(255, 216, 126, 0.3);
+}
+
+.light-bedroom {
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(255, 210, 123, 0.22), transparent 38%),
+    linear-gradient(140deg, #7e7164, #b5a38c);
+}
+
+.light-bedroom .lighting-design-art-furniture span:first-child {
+  background: linear-gradient(#d2bfa4, #8f7c64);
+}
+
+.light-kitchen {
+  background:
+    linear-gradient(180deg, #d6c9b2 0 45%, #9b8669 46% 100%);
+}
+
+.light-kitchen .lighting-design-art-light span {
+  top: 75px;
+  width: 38px;
+  height: 5px;
+  border-radius: 0;
+  background: #fff1c8;
+  box-shadow: 0 0 14px 5px rgba(255, 226, 151, 0.6);
+}
+
+.light-chandelier {
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(255, 218, 135, 0.32), transparent 40%),
+    linear-gradient(135deg, #b6a28a, #756451);
+}
+
+.light-chandelier .lighting-design-art-light span {
+  top: 42px;
+  width: 3px;
+  height: 55px;
+  border-radius: 0;
+  background: #5a452b;
+  box-shadow: none;
+}
+
+.light-chandelier .lighting-design-art-light span:nth-child(1) {
+  left: 35%;
+  transform: rotate(-25deg);
+}
+
+.light-chandelier .lighting-design-art-light span:nth-child(2) {
+  left: 50%;
+  top: 30px;
+  height: 70px;
+}
+
+.light-chandelier .lighting-design-art-light span:nth-child(3) {
+  left: 65%;
+  transform: rotate(25deg);
+}
+
+.light-sconce {
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(255, 223, 150, 0.4), transparent 36%),
+    repeating-linear-gradient(90deg, #8a7054 0 15px, #ad906d 16px 18px, #70583f 19px 30px);
+}
+
+.light-sconce .lighting-design-art-light span {
+  top: 70px;
+  width: 15px;
+  height: 28px;
+  border-radius: 5px;
+  background: #ffe7a9;
+  box-shadow: 0 0 26px 13px rgba(255, 220, 136, 0.42);
+}
+
+.light-exterior {
+  background:
+    radial-gradient(ellipse at 50% 70%, rgba(255, 206, 105, 0.22), transparent 40%),
+    linear-gradient(#17222d 0 65%, #37413c 66% 100%);
+}
+
+.light-exterior .lighting-design-art-light span {
+  top: 65px;
+  width: 12px;
+  height: 22px;
+  border-radius: 3px;
+  background: #ffe3a0;
+  box-shadow: 0 0 26px 12px rgba(255, 205, 100, 0.3);
+}
+
+.light-exterior .lighting-design-art-furniture span:first-child {
+  background: linear-gradient(#8e9a8d, #48564a);
+}
+
+.lighting-design-card-content {
+  padding: 22px;
+}
+
+.lighting-design-card-category {
+  color: var(--ld-gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.lighting-design-card-content h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.lighting-design-card-content p {
+  min-height: 82px;
+  margin-bottom: 17px;
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.lighting-design-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ld-gold-light);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lighting-design-card-link svg {
+  transition: transform 0.2s ease;
+}
+
+.lighting-design-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Benefits */
+
+.lighting-design-benefits {
+  background: #0d131d;
+  border-block: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lighting-design-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.lighting-design-benefit {
+  padding: 27px 23px;
+  border: 1px solid var(--ld-border);
+  border-radius: 7px;
+  background: linear-gradient(145deg, #121b27, #0f151f);
+  transition: transform 0.25s ease;
+}
+
+.lighting-design-benefit:hover {
+  transform: translateY(-4px);
+}
+
+.lighting-design-benefit-icon {
+  display: grid;
+  width: 49px;
+  height: 49px;
+  margin-bottom: 22px;
+  place-items: center;
+  border: 1px solid rgba(215, 180, 106, 0.28);
+  border-radius: 5px;
+  background: rgba(215, 180, 106, 0.08);
+  color: var(--ld-gold);
+  font-size: 1.25rem;
+}
+
+.lighting-design-benefit h3 {
+  margin-bottom: 12px;
+  font-size: 1.02rem;
+}
+
+.lighting-design-benefit p {
+  margin-bottom: 0;
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+
+/* Colour temperature */
+
+.lighting-design-temperature {
+  background: var(--ld-bg);
+}
+
+.lighting-design-temperature-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.lighting-design-temperature-copy h2 {
+  margin-top: 16px;
+}
+
+.lighting-design-temperature-options {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.lighting-design-temperature-options > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.lighting-design-temperature-dot {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 4px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.lighting-design-temperature-dot.warm {
+  background: #ffcc70;
+  box-shadow: 0 0 18px rgba(255, 204, 112, 0.24);
+}
+
+.lighting-design-temperature-dot.neutral {
+  background: #fff0d0;
+}
+
+.lighting-design-temperature-dot.cool {
+  background: #d8e8ff;
+  box-shadow: 0 0 18px rgba(180, 212, 255, 0.2);
+}
+
+.lighting-design-temperature-options strong,
+.lighting-design-temperature-options small {
+  display: block;
+}
+
+.lighting-design-temperature-options strong {
+  margin-bottom: 4px;
+  font-size: 0.92rem;
+}
+
+.lighting-design-temperature-options small {
+  color: var(--ld-muted);
+  font-size: 0.8rem;
+}
+
+.lighting-design-temperature-board {
+  padding: 28px;
+  border: 1px solid var(--ld-border);
+  border-radius: 8px;
+  background: #111925;
+}
+
+.lighting-design-temperature-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 23px;
+  color: var(--ld-gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.lighting-design-temperature-scene {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(140deg, #796957, #c2ad8d);
+  background-size: 60px 100%;
+}
+
+.lighting-design-scene-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 12px;
+  background: #ffe8ad;
+  box-shadow: 0 5px 35px 16px rgba(255, 214, 121, 0.42);
+}
+
+.lighting-design-scene-window {
+  position: absolute;
+  top: 45px;
+  left: 9%;
+  width: 31%;
+  height: 125px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border: 8px solid #5d4c38;
+  background: #b8c9c6;
+}
+
+.lighting-design-scene-window span {
+  border: 2px solid #8b8d7b;
+  background: linear-gradient(140deg, #d6d4bc, #9caeaa);
+}
+
+.lighting-design-scene-pendant {
+  position: absolute;
+  top: 0;
+  right: 20%;
+  width: 60px;
+  height: 140px;
+}
+
+.lighting-design-scene-pendant span:first-child {
+  position: absolute;
+  top: 0;
+  left: 29px;
+  width: 2px;
+  height: 90px;
+  background: #453827;
+}
+
+.lighting-design-scene-pendant span:last-child {
+  position: absolute;
+  top: 78px;
+  width: 60px;
+  height: 29px;
+  border-radius: 50% 50% 4px 4px;
+  background: #e8c77f;
+  box-shadow: 0 0 32px 13px rgba(255, 218, 133, 0.35);
+}
+
+.lighting-design-scene-sofa {
+  position: absolute;
+  right: 8%;
+  bottom: 0;
+  left: 10%;
+  height: 70px;
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 7px 7px 0 0;
+  background: linear-gradient(#d4c0a0, #8b765a);
+}
+
+.lighting-design-scene-sofa span {
+  flex: 1;
+  background: #b6a084;
+  border-radius: 4px;
+}
+
+.lighting-design-temperature-board > p {
+  margin: 20px 0 0;
+  font-size: 0.86rem;
+}
+
+/* Enquiry */
+
+.lighting-design-enquiry {
+  background:
+    radial-gradient(ellipse at left center, rgba(215, 180, 106, 0.07), transparent 48%),
+    #0d131d;
+  border-block: 1px solid rgba(255, 255, 255, 0.06);
+  scroll-margin-top: 30px;
+}
+
+.lighting-design-enquiry-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: start;
+  gap: 75px;
+}
+
+.lighting-design-enquiry-copy {
+  padding-top: 30px;
+}
+
+.lighting-design-enquiry-copy h2 {
+  margin-top: 17px;
+}
+
+.lighting-design-whatsapp-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 28px;
+  padding: 18px;
+  border: 1px solid rgba(37, 211, 102, 0.24);
+  border-radius: 6px;
+  background: rgba(37, 211, 102, 0.05);
+}
+
+.lighting-design-whatsapp-note > svg {
+  color: #25d366;
+  font-size: 2rem;
+}
+
+.lighting-design-whatsapp-note strong,
+.lighting-design-whatsapp-note span {
+  display: block;
+}
+
+.lighting-design-whatsapp-note strong {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.lighting-design-whatsapp-note span {
+  color: var(--ld-muted);
+  font-size: 0.8rem;
+}
+
+.lighting-design-enquiry-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.lighting-design-enquiry-detail > svg {
+  flex-shrink: 0;
+  margin-top: 5px;
+  color: var(--ld-gold);
+}
+
+.lighting-design-enquiry-detail p {
+  margin-bottom: 0;
+  font-size: 0.86rem;
+}
+
+.lighting-design-form {
+  display: grid;
+  gap: 18px;
+  padding: 30px;
+  border: 1px solid var(--ld-border);
+  border-radius: 9px;
+  background: linear-gradient(145deg, #151f2c, #101722);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.2);
+}
+
+.lighting-design-form-heading h3 {
+  margin-bottom: 8px;
+  font-size: 1.55rem;
+}
+
+.lighting-design-form-heading p {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.lighting-design-form label {
+  display: grid;
+  gap: 8px;
+  color: #e1e4e8;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.lighting-design-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.lighting-design-form input,
+.lighting-design-form select,
+.lighting-design-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  outline: none;
+  background: #0b111a;
+  color: #f5f3ed;
+  font: inherit;
+  font-size: 0.88rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lighting-design-form input::placeholder,
+.lighting-design-form textarea::placeholder {
+  color: #7f8997;
+}
+
+.lighting-design-form input:focus,
+.lighting-design-form select:focus,
+.lighting-design-form textarea:focus {
+  border-color: var(--ld-gold);
+  box-shadow: 0 0 0 3px rgba(215, 180, 106, 0.09);
+}
+
+.lighting-design-form textarea {
+  resize: vertical;
+}
+
+.lighting-design-submit {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 5px;
+  background: #25d366;
+  color: #082b16;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.lighting-design-submit:hover {
+  transform: translateY(-2px);
+  background: #45e17d;
+}
+
+.lighting-design-form-note {
+  color: var(--ld-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Final CTA */
+
+.lighting-design-final-cta {
+  padding: 55px 0;
+  background:
+    radial-gradient(ellipse at 80% 50%, rgba(215, 180, 106, 0.12), transparent 45%),
+    #111823;
+}
+
+.lighting-design-final-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.lighting-design-final-inner h2 {
+  margin: 12px 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.lighting-design-final-inner p {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .lighting-design-hero-grid,
+  .lighting-design-temperature-grid,
+  .lighting-design-enquiry-grid {
+    gap: 40px;
+  }
+
+  .lighting-design-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lighting-design-benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lighting-design-room {
+    min-height: 360px;
+  }
+
+  .lighting-design-art {
+    height: 200px;
+  }
+}
+
+@media (max-width: 760px) {
+  .lighting-design-container {
+    width: min(100% - 32px, 560px);
+  }
+
+  .lighting-design-section {
+    padding: 70px 0;
+  }
+
+  .lighting-design-hero {
+    padding: 65px 0 75px;
+  }
+
+  .lighting-design-hero-grid,
+  .lighting-design-intro-grid,
+  .lighting-design-temperature-grid,
+  .lighting-design-enquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .lighting-design-hero h1 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+  }
+
+  .lighting-design-hero-copy > p {
+    font-size: 0.97rem;
+  }
+
+  .lighting-design-hero-visual {
+    margin: 0 8px;
+  }
+
+  .lighting-design-room {
+    min-height: 350px;
+  }
+
+  .lighting-design-intro-grid {
+    gap: 22px;
+  }
+
+  .lighting-design-cards {
+    gap: 16px;
+  }
+
+  .lighting-design-card-content {
+    padding: 17px;
+  }
+
+  .lighting-design-card-content p {
+    min-height: 0;
+  }
+
+  .lighting-design-benefit-grid {
+    gap: 14px;
+  }
+
+  .lighting-design-benefit {
+    padding: 21px 17px;
+  }
+
+  .lighting-design-temperature-board {
+    padding: 22px;
+  }
+
+  .lighting-design-enquiry-copy {
+    padding-top: 0;
+  }
+
+  .lighting-design-form {
+    padding: 23px 18px;
+  }
+
+  .lighting-design-final-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .lighting-design-container {
+    width: calc(100% - 28px);
+  }
+
+  .lighting-design-section {
+    padding: 58px 0;
+  }
+
+  .lighting-design-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 1.4px;
+  }
+
+  .lighting-design-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .lighting-design-hero-actions .lighting-design-btn {
+    width: 100%;
+  }
+
+  .lighting-design-hero-points {
+    gap: 11px 15px;
+  }
+
+  .lighting-design-hero-points span {
+    font-size: 0.73rem;
+  }
+
+  .lighting-design-room {
+    min-height: 285px;
+  }
+
+  .lighting-design-ceiling {
+    height: 28px;
+  }
+
+  .lighting-design-room-wall {
+    inset: 28px 0 48px;
+  }
+
+  .lighting-design-floor {
+    height: 48px;
+  }
+
+  .lighting-design-art {
+    top: 45px;
+    height: 115px;
+  }
+
+  .lighting-design-sofa {
+    height: 68px;
+  }
+
+  .lighting-design-visual-label {
+    right: -5px;
+    padding: 12px;
+  }
+
+  .lighting-design-visual-label > span {
+    width: 35px;
+    height: 35px;
+  }
+
+  .lighting-design-visual-label strong {
+    font-size: 0.8rem;
+  }
+
+  .lighting-design-visual-label small {
+    font-size: 0.7rem;
+  }
+
+  .lighting-design-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .lighting-design-art {
+    height: 220px;
+  }
+
+  .lighting-design-card-content p {
+    font-size: 0.9rem;
+  }
+
+  .lighting-design-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lighting-design-benefit {
+    padding: 23px;
+  }
+
+  .lighting-design-temperature-scene {
+    height: 230px;
+  }
+
+  .lighting-design-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .lighting-design-submit {
+    font-size: 0.82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lighting-design-page *,
+  .lighting-design-page *::before,
+  .lighting-design-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

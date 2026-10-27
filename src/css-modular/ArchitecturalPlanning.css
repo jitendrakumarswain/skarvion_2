@@ -1,0 +1,274 @@
+
+.architectural-planning {
+  min-height: 100vh;
+  background: #f7f8fa;
+  color: #182238;
+}
+
+.planning-hero {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  padding: 75px max(6%, calc((100% - 1200px) / 2));
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(8, 17, 34, 0.94), rgba(8, 17, 34, 0.55)),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
+}
+
+.planning-hero-content {
+  max-width: 720px;
+}
+
+.planning-eyebrow {
+  color: #b9944b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.planning-hero h1 {
+  margin: 20px 0;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.12;
+}
+
+.planning-hero h1 span {
+  display: block;
+  margin-top: 8px;
+  color: #d5b16a;
+}
+
+.planning-hero p {
+  max-width: 600px;
+  color: #d0d7e2;
+  line-height: 1.8;
+}
+
+.planning-primary-button,
+.planning-enquire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #087eaa;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.planning-primary-button {
+  margin-top: 18px;
+}
+
+.planning-primary-button:hover,
+.planning-enquire:hover {
+  background: #075f83;
+  transform: translateY(-2px);
+}
+
+.planning-intro {
+  max-width: 850px;
+  margin: auto;
+  padding: 60px 24px 30px;
+  text-align: center;
+}
+
+.planning-intro h2,
+.planning-contact h2 {
+  margin: 12px 0;
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.planning-intro p,
+.planning-contact > p {
+  color: #667085;
+  line-height: 1.8;
+}
+
+.planning-services-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 24px 65px;
+}
+
+.planning-filters {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 0 20px;
+}
+
+.planning-filter {
+  flex-shrink: 0;
+  padding: 10px 15px;
+  border: 1px solid #dce2ea;
+  border-radius: 30px;
+  background: #fff;
+  color: #344054;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.planning-filter:hover,
+.planning-filter.active {
+  border-color: #087eaa;
+  background: #087eaa;
+  color: #fff;
+}
+
+.planning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.planning-card {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border: 1px solid #e5e8ef;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(20, 32, 52, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.planning-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(20, 32, 52, 0.1);
+}
+
+.planning-card-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  background: #edf6fa;
+  color: #087eaa;
+  font-size: 22px;
+}
+
+.planning-category {
+  margin-bottom: 8px;
+  color: #92702f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.planning-card h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.planning-card p {
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.planning-card ul {
+  padding-left: 20px;
+  margin: 5px 0 22px;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.planning-enquire {
+  width: 100%;
+  margin-top: auto;
+  box-sizing: border-box;
+}
+
+.planning-contact {
+  max-width: 700px;
+  margin: 0 auto 70px;
+  padding: 32px;
+  border: 1px solid #e5e8ef;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.planning-contact label {
+  display: block;
+  margin: 20px 0;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.planning-contact input,
+.planning-contact textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+  padding: 12px 14px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background: #fff;
+  color: #182238;
+  font: inherit;
+}
+
+.planning-contact input:focus,
+.planning-contact textarea:focus {
+  outline: 2px solid #087eaa;
+  outline-offset: 2px;
+}
+
+.planning-enquire:focus-visible,
+.planning-filter:focus-visible,
+.planning-primary-button:focus-visible {
+  outline: 3px solid #d5b16a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .planning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .planning-hero {
+    min-height: 370px;
+    padding: 55px 22px;
+  }
+
+  .planning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planning-services-section {
+    padding: 16px 18px 45px;
+  }
+
+  .planning-contact {
+    margin: 0 18px 45px;
+    padding: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .planning-card,
+  .planning-primary-button,
+  .planning-enquire {
+    transition: none;
+  }
+}

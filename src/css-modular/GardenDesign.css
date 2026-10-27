@@ -1,0 +1,1012 @@
+
+.garden-page {
+  --garden-bg: #080e16;
+  --garden-panel: #111c29;
+  --garden-gold: #d8ad62;
+  --garden-gold-light: #f0d49c;
+  --garden-text: #f3f1ec;
+  --garden-muted: #aab5c3;
+  --garden-border: rgba(216, 173, 98, 0.23);
+  background: var(--garden-bg);
+  color: var(--garden-text);
+  overflow: hidden;
+}
+
+.garden-page * {
+  box-sizing: border-box;
+}
+
+.garden-page a {
+  text-decoration: none;
+}
+
+.garden-container {
+  width: min(1160px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+.garden-page .garden-section-spacing {
+  padding: 100px 0;
+}
+
+.garden-eyebrow,
+.garden-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--garden-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.garden-hero {
+  position: relative;
+  isolation: isolate;
+  padding: 100px 0 110px;
+  background:
+    radial-gradient(ellipse at 80% 30%, rgba(50, 87, 69, 0.24), transparent 42%),
+    linear-gradient(135deg, #080e16, #0d1a24 60%, #12231f);
+}
+
+.garden-hero-decoration {
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  right: -70px;
+  color: rgba(216, 173, 98, 0.055);
+  font-size: 350px;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+.garden-hero-grid {
+  display: grid;
+  grid-template-columns: 1.03fr 0.97fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.garden-hero-content h1 {
+  max-width: 640px;
+  margin: 25px 0;
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.garden-hero-content h1 span,
+.garden-intro h2 span,
+.garden-benefits h2 span,
+.garden-enquiry-copy h2 span {
+  display: block;
+  color: var(--garden-gold);
+}
+
+.garden-hero-content > p,
+.garden-intro-grid > div > p,
+.garden-benefits-copy > p,
+.garden-enquiry-copy > p {
+  color: var(--garden-muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.garden-hero-content > p {
+  max-width: 580px;
+}
+
+.garden-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.garden-btn {
+  min-height: 49px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 14px 21px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.garden-btn:hover {
+  transform: translateY(-3px);
+}
+
+.garden-btn-gold {
+  background: var(--garden-gold);
+  color: #111711;
+}
+
+.garden-btn-gold:hover {
+  background: var(--garden-gold-light);
+}
+
+.garden-btn-outline {
+  border-color: var(--garden-border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--garden-text);
+}
+
+.garden-btn-outline:hover {
+  border-color: var(--garden-gold);
+}
+
+.garden-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.garden-hero-points span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c6d0d7;
+  font-size: 0.78rem;
+}
+
+.garden-hero-points svg {
+  color: var(--garden-gold);
+}
+
+.garden-hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 510px;
+  margin: 0 auto;
+  padding: 14px;
+}
+
+.garden-visual-card {
+  overflow: hidden;
+  border: 1px solid rgba(216, 173, 98, 0.3);
+  border-radius: 16px;
+  background: #111c26;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.3);
+}
+
+.garden-visual-header,
+.garden-visual-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 24px;
+}
+
+.garden-visual-header {
+  color: var(--garden-gold);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.garden-visual-header svg {
+  font-size: 1.3rem;
+}
+
+.garden-illustration {
+  position: relative;
+  height: 325px;
+  overflow: hidden;
+  background: linear-gradient(#7e9a9b 0%, #c0c1a3 58%, #d1b88d 100%);
+}
+
+.garden-sun {
+  position: absolute;
+  top: 32px;
+  right: 45px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #f0d79d;
+  box-shadow: 0 0 45px rgba(240, 215, 157, 0.4);
+}
+
+.garden-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 53%;
+  height: 64%;
+  background: linear-gradient(130deg, #c9c5b1, #8e9b91);
+}
+
+.garden-house {
+  position: absolute;
+  right: 15%;
+  bottom: 0;
+  width: 80%;
+  height: 88%;
+}
+
+.garden-house-roof {
+  position: absolute;
+  top: 0;
+  left: -8%;
+  width: 116%;
+  height: 36%;
+  background: #515b52;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.garden-house-wall {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 72%;
+  background: linear-gradient(90deg, #e0d3b9, #b8a98c);
+}
+
+.garden-house-wall span {
+  position: absolute;
+  top: 22%;
+  width: 24%;
+  height: 43%;
+  border: 5px solid #4c5a56;
+  background: linear-gradient(120deg, #88a9a7, #405d5b);
+}
+
+.garden-house-wall span:first-child {
+  left: 12%;
+}
+
+.garden-house-wall span:last-child {
+  right: 12%;
+}
+
+.garden-ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 42%;
+  background: linear-gradient(#5d815b, #355b43);
+}
+
+.garden-tree {
+  position: absolute;
+  z-index: 3;
+  bottom: 25%;
+  width: 105px;
+  height: 170px;
+}
+
+.garden-tree-one {
+  left: 6%;
+}
+
+.garden-tree-two {
+  right: 8%;
+  transform: scale(0.72);
+  transform-origin: bottom center;
+}
+
+.garden-tree-crown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  border-radius: 48% 52% 45% 55%;
+  background: linear-gradient(130deg, #72966a, #294f3a);
+  box-shadow:
+    14px 17px 0 -4px #476f49,
+    -12px 20px 0 -5px #5d8253;
+}
+
+.garden-tree-trunk {
+  position: absolute;
+  bottom: 0;
+  left: 44%;
+  width: 15px;
+  height: 45%;
+  background: #70543b;
+}
+
+.garden-shrub {
+  position: absolute;
+  z-index: 4;
+  bottom: 20%;
+  width: 95px;
+  height: 65px;
+  border-radius: 50% 50% 20% 20%;
+  background: linear-gradient(140deg, #8eaa68, #3b7045);
+}
+
+.garden-shrub-one {
+  left: 25%;
+}
+
+.garden-shrub-two {
+  right: 24%;
+  transform: scale(0.85);
+}
+
+.garden-path {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 36%;
+  width: 32%;
+  height: 42%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: #b7a488;
+  clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+}
+
+.garden-path span {
+  width: 62%;
+  height: 5px;
+  background: #887a66;
+}
+
+.garden-visual-footer strong,
+.garden-visual-footer span {
+  display: block;
+}
+
+.garden-visual-footer strong {
+  margin-bottom: 5px;
+  font-size: 0.98rem;
+}
+
+.garden-visual-footer span {
+  color: var(--garden-muted);
+  font-size: 0.78rem;
+}
+
+.garden-visual-footer > svg {
+  color: var(--garden-gold);
+}
+
+.garden-floating-note {
+  position: absolute;
+  right: -5px;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 18px;
+  border: 1px solid var(--garden-border);
+  border-radius: 9px;
+  background: #172537;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
+}
+
+.garden-floating-note > svg {
+  color: var(--garden-gold);
+  font-size: 1.65rem;
+}
+
+.garden-floating-note strong,
+.garden-floating-note span {
+  display: block;
+}
+
+.garden-floating-note strong {
+  font-size: 0.83rem;
+}
+
+.garden-floating-note span {
+  margin-top: 4px;
+  color: var(--garden-muted);
+  font-size: 0.7rem;
+}
+
+.garden-intro {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0b121c;
+}
+
+.garden-intro-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.garden-intro h2,
+.garden-benefits h2,
+.garden-enquiry-copy h2 {
+  margin: 17px 0;
+  font-size: clamp(2rem, 3.7vw, 3.2rem);
+  line-height: 1.18;
+  letter-spacing: -1px;
+}
+
+.garden-intro-grid > div > p {
+  margin-top: 0;
+}
+
+.garden-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  color: var(--garden-gold);
+  font-weight: 750;
+}
+
+.garden-text-link:hover {
+  gap: 15px;
+}
+
+.garden-services {
+  background:
+    radial-gradient(ellipse at 90% 5%, rgba(42, 73, 59, 0.18), transparent 38%),
+    var(--garden-bg);
+}
+
+.garden-section-heading {
+  max-width: 700px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.garden-section-heading h2 {
+  margin: 16px 0 12px;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: -1px;
+}
+
+.garden-section-heading > p {
+  color: var(--garden-muted);
+  line-height: 1.8;
+}
+
+.garden-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 38px;
+}
+
+.garden-filter {
+  padding: 10px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  background: transparent;
+  color: #c3ccd5;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.garden-filter:hover,
+.garden-filter.active {
+  border-color: var(--garden-gold);
+  background: var(--garden-gold);
+  color: #111711;
+}
+
+.garden-service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.garden-service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 25px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 9px;
+  background: linear-gradient(145deg, #111c29, #0c141e);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.garden-service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(216, 173, 98, 0.5);
+}
+
+.garden-card-number {
+  position: absolute;
+  top: 19px;
+  right: 20px;
+  color: rgba(216, 173, 98, 0.55);
+  font-size: 0.77rem;
+  font-weight: 800;
+}
+
+.garden-service-icon {
+  display: grid;
+  place-items: center;
+  width: 51px;
+  height: 51px;
+  margin-bottom: 23px;
+  border: 1px solid var(--garden-border);
+  border-radius: 9px;
+  background: rgba(216, 173, 98, 0.07);
+  color: var(--garden-gold);
+  font-size: 1.3rem;
+}
+
+.garden-service-category {
+  color: var(--garden-gold);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.garden-service-card h3 {
+  margin: 11px 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.garden-service-card > p {
+  margin: 0 0 17px;
+  color: var(--garden-muted);
+  font-size: 0.83rem;
+  line-height: 1.75;
+}
+
+.garden-service-card ul {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.garden-service-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #c4cdd7;
+  font-size: 0.77rem;
+  line-height: 1.5;
+}
+
+.garden-service-card li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--garden-gold);
+  font-size: 0.7rem;
+}
+
+.garden-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding: 10px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: var(--garden-gold);
+  font: inherit;
+  font-size: 0.79rem;
+  font-weight: 750;
+  cursor: pointer;
+  text-align: left;
+}
+
+.garden-card-link:hover {
+  color: var(--garden-gold-light);
+}
+
+.garden-benefits {
+  background: linear-gradient(115deg, #111d28, #0a121c);
+}
+
+.garden-benefits-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.garden-benefits-copy > p {
+  margin-bottom: 28px;
+}
+
+.garden-benefit-list {
+  border-top: 1px solid var(--garden-border);
+}
+
+.garden-benefit-item {
+  display: grid;
+  grid-template-columns: 42px 1fr 20px;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--garden-border);
+}
+
+.garden-benefit-item > span {
+  color: var(--garden-gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.garden-benefit-item p {
+  margin: 0;
+  color: #d5dbe2;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.garden-benefit-item > svg {
+  color: var(--garden-gold);
+  font-size: 0.8rem;
+}
+
+.garden-enquiry {
+  background:
+    radial-gradient(ellipse at 5% 90%, rgba(45, 75, 58, 0.16), transparent 40%),
+    #080e16;
+}
+
+.garden-enquiry-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 75px;
+}
+
+.garden-enquiry-copy {
+  position: sticky;
+  top: 35px;
+}
+
+.garden-contact-note {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+  padding: 18px;
+  border: 1px solid var(--garden-border);
+  border-radius: 8px;
+  background: rgba(216, 173, 98, 0.04);
+}
+
+.garden-contact-note > svg {
+  flex-shrink: 0;
+  color: #55cf86;
+  font-size: 2rem;
+}
+
+.garden-contact-note strong,
+.garden-contact-note span {
+  display: block;
+}
+
+.garden-contact-note strong {
+  font-size: 0.9rem;
+}
+
+.garden-contact-note span {
+  margin-top: 5px;
+  color: var(--garden-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.garden-form {
+  padding: 32px;
+  border: 1px solid var(--garden-border);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #111c2b, #0c131e);
+}
+
+.garden-form h3 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.garden-form > p {
+  margin: 0 0 25px;
+  color: var(--garden-muted);
+  font-size: 0.87rem;
+}
+
+.garden-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  color: #e1e5ea;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.garden-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.garden-form input,
+.garden-form select,
+.garden-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 5px;
+  outline: none;
+  background: #0a111c;
+  color: #f3f1ec;
+  font: inherit;
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease;
+}
+
+.garden-form input:focus,
+.garden-form select:focus,
+.garden-form textarea:focus {
+  border-color: var(--garden-gold);
+}
+
+.garden-form input::placeholder,
+.garden-form textarea::placeholder {
+  color: #788594;
+}
+
+.garden-form select option {
+  background: #0c131e;
+  color: #f3f1ec;
+}
+
+.garden-form textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.garden-submit {
+  width: 100%;
+  margin-top: 22px;
+  border: 0;
+}
+
+.garden-form-disclaimer {
+  display: block;
+  margin-top: 12px;
+  color: #8995a4;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.garden-final-cta {
+  padding: 52px 0;
+  border-top: 1px solid var(--garden-border);
+  background: #111b29;
+}
+
+.garden-final-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.garden-final-cta h2 {
+  margin: 12px 0;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  line-height: 1.25;
+}
+
+.garden-final-cta p {
+  margin-bottom: 0;
+  color: var(--garden-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.garden-final-cta-inner > .garden-btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1050px) {
+  .garden-hero-grid {
+    gap: 35px;
+  }
+
+  .garden-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .garden-intro-grid,
+  .garden-benefits-grid,
+  .garden-enquiry-grid {
+    gap: 45px;
+  }
+
+  .garden-floating-note {
+    right: -3px;
+  }
+}
+
+@media (max-width: 760px) {
+  .garden-container {
+    width: min(100% - 32px, 560px);
+  }
+
+  .garden-page .garden-section-spacing {
+    padding: 70px 0;
+  }
+
+  .garden-hero {
+    padding: 72px 0 85px;
+  }
+
+  .garden-hero-grid,
+  .garden-intro-grid,
+  .garden-benefits-grid,
+  .garden-enquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .garden-hero-content h1 {
+    font-size: clamp(2.45rem, 10vw, 3.6rem);
+    letter-spacing: -1.4px;
+  }
+
+  .garden-hero-content > p,
+  .garden-intro-grid > div > p,
+  .garden-benefits-copy > p,
+  .garden-enquiry-copy > p {
+    font-size: 0.94rem;
+  }
+
+  .garden-hero-visual {
+    max-width: 490px;
+    padding: 4px;
+  }
+
+  .garden-floating-note {
+    right: -5px;
+    bottom: 25px;
+  }
+
+  .garden-intro-grid,
+  .garden-benefits-grid,
+  .garden-enquiry-grid {
+    gap: 28px;
+  }
+
+  .garden-enquiry-copy {
+    position: static;
+  }
+
+  .garden-final-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .garden-final-cta-inner > .garden-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .garden-container {
+    width: calc(100% - 28px);
+  }
+
+  .garden-page .garden-section-spacing {
+    padding: 58px 0;
+  }
+
+  .garden-eyebrow,
+  .garden-section-label {
+    font-size: 0.65rem;
+    letter-spacing: 1.2px;
+  }
+
+  .garden-hero-content h1 {
+    font-size: 2.45rem;
+  }
+
+  .garden-hero-actions {
+    flex-direction: column;
+  }
+
+  .garden-hero-actions .garden-btn {
+    width: 100%;
+  }
+
+  .garden-hero-points {
+    display: grid;
+    gap: 11px;
+  }
+
+  .garden-illustration {
+    height: 260px;
+  }
+
+  .garden-tree-one {
+    transform: scale(0.78);
+    transform-origin: bottom left;
+  }
+
+  .garden-tree-two {
+    transform: scale(0.58);
+    transform-origin: bottom right;
+  }
+
+  .garden-floating-note {
+    right: -2px;
+    bottom: 10px;
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .garden-floating-note > svg {
+    font-size: 1.3rem;
+  }
+
+  .garden-floating-note strong {
+    font-size: 0.73rem;
+  }
+
+  .garden-floating-note span {
+    font-size: 0.62rem;
+  }
+
+  .garden-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .garden-service-card {
+    padding: 23px;
+  }
+
+  .garden-form {
+    padding: 22px 17px;
+  }
+
+  .garden-form-row {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .garden-benefit-item {
+    grid-template-columns: 30px 1fr 16px;
+    gap: 10px;
+  }
+
+  .garden-visual-header,
+  .garden-visual-footer {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .garden-page *,
+  .garden-page *::before,
+  .garden-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

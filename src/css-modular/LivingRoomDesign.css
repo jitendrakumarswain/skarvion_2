@@ -1,0 +1,948 @@
+
+.living-room-page {
+  --lr-bg: #080d17;
+  --lr-panel: #101827;
+  --lr-panel-light: #172235;
+  --lr-gold: #d6ad62;
+  --lr-gold-light: #f0d59b;
+  --lr-text: #f4f2ed;
+  --lr-muted: #aab4c4;
+  background: var(--lr-bg);
+  color: var(--lr-text);
+  overflow: hidden;
+}
+
+.living-room-page * {
+  box-sizing: border-box;
+}
+
+.living-room-container {
+  width: min(1200px, 88%);
+  margin: 0 auto;
+}
+
+.living-room-page button,
+.living-room-page input,
+.living-room-page textarea {
+  font: inherit;
+}
+
+.living-room-page button,
+.living-room-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.living-room-hero {
+  position: relative;
+  padding: 100px 0 88px;
+  background:
+    radial-gradient(ellipse at 78% 45%, rgba(214, 173, 98, 0.12), transparent 38%),
+    linear-gradient(135deg, #080d17 0%, #0c1422 55%, #111a29 100%);
+}
+
+.living-room-hero-glow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: 8%;
+  right: -150px;
+  border-radius: 50%;
+  background: rgba(214, 173, 98, 0.09);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.living-room-hero-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.living-room-hero-copy {
+  max-width: 620px;
+}
+
+.living-room-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--lr-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.living-room-hero h1 {
+  margin: 22px 0;
+  font-size: clamp(2.7rem, 5vw, 4.6rem);
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.living-room-hero h1 span {
+  display: block;
+  color: var(--lr-gold);
+}
+
+.living-room-hero-copy > p,
+.living-room-section-heading > p,
+.living-room-enquiry-copy > p {
+  color: var(--lr-muted);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.living-room-hero-copy > p {
+  max-width: 550px;
+}
+
+.living-room-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.living-room-primary-btn,
+.living-room-secondary-btn {
+  min-height: 49px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 7px;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.living-room-primary-btn {
+  border: 1px solid var(--lr-gold);
+  background: var(--lr-gold);
+  color: #111521;
+}
+
+.living-room-primary-btn:hover {
+  background: var(--lr-gold-light);
+  transform: translateY(-2px);
+}
+
+.living-room-secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--lr-text);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.living-room-secondary-btn:hover {
+  border-color: var(--lr-gold);
+  transform: translateY(-2px);
+}
+
+.living-room-trust-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 20px;
+  margin-top: 28px;
+  color: #c5ceda;
+  font-size: 0.82rem;
+}
+
+.living-room-trust-points span,
+.living-room-enquiry-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.living-room-trust-points svg,
+.living-room-enquiry-points svg {
+  color: var(--lr-gold);
+  flex-shrink: 0;
+}
+
+.living-room-visual {
+  position: relative;
+  padding: 15px;
+  border: 1px solid rgba(214, 173, 98, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 28px 75px rgba(0, 0, 0, 0.28);
+}
+
+.living-room-visual-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 7px 15px;
+}
+
+.living-room-visual-label span {
+  color: var(--lr-gold);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.living-room-visual-label strong {
+  font-size: 0.82rem;
+}
+
+.living-room-art {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #e5d7bd, #bda88b 65%, #8b785f);
+}
+
+.living-room-art-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 31%;
+  height: 47%;
+  display: flex;
+  gap: 4px;
+  padding: 12px;
+  background: #e7e3d6;
+  box-shadow: 5px 6px 15px rgba(31, 33, 33, 0.1);
+}
+
+.living-room-art-window div {
+  flex: 1;
+  background: linear-gradient(180deg, #b9d0d0, #edf0e6);
+  border: 3px solid #7c786b;
+}
+
+.living-room-art-frame {
+  position: absolute;
+  top: 12%;
+  right: 12%;
+  width: 34%;
+  height: 26%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5px;
+  padding: 15px;
+  border: 7px solid #8e7151;
+  background: #e6d8bc;
+}
+
+.living-room-art-frame span {
+  width: 28%;
+  height: 62%;
+  border-radius: 50% 50% 5px 5px;
+  background: #a7a78a;
+}
+
+.living-room-art-frame span:nth-child(2) {
+  height: 85%;
+  background: #d2ae71;
+}
+
+.living-room-art-floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 25%;
+  background: repeating-linear-gradient(
+    0deg,
+    #a58b6a 0,
+    #a58b6a 2px,
+    #b69b77 2px,
+    #b69b77 32px
+  );
+}
+
+.living-room-art-rug {
+  position: absolute;
+  bottom: 3%;
+  left: 14%;
+  width: 70%;
+  height: 19%;
+  border-radius: 50%;
+  background: rgba(232, 217, 188, 0.8);
+  border: 2px solid rgba(105, 81, 57, 0.18);
+}
+
+.living-room-art-sofa {
+  position: absolute;
+  z-index: 2;
+  left: 17%;
+  bottom: 17%;
+  width: 62%;
+  height: 31%;
+}
+
+.living-room-sofa-back {
+  position: absolute;
+  top: 0;
+  left: 7%;
+  width: 86%;
+  height: 60%;
+  border-radius: 13px 13px 3px 3px;
+  background: linear-gradient(120deg, #52605a, #394740);
+  box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.08);
+}
+
+.living-room-sofa-seat {
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  width: 94%;
+  height: 44%;
+  border-radius: 8px;
+  background: #67756a;
+  box-shadow: 0 9px 10px rgba(49, 39, 28, 0.22);
+}
+
+.living-room-sofa-arm {
+  position: absolute;
+  bottom: 3%;
+  width: 13%;
+  height: 54%;
+  border-radius: 7px;
+  background: #435148;
+}
+
+.living-room-sofa-arm.left {
+  left: 0;
+}
+
+.living-room-sofa-arm.right {
+  right: 0;
+}
+
+.living-room-sofa-cushion {
+  position: absolute;
+  z-index: 2;
+  top: 24%;
+  width: 20%;
+  height: 31%;
+  border-radius: 4px;
+  background: #d2b486;
+  transform: rotate(-7deg);
+}
+
+.living-room-sofa-cushion.one {
+  left: 22%;
+}
+
+.living-room-sofa-cushion.two {
+  right: 22%;
+  background: #b8a18a;
+  transform: rotate(7deg);
+}
+
+.living-room-art-table {
+  position: absolute;
+  z-index: 3;
+  left: 37%;
+  bottom: 10%;
+  width: 27%;
+  height: 9%;
+  border-radius: 50%;
+  background: #7d5d3e;
+  border-bottom: 8px solid #60472f;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.16);
+}
+
+.living-room-art-plant {
+  position: absolute;
+  z-index: 3;
+  right: 8%;
+  bottom: 22%;
+  width: 13%;
+  height: 25%;
+}
+
+.living-room-art-plant i {
+  position: absolute;
+  bottom: 0;
+  left: 24%;
+  width: 55%;
+  height: 36%;
+  border-radius: 2px 2px 10px 10px;
+  background: #b57f4d;
+}
+
+.living-room-art-plant span {
+  position: absolute;
+  bottom: 25%;
+  left: 40%;
+  width: 25%;
+  height: 65%;
+  border-radius: 100% 0 100% 0;
+  background: #526d4e;
+  transform: rotate(-35deg);
+}
+
+.living-room-art-plant span:nth-child(2) {
+  left: 5%;
+  height: 53%;
+  transform: rotate(-65deg);
+}
+
+.living-room-art-plant span:nth-child(3) {
+  left: 57%;
+  height: 57%;
+  transform: rotate(20deg);
+}
+
+.living-room-art-lamp {
+  position: absolute;
+  z-index: 1;
+  left: 10%;
+  bottom: 38%;
+  height: 30%;
+  width: 10%;
+}
+
+.living-room-art-lamp span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 35%;
+  background: #f3e0ae;
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+}
+
+.living-room-art-lamp i {
+  position: absolute;
+  top: 30%;
+  left: 46%;
+  width: 8%;
+  height: 68%;
+  background: #725b43;
+}
+
+.living-room-visual-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 5px 4px;
+}
+
+.living-room-visual-note > svg {
+  color: var(--lr-gold);
+  font-size: 1.4rem;
+}
+
+.living-room-visual-note strong,
+.living-room-visual-note span {
+  display: block;
+}
+
+.living-room-visual-note strong {
+  font-size: 0.88rem;
+}
+
+.living-room-visual-note span {
+  margin-top: 4px;
+  color: var(--lr-muted);
+  font-size: 0.78rem;
+}
+
+.living-room-intro,
+.living-room-options {
+  padding: 85px 0;
+}
+
+.living-room-intro {
+  background: #0b111d;
+}
+
+.living-room-section-heading {
+  max-width: 720px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.living-room-section-heading h2,
+.living-room-enquiry-copy h2,
+.living-room-final-cta h2 {
+  margin: 13px 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+}
+
+.living-room-section-heading > p {
+  margin: 0 auto;
+  max-width: 680px;
+}
+
+.living-room-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.living-room-benefits article {
+  padding: 25px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #111b2a, #0d1521);
+}
+
+.living-room-benefit-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(214, 173, 98, 0.12);
+  color: var(--lr-gold);
+  font-size: 1.15rem;
+}
+
+.living-room-benefits h3 {
+  margin: 19px 0 9px;
+  font-size: 1rem;
+}
+
+.living-room-benefits p {
+  margin: 0;
+  color: var(--lr-muted);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.living-room-options {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(214, 173, 98, 0.055), transparent 40%),
+    var(--lr-bg);
+}
+
+.living-room-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 30px;
+}
+
+.living-room-filters button {
+  padding: 10px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  background: transparent;
+  color: #d5dbe4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.living-room-filters button:hover,
+.living-room-filters button.active {
+  border-color: var(--lr-gold);
+  background: var(--lr-gold);
+  color: #101521;
+}
+
+.living-room-design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.living-room-design-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 13px;
+  background: var(--lr-panel);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.living-room-design-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(214, 173, 98, 0.48);
+}
+
+.living-room-card-art {
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e7d9bf, #b8a286);
+}
+
+.living-room-card-art.art-1 {
+  background: linear-gradient(135deg, #c6b49c, #786f62);
+}
+
+.living-room-card-art.art-2 {
+  background: linear-gradient(135deg, #d8d1c0, #9dafa7);
+}
+
+.living-room-card-number {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  z-index: 3;
+  color: rgba(20, 27, 34, 0.55);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.living-room-card-room {
+  position: absolute;
+  inset: 22px 25px 0;
+  overflow: hidden;
+  border: 5px solid rgba(255, 255, 255, 0.28);
+  border-bottom: 0;
+  background: linear-gradient(135deg, #efe7d7, #c9b69a);
+  box-shadow: 0 9px 20px rgba(31, 35, 32, 0.12);
+}
+
+.living-room-card-wall-art {
+  position: absolute;
+  top: 14%;
+  right: 13%;
+  width: 30%;
+  height: 28%;
+  border: 5px solid #a28762;
+  background: linear-gradient(140deg, #d3bd8c, #899b7d);
+}
+
+.living-room-card-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24%;
+  height: 52%;
+  background: linear-gradient(135deg, #c5dbd9, #f3f0df);
+  border-right: 5px solid #a08d73;
+}
+
+.living-room-card-sofa {
+  position: absolute;
+  z-index: 2;
+  left: 17%;
+  bottom: 15%;
+  width: 63%;
+  height: 31%;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(180deg, #7b8878, #43554a);
+  box-shadow: inset 0 8px rgba(255, 255, 255, 0.09);
+}
+
+.art-1 .living-room-card-sofa {
+  background: linear-gradient(180deg, #7c6858, #4c4037);
+}
+
+.art-2 .living-room-card-sofa {
+  background: linear-gradient(180deg, #a0a99d, #667568);
+}
+
+.living-room-card-table {
+  position: absolute;
+  z-index: 3;
+  left: 36%;
+  bottom: 7%;
+  width: 28%;
+  height: 8%;
+  border-radius: 50%;
+  background: #906d49;
+}
+
+.living-room-card-plant {
+  position: absolute;
+  right: 7%;
+  bottom: 15%;
+  width: 12%;
+  height: 23%;
+  border-radius: 50% 50% 5px 5px;
+  background: #55724f;
+}
+
+.living-room-card-category {
+  position: absolute;
+  z-index: 4;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 30px;
+  background: rgba(8, 13, 23, 0.82);
+  color: var(--lr-gold-light);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.living-room-card-body {
+  padding: 22px;
+}
+
+.living-room-card-body h3 {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+}
+
+.living-room-card-body > p {
+  min-height: 78px;
+  margin: 0;
+  color: var(--lr-muted);
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.living-room-card-body ul {
+  display: grid;
+  gap: 9px;
+  margin: 19px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.living-room-card-body li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #d7dce4;
+  font-size: 0.82rem;
+}
+
+.living-room-card-body li svg {
+  margin-top: 3px;
+  color: var(--lr-gold);
+  flex-shrink: 0;
+}
+
+.living-room-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--lr-gold);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.living-room-card-link:hover {
+  color: var(--lr-gold-light);
+}
+
+.living-room-enquiry {
+  padding: 85px 0;
+  background: #0d1522;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.living-room-enquiry-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  align-items: start;
+  gap: 70px;
+}
+
+.living-room-enquiry-copy h2 {
+  margin-top: 18px;
+}
+
+.living-room-enquiry-points {
+  display: grid;
+  gap: 15px;
+  margin-top: 26px;
+  color: #d5dce5;
+  font-size: 0.91rem;
+}
+
+.living-room-form {
+  display: grid;
+  gap: 10px;
+  padding: 30px;
+  border: 1px solid rgba(214, 173, 98, 0.2);
+  border-radius: 14px;
+  background: #111c2c;
+}
+
+.living-room-form label {
+  margin-top: 7px;
+  color: #e5e8ed;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.living-room-form input,
+.living-room-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 7px;
+  outline: none;
+  background: #0b1320;
+  color: var(--lr-text);
+  resize: vertical;
+}
+
+.living-room-form input::placeholder,
+.living-room-form textarea::placeholder {
+  color: #778397;
+}
+
+.living-room-form input:focus,
+.living-room-form textarea:focus {
+  border-color: var(--lr-gold);
+  box-shadow: 0 0 0 3px rgba(214, 173, 98, 0.1);
+}
+
+.living-room-form .living-room-primary-btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.living-room-form small {
+  margin-top: 5px;
+  color: #929eaf;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.living-room-final-cta {
+  padding: 45px 0;
+  background:
+    radial-gradient(ellipse at 90% 50%, rgba(214, 173, 98, 0.1), transparent 45%),
+    #080d17;
+}
+
+.living-room-final-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.living-room-final-cta h2 {
+  margin-bottom: 8px;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.living-room-final-cta p {
+  margin: 0;
+  color: var(--lr-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+  .living-room-hero-content {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 35px;
+  }
+
+  .living-room-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .living-room-design-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .living-room-enquiry-layout {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 720px) {
+  .living-room-container {
+    width: min(100% - 34px, 560px);
+  }
+
+  .living-room-hero {
+    padding: 65px 0;
+  }
+
+  .living-room-hero-content,
+  .living-room-enquiry-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .living-room-hero h1 {
+    font-size: clamp(2.4rem, 11vw, 3.5rem);
+    letter-spacing: -1.4px;
+  }
+
+  .living-room-trust-points {
+    display: grid;
+    gap: 11px;
+  }
+
+  .living-room-art {
+    min-height: 300px;
+  }
+
+  .living-room-intro,
+  .living-room-options,
+  .living-room-enquiry {
+    padding: 62px 0;
+  }
+
+  .living-room-section-heading {
+    margin-bottom: 28px;
+  }
+
+  .living-room-design-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .living-room-card-body > p {
+    min-height: 0;
+  }
+
+  .living-room-enquiry-layout {
+    gap: 30px;
+  }
+
+  .living-room-form {
+    padding: 22px;
+  }
+
+  .living-room-final-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .living-room-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .living-room-hero-actions {
+    flex-direction: column;
+  }
+
+  .living-room-hero-actions > * {
+    width: 100%;
+  }
+
+  .living-room-visual-label {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .living-room-art {
+    min-height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .living-room-page *,
+  .living-room-page *::before,
+  .living-room-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

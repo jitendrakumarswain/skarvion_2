@@ -1,0 +1,928 @@
+
+.bathroom-page {
+  --ba-bg: #080d17;
+  --ba-panel: #111b2a;
+  --ba-gold: #d6ad62;
+  --ba-gold-light: #f0d59b;
+  --ba-text: #f4f2ed;
+  --ba-muted: #aab4c4;
+  background: var(--ba-bg);
+  color: var(--ba-text);
+  overflow: hidden;
+}
+
+.bathroom-page * {
+  box-sizing: border-box;
+}
+
+.bathroom-container {
+  width: min(1200px, 88%);
+  margin: 0 auto;
+}
+
+.bathroom-page button,
+.bathroom-page input,
+.bathroom-page textarea {
+  font: inherit;
+}
+
+.bathroom-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ba-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.bathroom-hero {
+  padding: 90px 0;
+  background:
+    radial-gradient(ellipse at 78% 45%, rgba(214, 173, 98, 0.12), transparent 38%),
+    linear-gradient(135deg, #080d17, #111b2a);
+}
+
+.bathroom-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.bathroom-hero h1 {
+  margin: 23px 0;
+  font-size: clamp(2.7rem, 5vw, 4.4rem);
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+}
+
+.bathroom-hero h1 span {
+  display: block;
+  color: var(--ba-gold);
+}
+
+.bathroom-hero-copy > p,
+.bathroom-section-heading > p,
+.bathroom-process-layout > div:first-child > p,
+.bathroom-enquiry-copy > p {
+  color: var(--ba-muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.bathroom-hero-copy > p {
+  max-width: 560px;
+}
+
+.bathroom-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.bathroom-primary-btn,
+.bathroom-secondary-btn {
+  min-height: 49px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 19px;
+  border-radius: 7px;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bathroom-primary-btn {
+  border: 1px solid var(--ba-gold);
+  background: var(--ba-gold);
+  color: #101521;
+}
+
+.bathroom-primary-btn:hover {
+  background: var(--ba-gold-light);
+  transform: translateY(-2px);
+}
+
+.bathroom-secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--ba-text);
+}
+
+.bathroom-secondary-btn:hover {
+  border-color: var(--ba-gold);
+  transform: translateY(-2px);
+}
+
+.bathroom-trust-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 19px;
+  margin-top: 28px;
+  color: #c5ceda;
+  font-size: 0.82rem;
+}
+
+.bathroom-trust-points span,
+.bathroom-enquiry-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bathroom-trust-points svg,
+.bathroom-enquiry-points svg {
+  color: var(--ba-gold);
+  flex-shrink: 0;
+}
+
+.bathroom-visual {
+  padding: 15px;
+  border: 1px solid rgba(214, 173, 98, 0.22);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
+.bathroom-visual-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 7px 15px;
+}
+
+.bathroom-visual-top span {
+  color: var(--ba-gold);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.bathroom-visual-top strong {
+  font-size: 0.83rem;
+}
+
+.bathroom-art {
+  position: relative;
+  min-height: 345px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(140deg, #e7dfd0, #c8bba5);
+}
+
+.bathroom-art-wall-tiles {
+  position: absolute;
+  inset: 0 0 18%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background: #e1d7c6;
+}
+
+.bathroom-art-wall-tiles span {
+  border: 1px solid rgba(133, 117, 94, 0.23);
+  background: linear-gradient(140deg, #eee7da, #d8cbb6);
+}
+
+.bathroom-art-window {
+  position: absolute;
+  z-index: 1;
+  top: 7%;
+  left: 5%;
+  display: flex;
+  gap: 3px;
+  width: 23%;
+  height: 30%;
+  padding: 6px;
+  border: 4px solid #958a78;
+  background: #e9e4d8;
+}
+
+.bathroom-art-window span {
+  flex: 1;
+  background: linear-gradient(180deg, #c1d8d5, #eef1e6);
+}
+
+.bathroom-art-mirror {
+  position: absolute;
+  z-index: 2;
+  top: 17%;
+  left: 38%;
+  width: 25%;
+  height: 28%;
+  border: 7px solid #a18e73;
+  border-radius: 48% 48% 5px 5px;
+  background: linear-gradient(145deg, #d7e3df, #a8c1be);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.45);
+}
+
+.bathroom-art-vanity {
+  position: absolute;
+  z-index: 4;
+  top: 46%;
+  left: 32%;
+  width: 39%;
+  height: 34%;
+}
+
+.bathroom-art-basin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 23%;
+  border: 5px solid #aaa69b;
+  border-radius: 6px 6px 15px 15px;
+  background: #f3eee4;
+  box-shadow: 0 5px 7px rgba(48, 42, 34, 0.12);
+}
+
+.bathroom-art-cabinet {
+  position: absolute;
+  top: 22%;
+  left: 5%;
+  display: flex;
+  gap: 4px;
+  width: 90%;
+  height: 73%;
+  padding: 5px;
+  background: #8b7157;
+}
+
+.bathroom-art-cabinet span {
+  flex: 1;
+  border: 2px solid #6f5844;
+  background: linear-gradient(100deg, #b09a7c, #947a5b);
+}
+
+.bathroom-art-shower {
+  position: absolute;
+  z-index: 3;
+  top: 10%;
+  right: 5%;
+  width: 24%;
+  height: 60%;
+  border: 4px solid rgba(135, 158, 157, 0.8);
+  border-top: 0;
+  background: rgba(199, 222, 218, 0.2);
+}
+
+.bathroom-art-shower span {
+  position: absolute;
+  top: 8%;
+  right: 22%;
+  width: 45%;
+  height: 5px;
+  border-radius: 5px;
+  background: #8d9895;
+}
+
+.bathroom-art-shower i {
+  position: absolute;
+  top: 9%;
+  right: 25%;
+  width: 4px;
+  height: 25%;
+  background: #8d9895;
+}
+
+.bathroom-art-shower div {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  left: 10%;
+  height: 8%;
+  background: #b9b2a4;
+}
+
+.bathroom-art-toilet {
+  position: absolute;
+  z-index: 5;
+  bottom: 20%;
+  left: 7%;
+  width: 20%;
+  height: 23%;
+}
+
+.bathroom-art-toilet span {
+  position: absolute;
+  top: 0;
+  left: 17%;
+  width: 66%;
+  height: 43%;
+  border: 4px solid #c4beb1;
+  border-radius: 4px;
+  background: #f3efe5;
+}
+
+.bathroom-art-toilet i {
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 84%;
+  height: 60%;
+  border-radius: 7px 7px 45% 45%;
+  background: linear-gradient(110deg, #f5f1e7, #d4cec1);
+  border: 3px solid #c6c0b4;
+}
+
+.bathroom-art-floor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 18%;
+  background: repeating-linear-gradient(
+    0deg,
+    #b5a68d 0,
+    #b5a68d 2px,
+    #d1c4af 2px,
+    #d1c4af 29px
+  );
+}
+
+.bathroom-visual-caption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 5px 4px;
+}
+
+.bathroom-visual-caption > svg {
+  color: var(--ba-gold);
+  font-size: 1.4rem;
+}
+
+.bathroom-visual-caption strong,
+.bathroom-visual-caption span {
+  display: block;
+}
+
+.bathroom-visual-caption strong {
+  font-size: 0.87rem;
+}
+
+.bathroom-visual-caption span {
+  margin-top: 4px;
+  color: var(--ba-muted);
+  font-size: 0.77rem;
+}
+
+.bathroom-benefits-section,
+.bathroom-options-section,
+.bathroom-process-section,
+.bathroom-enquiry-section {
+  padding: 82px 0;
+}
+
+.bathroom-benefits-section {
+  background: #0b111d;
+}
+
+.bathroom-section-heading {
+  max-width: 750px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.bathroom-section-heading h2,
+.bathroom-process-layout h2,
+.bathroom-enquiry-copy h2,
+.bathroom-final-cta h2 {
+  margin: 14px 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+
+.bathroom-section-heading > p {
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+.bathroom-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.bathroom-benefits article {
+  padding: 24px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #111b2a, #0d1521);
+}
+
+.bathroom-benefits article > span {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(214, 173, 98, 0.12);
+  color: var(--ba-gold);
+  font-size: 1.15rem;
+}
+
+.bathroom-benefits h3 {
+  margin: 18px 0 9px;
+  font-size: 1rem;
+}
+
+.bathroom-benefits p {
+  margin: 0;
+  color: var(--ba-muted);
+  font-size: 0.87rem;
+  line-height: 1.75;
+}
+
+.bathroom-options-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(214, 173, 98, 0.05), transparent 40%),
+    var(--ba-bg);
+}
+
+.bathroom-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.bathroom-filters button {
+  padding: 10px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  background: transparent;
+  color: #d5dbe4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bathroom-filters button:hover,
+.bathroom-filters button.active {
+  border-color: var(--ba-gold);
+  background: var(--ba-gold);
+  color: #101521;
+}
+
+.bathroom-design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.bathroom-design-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 13px;
+  background: var(--ba-panel);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.bathroom-design-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(214, 173, 98, 0.45);
+}
+
+.bathroom-card-art {
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e7dfd0, #b9aa94);
+}
+
+.bathroom-art-1 {
+  background: linear-gradient(135deg, #d3c5b2, #908575);
+}
+
+.bathroom-art-2 {
+  background: linear-gradient(135deg, #ddd9cb, #a8b5aa);
+}
+
+.bathroom-card-number {
+  position: absolute;
+  z-index: 5;
+  top: 12px;
+  left: 14px;
+  color: rgba(20, 27, 34, 0.55);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.bathroom-card-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22%;
+  height: 43%;
+  border-right: 5px solid #998b78;
+  background: linear-gradient(135deg, #c3d9d5, #eef0e3);
+}
+
+.bathroom-card-mirror {
+  position: absolute;
+  top: 17%;
+  left: 37%;
+  width: 26%;
+  height: 30%;
+  border: 5px solid #9f8a6d;
+  border-radius: 45% 45% 4px 4px;
+  background: linear-gradient(135deg, #d6e1dc, #a7c0bc);
+}
+
+.bathroom-card-vanity {
+  position: absolute;
+  z-index: 2;
+  top: 46%;
+  left: 31%;
+  width: 41%;
+  height: 34%;
+  background: #92795d;
+  border-top: 8px solid #e7dfd1;
+}
+
+.bathroom-card-vanity span {
+  position: absolute;
+  top: 24%;
+  left: 48%;
+  height: 66%;
+  width: 3px;
+  background: #6d5844;
+}
+
+.bathroom-card-vanity i {
+  position: absolute;
+  top: 24%;
+  left: 12%;
+  height: 66%;
+  width: 3px;
+  background: #6d5844;
+}
+
+.bathroom-card-shower {
+  position: absolute;
+  top: 10%;
+  right: 6%;
+  width: 22%;
+  height: 57%;
+  border: 4px solid rgba(135, 158, 157, 0.75);
+  background: rgba(199, 222, 218, 0.18);
+}
+
+.bathroom-card-floor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 16%;
+  background: repeating-linear-gradient(
+    0deg,
+    #b6a78e 0,
+    #b6a78e 2px,
+    #d1c3ad 2px,
+    #d1c3ad 25px
+  );
+}
+
+.bathroom-card-category {
+  position: absolute;
+  z-index: 6;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 30px;
+  background: rgba(8, 13, 23, 0.84);
+  color: var(--ba-gold-light);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.bathroom-card-content {
+  padding: 22px;
+}
+
+.bathroom-card-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.bathroom-card-content > p {
+  min-height: 78px;
+  margin: 0;
+  color: var(--ba-muted);
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.bathroom-card-content ul {
+  display: grid;
+  gap: 9px;
+  margin: 19px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bathroom-card-content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #d7dce4;
+  font-size: 0.82rem;
+}
+
+.bathroom-card-content li svg {
+  margin-top: 3px;
+  color: var(--ba-gold);
+  flex-shrink: 0;
+}
+
+.bathroom-card-enquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ba-gold);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.bathroom-card-enquire:hover {
+  color: var(--ba-gold-light);
+}
+
+.bathroom-process-section {
+  background: #0b111d;
+}
+
+.bathroom-process-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.bathroom-process-layout h2 {
+  margin-top: 17px;
+}
+
+.bathroom-process-steps {
+  display: grid;
+  gap: 15px;
+}
+
+.bathroom-process-steps article {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: #111b2a;
+}
+
+.bathroom-process-steps article > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  border-radius: 9px;
+  background: rgba(214, 173, 98, 0.12);
+  color: var(--ba-gold);
+  font-weight: 900;
+}
+
+.bathroom-process-steps h3 {
+  margin: 2px 0 7px;
+  font-size: 1rem;
+}
+
+.bathroom-process-steps p {
+  margin: 0;
+  color: var(--ba-muted);
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.bathroom-enquiry-section {
+  background: #0d1522;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bathroom-enquiry-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  align-items: start;
+  gap: 65px;
+}
+
+.bathroom-enquiry-copy h2 {
+  margin-top: 18px;
+}
+
+.bathroom-enquiry-points {
+  display: grid;
+  gap: 15px;
+  margin-top: 25px;
+  color: #d5dce5;
+  font-size: 0.9rem;
+}
+
+.bathroom-form {
+  display: grid;
+  gap: 10px;
+  padding: 29px;
+  border: 1px solid rgba(214, 173, 98, 0.2);
+  border-radius: 14px;
+  background: #111c2c;
+}
+
+.bathroom-form label {
+  margin-top: 7px;
+  color: #e5e8ed;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.bathroom-form input,
+.bathroom-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 7px;
+  outline: none;
+  background: #0b1320;
+  color: var(--ba-text);
+  resize: vertical;
+}
+
+.bathroom-form input::placeholder,
+.bathroom-form textarea::placeholder {
+  color: #778397;
+}
+
+.bathroom-form input:focus,
+.bathroom-form textarea:focus {
+  border-color: var(--ba-gold);
+  box-shadow: 0 0 0 3px rgba(214, 173, 98, 0.1);
+}
+
+.bathroom-form .bathroom-primary-btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.bathroom-form small {
+  margin-top: 5px;
+  color: #929eaf;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.bathroom-final-cta {
+  padding: 45px 0;
+  background:
+    radial-gradient(ellipse at 90% 50%, rgba(214, 173, 98, 0.1), transparent 45%),
+    #080d17;
+}
+
+.bathroom-final-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.bathroom-final-cta h2 {
+  margin-bottom: 8px;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.bathroom-final-cta p {
+  margin: 0;
+  color: var(--ba-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+  .bathroom-hero-layout {
+    gap: 35px;
+  }
+
+  .bathroom-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bathroom-design-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bathroom-process-layout,
+  .bathroom-enquiry-layout {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 720px) {
+  .bathroom-container {
+    width: min(100% - 34px, 560px);
+  }
+
+  .bathroom-hero {
+    padding: 62px 0;
+  }
+
+  .bathroom-hero-layout,
+  .bathroom-process-layout,
+  .bathroom-enquiry-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .bathroom-hero h1 {
+    font-size: clamp(2.4rem, 10vw, 3.4rem);
+    letter-spacing: -1.2px;
+  }
+
+  .bathroom-trust-points {
+    display: grid;
+    gap: 11px;
+  }
+
+  .bathroom-art {
+    min-height: 290px;
+  }
+
+  .bathroom-benefits-section,
+  .bathroom-options-section,
+  .bathroom-process-section,
+  .bathroom-enquiry-section {
+    padding: 62px 0;
+  }
+
+  .bathroom-section-heading {
+    margin-bottom: 28px;
+  }
+
+  .bathroom-design-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bathroom-card-content > p {
+    min-height: 0;
+  }
+
+  .bathroom-form {
+    padding: 22px;
+  }
+
+  .bathroom-final-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .bathroom-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .bathroom-actions {
+    flex-direction: column;
+  }
+
+  .bathroom-actions > * {
+    width: 100%;
+  }
+
+  .bathroom-visual-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .bathroom-art {
+    min-height: 255px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bathroom-page *,
+  .bathroom-page *::before,
+  .bathroom-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,1327 @@
+
+/* =========================================
+   SKARVION INFRASTRUCTURE
+   WALL DECOR DESIGN PAGE
+========================================= */
+
+.wall-decor-page {
+  --wd-bg: #090d14;
+  --wd-panel: #101722;
+  --wd-panel-light: #151f2c;
+  --wd-gold: #d7b46a;
+  --wd-gold-light: #f0d69b;
+  --wd-text: #f5f3ed;
+  --wd-muted: #a9b1bd;
+  --wd-border: rgba(215, 180, 106, 0.2);
+  background: var(--wd-bg);
+  color: var(--wd-text);
+  font-family: inherit;
+  overflow: hidden;
+}
+
+.wall-decor-page *,
+.wall-decor-page *::before,
+.wall-decor-page *::after {
+  box-sizing: border-box;
+}
+
+.wall-decor-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wall-decor-container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.wall-decor-section {
+  padding: 100px 0;
+}
+
+.wall-decor-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--wd-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.wall-decor-page h1,
+.wall-decor-page h2,
+.wall-decor-page h3,
+.wall-decor-page p {
+  margin-top: 0;
+}
+
+.wall-decor-page h1,
+.wall-decor-page h2 {
+  letter-spacing: -1.3px;
+}
+
+.wall-decor-page h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.15;
+}
+
+.wall-decor-page h2 span,
+.wall-decor-hero h1 span {
+  display: block;
+  color: var(--wd-gold);
+}
+
+.wall-decor-page p {
+  color: var(--wd-muted);
+  line-height: 1.85;
+}
+
+.wall-decor-btn {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 14px 22px;
+  border: 1px solid var(--wd-gold);
+  border-radius: 5px;
+  background: var(--wd-gold);
+  color: #12151a !important;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.wall-decor-btn:hover {
+  background: var(--wd-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(215, 180, 106, 0.14);
+}
+
+.wall-decor-btn-outline {
+  background: transparent;
+  color: var(--wd-text) !important;
+}
+
+.wall-decor-btn-outline:hover {
+  background: rgba(215, 180, 106, 0.1);
+  color: var(--wd-gold-light) !important;
+}
+
+/* Hero */
+
+.wall-decor-hero {
+  position: relative;
+  isolation: isolate;
+  padding: 85px 0 95px;
+  background:
+    radial-gradient(ellipse at 80% 25%, rgba(70, 80, 92, 0.17), transparent 42%),
+    linear-gradient(120deg, #090d14, #101722 60%, #0b1018);
+}
+
+.wall-decor-hero-pattern {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(rgba(215, 180, 106, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(215, 180, 106, 0.13) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to right, transparent, black);
+}
+
+.wall-decor-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.wall-decor-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.wall-decor-hero h1 {
+  max-width: 650px;
+  margin: 23px 0;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  line-height: 1.04;
+  font-weight: 800;
+}
+
+.wall-decor-hero-copy > p {
+  max-width: 560px;
+  margin-bottom: 30px;
+  font-size: 1.05rem;
+}
+
+.wall-decor-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.wall-decor-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  margin-top: 28px;
+}
+
+.wall-decor-hero-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #d4d9df;
+  font-size: 0.8rem;
+}
+
+.wall-decor-hero-points svg {
+  color: var(--wd-gold);
+}
+
+/* CSS-designed hero wall illustration */
+
+.wall-decor-hero-visual {
+  position: relative;
+  padding: 12px 0 28px 12px;
+}
+
+.wall-decor-room {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid rgba(215, 180, 106, 0.3);
+  border-radius: 8px;
+  background: #b9a58a;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.28);
+}
+
+.wall-decor-room-ceiling {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 40px;
+  background: linear-gradient(#e6dccb, #c6b8a0);
+}
+
+.wall-decor-room-wall {
+  position: absolute;
+  inset: 40px 0 65px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12) 0 1px,
+      transparent 1px 33%,
+      rgba(0, 0, 0, 0.08) 33% 33.3%,
+      transparent 33.3% 66%,
+      rgba(0, 0, 0, 0.08) 66% 66.3%,
+      transparent 66.3%
+    ),
+    linear-gradient(110deg, #d5c8b5, #b6a48c);
+}
+
+.wall-decor-art-frame {
+  position: absolute;
+  top: 48px;
+  left: 23%;
+  width: 49%;
+  height: 190px;
+  padding: 9px;
+  border: 4px solid #6d5337;
+  background: #e8dcc8;
+  box-shadow: 0 8px 16px rgba(35, 27, 18, 0.18);
+}
+
+.wall-decor-art-inner {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 65% 30%, #d7b46a 0 10%, transparent 11%),
+    linear-gradient(145deg, transparent 35%, #776d57 36% 42%, transparent 43%),
+    linear-gradient(30deg, #b9b09a 0 32%, #e5d8c1 33% 58%, #8c9a8a 59%);
+}
+
+.wall-decor-art-inner span:first-child {
+  position: absolute;
+  right: 12%;
+  bottom: -10%;
+  width: 35%;
+  height: 75%;
+  border-radius: 50% 50% 0 0;
+  background: rgba(103, 119, 98, 0.8);
+}
+
+.wall-decor-art-inner span:last-child {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 42%;
+  height: 50%;
+  background: rgba(173, 125, 79, 0.5);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.wall-decor-wall-sconce {
+  position: absolute;
+  top: 95px;
+  right: 12%;
+  width: 12px;
+  height: 42px;
+  border-radius: 8px;
+  background: #6b5134;
+  box-shadow: 0 0 28px 15px rgba(255, 221, 152, 0.35);
+}
+
+.wall-decor-room-console {
+  position: absolute;
+  right: 12%;
+  bottom: 0;
+  left: 12%;
+  height: 55px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background: linear-gradient(#8e6c49, #5c4633);
+  box-shadow: 0 12px 20px rgba(45, 32, 19, 0.22);
+}
+
+.wall-decor-room-console div {
+  width: 27%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(90deg, #a1845e, #6d5237);
+}
+
+.wall-decor-room-floor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 65px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 75px, rgba(60, 43, 26, 0.13) 76px 78px),
+    linear-gradient(#b9a486, #8f785e);
+}
+
+.wall-decor-room-plant {
+  position: absolute;
+  bottom: 44px;
+  left: 4%;
+  width: 50px;
+  height: 90px;
+}
+
+.wall-decor-room-plant span {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  width: 20px;
+  height: 56px;
+  border-radius: 100% 0 100% 0;
+  background: #53664a;
+  transform-origin: bottom;
+}
+
+.wall-decor-room-plant span:nth-child(1) {
+  transform: rotate(-55deg);
+}
+
+.wall-decor-room-plant span:nth-child(2) {
+  transform: rotate(-20deg);
+}
+
+.wall-decor-room-plant span:nth-child(3) {
+  transform: rotate(25deg);
+}
+
+.wall-decor-room-plant span:nth-child(4) {
+  transform: rotate(60deg);
+}
+
+.wall-decor-visual-caption {
+  position: absolute;
+  right: -12px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 22px;
+  border: 1px solid var(--wd-border);
+  border-radius: 6px;
+  background: #151e29;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.wall-decor-caption-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 4px;
+  background: rgba(215, 180, 106, 0.12);
+  color: var(--wd-gold);
+  font-size: 1.2rem;
+}
+
+.wall-decor-visual-caption strong,
+.wall-decor-visual-caption small {
+  display: block;
+}
+
+.wall-decor-visual-caption strong {
+  font-size: 0.92rem;
+}
+
+.wall-decor-visual-caption small {
+  margin-top: 5px;
+  color: var(--wd-muted);
+}
+
+/* Intro */
+
+.wall-decor-intro {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0d131d;
+}
+
+.wall-decor-intro-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.wall-decor-intro-grid h2 {
+  margin-top: 17px;
+  margin-bottom: 0;
+}
+
+.wall-decor-intro-grid > p {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+/* Gallery */
+
+.wall-decor-gallery {
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(215, 180, 106, 0.05), transparent 48%),
+    var(--wd-bg);
+}
+
+.wall-decor-section-heading {
+  max-width: 720px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.wall-decor-section-heading h2 {
+  margin-top: 14px;
+}
+
+.wall-decor-section-heading p {
+  margin-bottom: 0;
+}
+
+.wall-decor-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 35px;
+}
+
+.wall-decor-filter {
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background: #111823;
+  color: #c5cbd3;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wall-decor-filter:hover,
+.wall-decor-filter.active {
+  border-color: var(--wd-gold);
+  background: rgba(215, 180, 106, 0.12);
+  color: var(--wd-gold-light);
+}
+
+.wall-decor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.wall-decor-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: var(--wd-panel);
+  animation: wall-decor-card-in 0.35s ease both;
+  animation-delay: calc(var(--card-index, 0) * 35ms);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.wall-decor-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(215, 180, 106, 0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes wall-decor-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wall-decor-card-art {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background-color: #c1b49e;
+  background-image:
+    linear-gradient(90deg, rgba(40, 30, 20, 0.13) 1px, transparent 1px),
+    linear-gradient(rgba(40, 30, 20, 0.05) 1px, transparent 1px);
+  background-size: 45px 45px;
+}
+
+.wall-decor-art-tag {
+  position: absolute;
+  z-index: 2;
+  top: 13px;
+  left: 13px;
+  padding: 7px 10px;
+  border: 1px solid rgba(215, 180, 106, 0.35);
+  border-radius: 3px;
+  background: rgba(10, 14, 20, 0.85);
+  color: var(--wd-gold-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.wall-decor-art-detail {
+  position: absolute;
+  inset: 30px 17% 35px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.wall-decor-art-detail span {
+  flex: 1;
+  border: 3px solid rgba(75, 58, 40, 0.6);
+  background: rgba(230, 215, 190, 0.4);
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.12);
+}
+
+.wall-decor-art-detail span:nth-child(2) {
+  flex: 1.4;
+  background: rgba(80, 71, 58, 0.18);
+}
+
+.wall-decor-art-console {
+  position: absolute;
+  right: 8%;
+  bottom: 15px;
+  left: 8%;
+  height: 32px;
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  background: linear-gradient(#967650, #624a32);
+  box-shadow: 0 8px 13px rgba(0, 0, 0, 0.18);
+}
+
+.wall-decor-art-console span {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(225, 205, 173, 0.13);
+}
+
+/* Gallery art variants */
+
+.wall-tv {
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(255, 218, 139, 0.28), transparent 40%),
+    repeating-linear-gradient(90deg, #7e654b 0 10px, #9b8060 11px 13px, #6c543f 14px 20px);
+}
+
+.wall-tv .wall-decor-art-detail {
+  inset: 27px 23% 42px;
+  gap: 4px;
+}
+
+.wall-tv .wall-decor-art-detail span {
+  border-color: rgba(224, 202, 166, 0.7);
+  background: rgba(30, 36, 42, 0.7);
+}
+
+.wall-tv .wall-decor-art-detail span:nth-child(2) {
+  flex: 2.4;
+  border: 8px solid #d6c4a5;
+  background: linear-gradient(145deg, #323b45, #0d1218);
+}
+
+.wall-wood {
+  background:
+    repeating-linear-gradient(90deg, #6c4a2d 0 14px, #96704a 15px 17px, #785638 18px 28px, #b18b60 29px 32px);
+}
+
+.wall-wood .wall-decor-art-detail span {
+  border-color: #4c3625;
+  background: linear-gradient(145deg, #b29a7b, #76604a);
+}
+
+.wall-texture {
+  background:
+    radial-gradient(ellipse at 25% 30%, rgba(255, 255, 255, 0.24), transparent 30%),
+    repeating-linear-gradient(130deg, #b5a48c 0 3px, #c7b9a5 4px 9px, #a99a84 10px 12px);
+}
+
+.wall-texture .wall-decor-art-detail span {
+  border-color: #827461;
+  background: linear-gradient(140deg, #e0d5c3, #a79b88);
+}
+
+.wall-stone {
+  background:
+    linear-gradient(0deg, rgba(26, 25, 23, 0.15), transparent),
+    repeating-linear-gradient(0deg, transparent 0 35px, rgba(35, 31, 27, 0.45) 36px 39px),
+    repeating-linear-gradient(90deg, #8c8172 0 65px, #6f665b 66px 69px, #b3a795 70px 137px);
+}
+
+.wall-stone .wall-decor-art-detail span {
+  border-color: #50483e;
+  background: linear-gradient(135deg, #d0c5b4, #7f7669);
+}
+
+.wall-panels {
+  background: #b5a38b;
+}
+
+.wall-panels .wall-decor-art-detail {
+  inset: 20px 12% 35px;
+  gap: 8px;
+}
+
+.wall-panels .wall-decor-art-detail span {
+  border: 8px solid #8d775c;
+  background: linear-gradient(135deg, #d7c7ad, #b4a087);
+}
+
+.wall-paper {
+  background-color: #d8c9b0;
+  background-image:
+    radial-gradient(ellipse at center, transparent 0 32%, rgba(106, 113, 79, 0.6) 33% 36%, transparent 37%),
+    radial-gradient(ellipse at 0 0, rgba(144, 110, 73, 0.7) 0 9%, transparent 10%),
+    radial-gradient(ellipse at 100% 100%, rgba(144, 110, 73, 0.7) 0 9%, transparent 10%);
+  background-size: 55px 65px;
+}
+
+.wall-paper .wall-decor-art-detail span {
+  border-color: #98886e;
+  background: rgba(237, 225, 205, 0.5);
+}
+
+.wall-bedroom {
+  background:
+    linear-gradient(180deg, transparent 60%, rgba(54, 42, 32, 0.18)),
+    repeating-linear-gradient(90deg, #9a846c 0 30px, #b8a58b 31px 33px);
+}
+
+.wall-bedroom .wall-decor-art-detail {
+  inset: 28px 20% 45px;
+}
+
+.wall-bedroom .wall-decor-art-detail span {
+  border: 7px solid #e0d1ba;
+  background: linear-gradient(145deg, #b49a7c, #76614c);
+}
+
+.wall-gallery {
+  background:
+    radial-gradient(circle at 20% 30%, #e5d7c0 0 30px, #6b5540 31px 36px, transparent 37px),
+    radial-gradient(circle at 50% 25%, #d7c7ad 0 38px, #756047 39px 44px, transparent 45px),
+    radial-gradient(circle at 80% 36%, #c5d0b7 0 28px, #6c7056 29px 34px, transparent 35px),
+    linear-gradient(135deg, #a8957b, #c7b69b);
+}
+
+.wall-gallery .wall-decor-art-detail span {
+  border-color: #70543a;
+  background: rgba(232, 220, 199, 0.3);
+}
+
+.wall-decor-card-content {
+  padding: 22px;
+}
+
+.wall-decor-card-category {
+  color: var(--wd-gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.wall-decor-card-content h3 {
+  margin: 10px 0;
+  font-size: 1.22rem;
+}
+
+.wall-decor-card-content p {
+  min-height: 82px;
+  margin-bottom: 17px;
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.wall-decor-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--wd-gold-light);
+  font: inherit;
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.wall-decor-card-link svg {
+  transition: transform 0.2s ease;
+}
+
+.wall-decor-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+.wall-decor-empty {
+  padding: 25px;
+  text-align: center;
+}
+
+/* Benefits */
+
+.wall-decor-benefits {
+  background: #0d131d;
+  border-block: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wall-decor-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.wall-decor-benefit {
+  padding: 27px 23px;
+  border: 1px solid var(--wd-border);
+  border-radius: 7px;
+  background: linear-gradient(145deg, #121b27, #0f151f);
+  transition: transform 0.25s ease;
+}
+
+.wall-decor-benefit:hover {
+  transform: translateY(-4px);
+}
+
+.wall-decor-benefit-icon {
+  display: grid;
+  width: 49px;
+  height: 49px;
+  margin-bottom: 22px;
+  place-items: center;
+  border: 1px solid rgba(215, 180, 106, 0.28);
+  border-radius: 5px;
+  background: rgba(215, 180, 106, 0.08);
+  color: var(--wd-gold);
+  font-size: 1.25rem;
+}
+
+.wall-decor-benefit h3 {
+  margin-bottom: 12px;
+  font-size: 1.03rem;
+}
+
+.wall-decor-benefit p {
+  margin-bottom: 0;
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+
+/* Process */
+
+.wall-decor-process {
+  background: var(--wd-bg);
+}
+
+.wall-decor-process-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.wall-decor-process-copy h2 {
+  margin-top: 16px;
+}
+
+.wall-decor-process-copy > p {
+  max-width: 550px;
+}
+
+.wall-decor-check-list {
+  display: grid;
+  gap: 15px;
+  margin: 27px 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.wall-decor-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #d8dce2;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.wall-decor-check-list svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--wd-gold);
+}
+
+.wall-decor-material-board {
+  padding: 30px;
+  border: 1px solid var(--wd-border);
+  border-radius: 9px;
+  background:
+    radial-gradient(ellipse at top right, rgba(215, 180, 106, 0.08), transparent 55%),
+    #101722;
+}
+
+.wall-decor-material-board-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 25px;
+  color: var(--wd-gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.wall-decor-swatches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.wall-decor-swatch {
+  position: relative;
+  min-height: 150px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+}
+
+.wall-decor-swatch::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  transition: transform 0.35s ease;
+}
+
+.wall-decor-swatch:hover::before {
+  transform: scale(1.07);
+}
+
+.wall-decor-swatch span {
+  position: relative;
+  z-index: 1;
+  padding: 7px 9px;
+  border-radius: 3px;
+  background: rgba(10, 13, 18, 0.78);
+  color: #fff;
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+.swatch-cream::before {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 8px, rgba(130, 110, 80, 0.09) 9px 10px),
+    linear-gradient(135deg, #eee2cd, #c7b49a);
+}
+
+.swatch-wood::before {
+  background:
+    repeating-linear-gradient(90deg, #795739 0 10px, #a17a50 11px 13px, #67472d 14px 22px);
+}
+
+.swatch-stone::before {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(40, 35, 30, 0.25) 31px 33px),
+    repeating-linear-gradient(90deg, #7c756a 0 50px, #a69c8d 51px 100px);
+}
+
+.swatch-gold::before {
+  background:
+    radial-gradient(ellipse at 25% 20%, rgba(255, 255, 255, 0.25), transparent 35%),
+    linear-gradient(135deg, #8b6b36, #d6b66d 45%, #8a6630);
+}
+
+.wall-decor-material-board > p {
+  margin: 22px 0 0;
+  font-size: 0.86rem;
+}
+
+/* Enquiry */
+
+.wall-decor-enquiry-section {
+  background:
+    radial-gradient(ellipse at left center, rgba(215, 180, 106, 0.07), transparent 48%),
+    #0d131d;
+  border-block: 1px solid rgba(255, 255, 255, 0.06);
+  scroll-margin-top: 30px;
+}
+
+.wall-decor-enquiry-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: start;
+  gap: 75px;
+}
+
+.wall-decor-enquiry-copy {
+  padding-top: 30px;
+}
+
+.wall-decor-enquiry-copy h2 {
+  margin-top: 17px;
+}
+
+.wall-decor-contact-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 18px;
+  border: 1px solid rgba(37, 211, 102, 0.24);
+  border-radius: 6px;
+  background: rgba(37, 211, 102, 0.05);
+}
+
+.wall-decor-contact-note > svg {
+  color: #25d366;
+  font-size: 2rem;
+}
+
+.wall-decor-contact-note strong,
+.wall-decor-contact-note span {
+  display: block;
+}
+
+.wall-decor-contact-note strong {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.wall-decor-contact-note span {
+  color: var(--wd-muted);
+  font-size: 0.8rem;
+}
+
+.wall-decor-form {
+  display: grid;
+  gap: 18px;
+  padding: 30px;
+  border: 1px solid var(--wd-border);
+  border-radius: 9px;
+  background: linear-gradient(145deg, #151f2c, #101722);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.2);
+}
+
+.wall-decor-form-heading h3 {
+  margin-bottom: 8px;
+  font-size: 1.55rem;
+}
+
+.wall-decor-form-heading p {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.wall-decor-form label {
+  display: grid;
+  gap: 8px;
+  color: #e1e4e8;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.wall-decor-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.wall-decor-form input,
+.wall-decor-form select,
+.wall-decor-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  outline: none;
+  background: #0b111a;
+  color: #f5f3ed;
+  font: inherit;
+  font-size: 0.88rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.wall-decor-form input::placeholder,
+.wall-decor-form textarea::placeholder {
+  color: #7f8997;
+}
+
+.wall-decor-form input:focus,
+.wall-decor-form select:focus,
+.wall-decor-form textarea:focus {
+  border-color: var(--wd-gold);
+  box-shadow: 0 0 0 3px rgba(215, 180, 106, 0.09);
+}
+
+.wall-decor-form textarea {
+  resize: vertical;
+}
+
+.wall-decor-submit {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 5px;
+  background: #25d366;
+  color: #082b16;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.wall-decor-submit:hover {
+  transform: translateY(-2px);
+  background: #45e17d;
+}
+
+.wall-decor-form-note {
+  color: var(--wd-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Final CTA */
+
+.wall-decor-final-cta {
+  padding: 55px 0;
+  background:
+    radial-gradient(ellipse at 80% 50%, rgba(215, 180, 106, 0.12), transparent 45%),
+    #111823;
+}
+
+.wall-decor-final-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.wall-decor-final-cta h2 {
+  margin: 12px 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.wall-decor-final-cta p {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .wall-decor-hero-content,
+  .wall-decor-process-grid,
+  .wall-decor-enquiry-grid {
+    gap: 40px;
+  }
+
+  .wall-decor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wall-decor-benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wall-decor-room {
+    min-height: 360px;
+  }
+
+  .wall-decor-art-frame {
+    height: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  .wall-decor-container {
+    width: min(100% - 32px, 560px);
+  }
+
+  .wall-decor-section {
+    padding: 70px 0;
+  }
+
+  .wall-decor-hero {
+    padding: 65px 0 75px;
+  }
+
+  .wall-decor-hero-content,
+  .wall-decor-intro-grid,
+  .wall-decor-process-grid,
+  .wall-decor-enquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .wall-decor-hero h1 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+  }
+
+  .wall-decor-hero-copy > p {
+    font-size: 0.97rem;
+  }
+
+  .wall-decor-hero-visual {
+    margin: 0 8px;
+  }
+
+  .wall-decor-room {
+    min-height: 350px;
+  }
+
+  .wall-decor-intro-grid {
+    gap: 22px;
+  }
+
+  .wall-decor-grid {
+    gap: 16px;
+  }
+
+  .wall-decor-card-art {
+    height: 190px;
+  }
+
+  .wall-decor-card-content {
+    padding: 17px;
+  }
+
+  .wall-decor-card-content p {
+    min-height: 0;
+  }
+
+  .wall-decor-benefit-grid {
+    gap: 14px;
+  }
+
+  .wall-decor-benefit {
+    padding: 21px 17px;
+  }
+
+  .wall-decor-material-board {
+    padding: 22px;
+  }
+
+  .wall-decor-enquiry-copy {
+    padding-top: 0;
+  }
+
+  .wall-decor-form {
+    padding: 23px 18px;
+  }
+
+  .wall-decor-final-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .wall-decor-container {
+    width: calc(100% - 28px);
+  }
+
+  .wall-decor-section {
+    padding: 58px 0;
+  }
+
+  .wall-decor-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 1.4px;
+  }
+
+  .wall-decor-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .wall-decor-hero-actions .wall-decor-btn {
+    width: 100%;
+  }
+
+  .wall-decor-hero-points {
+    gap: 11px 15px;
+  }
+
+  .wall-decor-hero-points span {
+    font-size: 0.74rem;
+  }
+
+  .wall-decor-room {
+    min-height: 285px;
+  }
+
+  .wall-decor-room-ceiling {
+    height: 27px;
+  }
+
+  .wall-decor-room-wall {
+    inset: 27px 0 48px;
+  }
+
+  .wall-decor-room-floor {
+    height: 48px;
+  }
+
+  .wall-decor-art-frame {
+    top: 40px;
+    height: 130px;
+  }
+
+  .wall-decor-room-console {
+    height: 43px;
+  }
+
+  .wall-decor-room-plant {
+    transform: scale(0.75);
+    transform-origin: bottom left;
+  }
+
+  .wall-decor-visual-caption {
+    right: -5px;
+    padding: 12px;
+  }
+
+  .wall-decor-caption-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .wall-decor-visual-caption strong {
+    font-size: 0.8rem;
+  }
+
+  .wall-decor-visual-caption small {
+    font-size: 0.7rem;
+  }
+
+  .wall-decor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wall-decor-card-art {
+    height: 220px;
+  }
+
+  .wall-decor-card-content p {
+    font-size: 0.9rem;
+  }
+
+  .wall-decor-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wall-decor-benefit {
+    padding: 23px;
+  }
+
+  .wall-decor-swatches {
+    gap: 9px;
+  }
+
+  .wall-decor-swatch {
+    min-height: 120px;
+    padding: 9px;
+  }
+
+  .wall-decor-swatch span {
+    font-size: 0.68rem;
+  }
+
+  .wall-decor-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .wall-decor-submit {
+    font-size: 0.82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wall-decor-page *,
+  .wall-decor-page *::before,
+  .wall-decor-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
