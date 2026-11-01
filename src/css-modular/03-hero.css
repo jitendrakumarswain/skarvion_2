@@ -7,8 +7,8 @@
   position: relative;
 
   width: 100%;
-  height: 100vh;
-  min-height: 680px;
+  height: auto;
+  min-height: 100vh;
 
   overflow: hidden;
 
@@ -144,12 +144,15 @@
    HERO CONTENT CONTAINER
 ========================================================= */
 
+
 .skv-hero-container {
   position: relative;
   z-index: 4;
 
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 100vh;
+  box-sizing: border-box;
 
   display: flex;
   align-items: flex-start;
@@ -162,6 +165,7 @@
 
   gap: 50px;
 }
+
 
 
 /* =========================================================
@@ -183,7 +187,6 @@
 
 .skv-badge {
   width: fit-content;
-
   display: inline-flex;
   align-items: center;
 
@@ -261,9 +264,8 @@
 
 .skv-typewriter-text {
   display: block;
-
+  min-height: 2.1em;
   margin-top: 7px;
-
   color: #38bdf8;
 }
 
@@ -712,6 +714,7 @@
 
   .skv-typewriter-text {
     margin-top: 4px;
+    min-height: 3.24em;
   }
 
   .skv-hero-desc {
@@ -796,6 +799,7 @@
 
 @media (max-width: 400px) {
   .skv-hero-container {
+    padding-top: 170px;
     padding-left: 16px;
     padding-right: 16px;
   }
