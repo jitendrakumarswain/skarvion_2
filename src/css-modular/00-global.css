@@ -449,7 +449,7 @@ button {
 ================================ */
 
 body {
-  cursor: none;
+  cursor: auto;
 }
 
 .skv-cursor {

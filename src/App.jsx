@@ -69,17 +69,7 @@ function App() {
 
   const [loading, setLoading] = useState(true);
 
-  const [cursor, setCursor] = useState({
-    x: 0,
-    y: 0,
-  });
 
-  const handleMouseMove = (e) => {
-    setCursor({
-      x: e.clientX,
-      y: e.clientY,
-    });
-  };
 
   if (loading) {
     return (
@@ -91,31 +81,13 @@ function App() {
 
   return (
     <>
-      {/* =========================
-          MODERN CURSOR
-      ========================= */}
 
-      <div
-        className="skv-cursor"
-        style={{
-          left: cursor.x,
-          top: cursor.y,
-        }}
-      />
-
-      <div
-        className="skv-cursor-ring"
-        style={{
-          left: cursor.x,
-          top: cursor.y,
-        }}
-      />
 
       {/* =========================
           APPLICATION CONTENT
       ========================= */}
 
-      <div onMouseMove={handleMouseMove}>
+      <div>
 
         <Routes>
 
