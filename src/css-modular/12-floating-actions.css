@@ -1,17 +1,17 @@
-/* Floating call / WhatsApp actions */
 
-/* 📞 CALL BUTTON */
+/* Floating Call / WhatsApp Actions */
+
+/* CALL BUTTON */
 .call-btn {
   position: fixed;
+  bottom: 96px;
+  right: 20px;
 
-  bottom: 100px; /* 🔥 ABOVE WhatsApp */
-  right: 25px;
-
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
 
   background: #34a853;
-  color: rgb(116, 11, 11);
+  color: white;
 
   border-radius: 50%;
   display: flex;
@@ -22,32 +22,26 @@
   z-index: 9999;
 
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ICON SIZE */
 .call-btn svg {
-  font-size: 26px;
+  font-size: 23px;
 }
 
-/* HOVER */
 .call-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-}
-
-.call-btn:hover {
-  background: linear-gradient(135deg, #0284c7, #0369a1);
 }
 
 /* WHATSAPP BUTTON */
 .whatsapp-btn {
   position: fixed;
   bottom: 25px;
-  right: 25px;
+  right: 20px;
 
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
 
   background: #25D366;
   color: white;
@@ -58,28 +52,76 @@
   align-items: center;
 
   text-decoration: none;
-
   z-index: 9999;
 
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  /* 🔥 animation */
   animation: whatsappPulse 1.8s infinite;
 }
 
-/* ICON SIZE */
 .whatsapp-btn svg {
-  font-size: 30px;
+  font-size: 25px;
 }
 
-/* HOVER EFFECT */
 .whatsapp-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Related to message done smoothly*/
+/* SMALL PHONES */
+@media (max-width: 480px) {
+  .call-btn,
+  .whatsapp-btn {
+    width: 46px;
+    height: 46px;
+    right: 15px;
+  }
+
+  .call-btn {
+    bottom: 86px;
+  }
+
+  .whatsapp-btn {
+    bottom: 25px;
+  }
+
+  .call-btn svg {
+    font-size: 20px;
+  }
+
+  .whatsapp-btn svg {
+    font-size: 22px;
+  }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 360px) {
+  .call-btn,
+  .whatsapp-btn {
+    width: 42px;
+    height: 42px;
+    right: 12px;
+  }
+
+  .call-btn {
+    bottom: 80px;
+  }
+
+  .whatsapp-btn {
+    bottom: 22px;
+  }
+
+  .call-btn svg {
+    font-size: 18px;
+  }
+
+  .whatsapp-btn svg {
+    font-size: 20px;
+  }
+}
+
+/* FORM MESSAGE */
 .form-message {
   transition: opacity 0.3s ease;
 }
