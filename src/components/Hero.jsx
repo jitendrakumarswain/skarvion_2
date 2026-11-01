@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import structureImage from "../assets/structure.png";
-import ParticlesBg from "./ParticlesBg";
 import QuoteModal from "./QuoteModal";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -109,10 +107,6 @@ export default function Hero() {
       {/* Modern Gradient Overlays */}
       <div className="skv-hero-overlay" />
       <div className="skv-hero-glow" />
-
-
-      {/* Particle Effects */}
-      <ParticlesBg />
 
 
       {/* Hero Content */}
